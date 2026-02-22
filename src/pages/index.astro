@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ormeau Table Tennis Club">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
+          <div class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <img alt="Ormeau Logo" class="h-16 w-16 block dark:hidden object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWsSTwwR0O7bpxCOfKtKabvBSTZlFhYtSGJSfq7KFaozgoZjP-k-ytYHcMP4alTVyvXGVlwZAwPMdN8cIRthr-SY5rq9GHKbeqiWcHl0W_ENUs0Ff9K-OLRRAMjexKXYaorIA9M9yfAWJiSPV9TVhTElsWlNDnjcg0bviNhht2SM4shTHJA8bV9l1ehKNxzaVuxHcpOIpngNKKe9OymJ81Lsb9z3FBgyR48hn0wNmQg-egXefkWUdKkFuy1bx0AhUpVktvGGAzGkGM"/>
+            <img alt="Ormeau Logo" class="h-16 w-16 hidden dark:block object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBEdvFLuZFjaVGZKoyHRuAg3lnj5-TtgXq02BdpHybRu_Qipaf_svTLHx6gPeSs-bdurwArb-RYpEgUlOPBsWwbSPwVxq-jj7mtw7XzGbcosBHGuYbusa_us_KPevqAxE7vKw77Na6XaWvvWQqBYFIo7hiGLGMpcuwXPlTBXVfq2fuZqRJ0P6WBGx2HPY8dzqsLFVsifPswDFtpgprcIkA3SQGX7JcS5cJYsMrzR1JSuTcV-R9pWbzA8LCN_kugYvlNwK2IGGtXIz"/>
+          </div>
+          <div class="flex flex-col justify-center">
+            <span class="font-bold text-2xl tracking-tighter text-gray-900 dark:text-white leading-none">Ormeau<span class="text-primary">TTC</span></span>
+          </div>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-12">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200" href="#">About</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200" href="#">Coaching</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200" href="#">Events</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200" href="#">News</a>
+        </div>
+        <div class="hidden md:flex items-center">
+          <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="#">Join Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+            <span class="material-icons text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center z-0 scale-105 blur-[2px]"></div>
+    <div class="relative z-20 max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 py-32 flex flex-col items-center text-center">
+      <span class="inline-block py-2 px-6 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md text-sm font-bold mb-10 uppercase tracking-[0.2em] text-primary">Table Tennis For Everyone</span>
+      <h1 class="text-6xl md:text-9xl font-bold tracking-tight mb-10 leading-[1.1] max-w-4xl"> A Club Built <br/>On <span class="text-primary">Progress</span> </h1>
+      <p class="text-xl md:text-2xl text-gray-200 max-w-2xl mb-16 font-light leading-relaxed"> Whether you're starting your journey or pushing for the podium, Ormeau provides the environment, coaching, and community you need to thrive. </p>
+      <div class="flex flex-col items-center w-full max-w-xs gap-6">
+        <a class="w-full px-12 py-5 rounded-full bg-primary text-white font-bold text-xl hover:bg-primary-hover transition-all duration-300 shadow-2xl shadow-primary/40 transform hover:-translate-y-1 text-center" href="#"> Start Playing </a>
+        <a class="w-full px-12 py-5 rounded-full bg-transparent border-2 border-white/30 text-white font-bold text-lg hover:bg-white hover:text-black hover:border-white transition-all duration-300 flex items-center justify-center gap-2 text-center" href="#"> How The Club Works </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-24 bg-background-light dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">More Than Just A <span class="text-primary">Club</span>,<br/>A Place To Grow.</h2>
+          <div class="w-24 h-1.5 bg-primary rounded-full mb-8"></div>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"> Ormeau Table Tennis Club isn't just about hitting a ball back and forth. It's about personal development, resilience, and community. We've built a space where players of all ages come together to learn, compete, and support one another. </p>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-10 leading-relaxed"> From our humble beginnings to becoming a powerhouse in British table tennis, our core mission remains the same: to provide the best possible environment for everyone to enjoy the sport. </p>
+          <a class="inline-flex items-center text-primary font-bold text-lg hover:underline underline-offset-4 decoration-2" href="#"> Learn More About Our Story <span class="material-icons ml-2">arrow_forward</span> </a>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-3xl z-0"></div>
+          <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+            <img alt="Club Atmosphere" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7vJsKAclIofiO11f8hHq1q6p0VxadRPiyUf9S56sPYWU-iJwJoKU7HfOzYrJK89gSy7IC_PiQCbFjn3rCat3LceCjGVZsvEmzJhWss7AOqsacB_Bq2TOVI3E4rvkk5La_SpvYUJPcxKa4pH3BYm73JsMcJJqc2FYyZq4Nl-QaERNmYa-tP-IukahydQ4QW-ZMmBvXuD3mhU3ufwyG4eyY2kzKx22DVz8NWql_U52BkPLw-1EgmqIzVIq87txIORJdtZrnj9gajkBk"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How The Club Works -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mb-20">
+        <span class="text-primary font-bold tracking-widest uppercase text-sm">Your Journey</span>
+        <h2 class="text-4xl font-bold mt-2 mb-6">How The Club Works</h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">We have a structured pathway designed to help every player find their level and enjoy the game.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group border-b-4 border-primary">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-4xl">school</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Start with Coaching</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"> Beginners join our foundation classes. Learn the basics, grip, and movement in a fun, supportive group setting. </p>
+        </div>
+        <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group border-b-4 border-gray-200 dark:border-gray-700 hover:border-primary">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-4xl">trending_up</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Progress at Your Pace</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"> Move up to intermediate squads as you improve. Participate in internal leagues and start testing your skills. </p>
+        </div>
+        <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group border-b-4 border-gray-200 dark:border-gray-700 hover:border-primary">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-4xl">trophy</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Opportunities to Go Further</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"> Elite coaching for those aiming for national selection. Represent the club in the British League and international events. </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Section -->
+  <section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden">
+    <div class="absolute right-0 top-0 w-1/3 h-full bg-surface-light dark:bg-surface-dark/50 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary font-bold tracking-widest uppercase text-sm">Expertise</span>
+          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-8">Heart Of What We Do</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8"> Our coaching team is world-class, led by full-time professional coaches who are dedicated to player development. </p>
+          <ul class="space-y-6 mb-10">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-4 mt-1">check_circle</span>
+              <div>
+                <h4 class="font-bold text-lg">Professional Coaches</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Full-time staff dedicated to your improvement.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-4 mt-1">check_circle</span>
+              <div>
+                <h4 class="font-bold text-lg">Structured Syllabus</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">A clear technical curriculum for every level.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-4 mt-1">check_circle</span>
+              <div>
+                <h4 class="font-bold text-lg">Video Analysis</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Modern technology to refine your technique.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-4 mt-1">check_circle</span>
+              <div>
+                <h4 class="font-bold text-lg">Performance Camps</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Intensive training weeks during holidays.</p>
+              </div>
+            </li>
+          </ul>
+          <a class="px-8 py-4 rounded-full bg-primary text-white font-bold text-lg hover:bg-primary-hover transition shadow-lg inline-block" href="#"> Sign Up For Coaching </a>
+        </div>
+        <div class="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+          <img alt="Coaching Session" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3DzgsLEtg6AhokHJcYwVJneHYzOg7fnhxhA4Hi5bTm7rZQ7R5xtsZx633mUT7nePbYmbKUgQdQjZSYl-XMYBIf-y4QbBrWoB8nX4RjbvDLf_48T7L5FD7Ehf3EVU7aK-r5xJjn8HXb5V3FE8wz_ANAxtS6Z8RB1KjVGjD_93Y2U45AgeJoZ3viVBLobQFCCKeXUfTDHbM1gQwApghuPP5o51e6sUUxW1bhtw8IhdUsueMGI6r0xF1q57WEUNH1iLfO0iT_pKy4mm"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-10 left-10 text-white">
+            <p class="font-bold text-2xl">Keith Knox</p>
+            <p class="text-primary font-medium">Head Performance Coach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Champions Section -->
+  <section class="py-24 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Proven Pathways</h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">From our academy to the world stage. We are proud of our champions.</p>
+      </div>
+      <div class="mb-20 rounded-3xl overflow-hidden relative aspect-video md:aspect-[21/9] group">
+        <img alt="British League Premier Champions 2022-23" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYoM4CJ58uSjw79XORjzN058Ksns9A0YuEIsnmAsrUseaba2cptWyYUHyaervb26DRFxtwL_w7ORn2H0lqEWrtGzzP07Ds6vma4UoVftDBnjKfNhsbmRquGh_hC1SV1lZaO8N_rBl7g51RfeA3MwSWSntpNyqGV_HPOxVggV8GduDrdH51LOJgVeedqB60Bz02l3R9mb2IDN2dxBdpkje0JVt1CRas0b9BIu6AoMAEYycsWMkV-xUw9netIfVR06yjv7MLhpsziBgW"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-8 md:p-12">
+          <h3 class="text-3xl md:text-4xl font-bold mb-2">British League Premier Champions</h3>
+          <p class="text-primary text-xl font-medium">2022-23 Season</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/5]">
+          <img alt="Owen Cathcart" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition duration-500 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0YsoQG0CdcLT9GeM8wO1eFCMCZRuEmLd8VEO2Tb6GGsPvkYz8oOiP6LtxBhmxz5EwXt88GRo9rS6wxeyRq7ANfaXDrC8GxBS7N2SHZbac-Nfv803WQzfjBpK0mLx4TtJBVxX4FX2bjSyU8v7XkHrNiVN_TUjXi9h3a-ZgSdmqWsoNkn6Fwd4i_UbM_5F5_cgON4rsDtS-wLOl2sEnYo-_SZ-KGgAaA83Uavk0sTM-hyQ3wOzlV5Y3rZhgKUYQzczTn5C3p04_SHiu"/>
+          <div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent">
+            <h3 class="text-2xl font-bold">Owen Cathcart</h3>
+            <p class="text-gray-300 text-sm mt-1">Commonwealth Games Athlete</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/5]">
+          <img alt="Sophie Earley" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition duration-500 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1x6acbBjA2wFkeJPo_WbooB-76emOl3bUNg7_Poc4cBGkNYuQ2_HPmkqstEDNr0isqwXy1rmygKk8_rOLYih1mM7UbO8Mj4LRyVjMz4x91nDy7jRg5mwL1dOKvBpkYI7qyQv1izoDTO9m0OnAQkM_AFhCBe27EWL5eboifPP_tki6WcjJHNCgAmtTsfHGLRqB-dFUSseJ37KqPS8F4JT9u5Hswpu_0d4HWEtfH8YF6NY875DxExPdS8u9kAf-hYL0tgSGaDTD3jpM"/>
+          <div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent">
+            <h3 class="text-2xl font-bold">Sophie Earley</h3>
+            <p class="text-gray-300 text-sm mt-1">European Youth Medalist</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/5]">
+          <img alt="Peadar Sheridan" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition duration-500 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOB20M7rwun8TaOqO8_AAGZInQfJquFdpOb-c4Yo7JltVQF2MSFZjWcrWD14Owsapfa1e_8Sys0y9HQQvesAAhWtfl9vNYGqwTekDctuHbE5GdSiIvglmYX3xkYDjyNq-s2dCBn6lLOph7FaC4Y7ZOjdv3iVHDQIGFfAr86SdK9W5GkFMe7dl7PmPvs-TcrHdfeQ9BjRVvqSFsZcASWX_o8y3IeBpoRPU-K8lJqbcIeG2J2rE9oBNFjLY5X33xywwT2drNt3H5cxD"/>
+          <div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent">
+            <h3 class="text-2xl font-bold">Peadar Sheridan</h3>
+            <p class="text-gray-300 text-sm mt-1">National Senior Champion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <h2 class="text-3xl font-bold text-center mb-16">What They Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl shadow-sm relative">
+          <span class="material-icons text-6xl text-primary/10 absolute top-6 right-6">format_quote</span>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 italic relative z-10">"The coaching standard at Ormeau is second to none. They have created a professional environment that is still welcoming to everyone."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">JH</div>
+            <div>
+              <h4 class="font-bold">Jeff Harrison</h4>
+              <p class="text-xs text-gray-400 uppercase">Club Member</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl shadow-sm relative">
+          <span class="material-icons text-6xl text-primary/10 absolute top-6 right-6">format_quote</span>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 italic relative z-10">"My kids have grown so much in confidence since joining. It's amazing to see them progress and make friends outside of school."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">DS</div>
+            <div>
+              <h4 class="font-bold">Deirdre Sealy</h4>
+              <p class="text-xs text-gray-400 uppercase">Parent</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl shadow-sm relative">
+          <span class="material-icons text-6xl text-primary/10 absolute top-6 right-6">format_quote</span>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 italic relative z-10">"Ormeau gave me the platform to achieve my dreams. The support from the coaches and the club is why I am where I am today."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+              <img alt="Peadar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOB20M7rwun8TaOqO8_AAGZInQfJquFdpOb-c4Yo7JltVQF2MSFZjWcrWD14Owsapfa1e_8Sys0y9HQQvesAAhWtfl9vNYGqwTekDctuHbE5GdSiIvglmYX3xkYDjyNq-s2dCBn6lLOph7FaC4Y7ZOjdv3iVHDQIGFfAr86SdK9W5GkFMe7dl7PmPvs-TcrHdfeQ9BjRVvqSFsZcASWX_o8y3IeBpoRPU-K8lJqbcIeG2J2rE9oBNFjLY5X33xywwT2drNt3H5cxD"/>
+            </div>
+            <div>
+              <h4 class="font-bold">Peadar Sheridan</h4>
+              <p class="text-xs text-gray-400 uppercase">Pro Player</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="py-24 bg-background-light dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 relative">
+          <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-primary/10 rounded-3xl z-0"></div>
+          <div class="grid grid-cols-2 gap-4 relative z-10">
+            <img alt="Community Event" class="rounded-2xl w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcCfDuKb6Mh3F3fCPoMxPxN1lijh2vpLXqLdNuTBfetMPrPVrdIfl6JF3VIs0Yq6Y0gLL2lglkU8v6AmLgUgXfSup0DATGQQwEuS5MHyPY1PhX7gsYtf1wgOI6U_DBxhZYfrqdJCcUI39VRYiqJPBJGx0UJd_qCpxSAOdHdtpk-fQ1r_ZCBZneLT6fJD_tLU3Tkzwe8KZq1D-qMmuxkYrsiq074QWPAQ3dw7fCDnavXexHiROqq7t1snSp1MF7wuPNxtIhp33Ghk"/>
+            <img alt="Social Play" class="rounded-2xl w-full h-64 object-cover mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8aLO5RDZTV7WuaVUcxJu9rju97_dfaeYQhTDJVjNgY2bWYEa2HiV9m6T5UmuUhkAkw7QMhK034p01ryJlkXdSLUvlOKuErq2u9veR6Q6HG01-4gLFfC-05554UD6hA_SeU6xerMCJMXv-_AY5Ob1EB4ztiOgJA45z6EzPplk-UWV_f1wMVP60aK-RqAB5e3MvGRwi9s4myfq9Ym4aX6VGLQvaYuV-a6VTD_LRUB8pa2Ujy_whOCvY1z_cbS4cDaAhabPFZFcyjcW1"/>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="text-primary font-bold tracking-widest uppercase text-sm">Culture</span>
+          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-8">Whole Community</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8"> We believe table tennis is a powerful tool for social good. We actively engage with the local community to bring the sport to new audiences. </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">diversity_3</span>
+              </div>
+              <span class="font-bold">Inclusivity Focus</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">school</span>
+              </div>
+              <span class="font-bold">School Programs</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">volunteer_activism</span>
+              </div>
+              <span class="font-bold">Volunteer Driven</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">family_restroom</span>
+              </div>
+              <span class="font-bold">Family Friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-primary text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl md:text-6xl font-bold mb-8">Joining <span class="text-black/20">ORMEAU</span></h2>
+      <p class="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto opacity-90"> Due to high demand, some of our sessions have a waiting list. Register your interest today and we'll get you on a table as soon as possible. </p>
+      <button class="px-10 py-5 bg-white text-primary font-bold text-xl rounded-full hover:bg-gray-100 transition shadow-2xl hover:shadow-white/20 transform hover:-translate-y-1"> Register Your Interest </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center mb-6">
+            <img alt="Ormeau Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdE73NkDH-wrlTsK_SEYJ__-aZXsqKuD0jrjya6iUXXis_kPhbLzzieBAd8wjfATXBaTHdnHBiDEGaQ5ZjGszeiOuU1x3z-eDMTWKEYV04_bgBwnpBGrPxkbXf72eKX3_JwPjog2Jac0GAynfc7y74vY0Er3d8Pw5USx8DZewY8HaoxFDHD_DiiGPgx_Vwh7lfQ5Qe86qzF4YyqkD7eq_y4WG-j_Zrk9WgAYewJ9uWLE0uOB1mAIQ44E3inZnYKHOm5Bdv02LUXHgj"/>
+            <span class="ml-3 font-bold text-xl tracking-tight">Ormeau TTC</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6"> Belfast's premier table tennis facility, dedicated to developing players of all ages and abilities in a supportive environment. </p>
+          <div class="flex space-x-4">
+            <a class="text-gray-400 hover:text-primary transition" href="#"><span class="material-icons">facebook</span></a>
+            <a class="text-gray-400 hover:text-primary transition" href="#"><span class="material-icons">ondemand_video</span></a>
+            <a class="text-gray-400 hover:text-primary transition" href="#"><span class="material-icons">photo_camera</span></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition" href="#">About Us</a></li>
+            <li><a class="hover:text-primary transition" href="#">Coaching Team</a></li>
+            <li><a class="hover:text-primary transition" href="#">Membership Plans</a></li>
+            <li><a class="hover:text-primary transition" href="#">Events Calendar</a></li>
+            <li><a class="hover:text-primary transition" href="#">Safeguarding</a></li>
+            <li><a class="hover:text-primary transition" href="#">Privacy Policy</a></li>
+            <li><a class="hover:text-primary transition" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-3 text-lg">place</span>
+              <span>115 Ormeau Road,<br/>Belfast, BT7 1SH</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">email</span>
+              <span>info@ormeauttc.com</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">phone</span>
+              <span>+44 28 9012 3456</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
+          <form class="flex flex-col gap-3">
+            <input class="bg-gray-800 border-none rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary text-white w-full" placeholder="Your email" type="email"/>
+            <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2023 Ormeau Table Tennis Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
