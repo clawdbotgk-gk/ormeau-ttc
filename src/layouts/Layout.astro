@@ -3,9 +3,16 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Ormeau Table Tennis Club - Belfast's premier table tennis club welcoming players of all ages and abilities. Professional coaching, state-of-the-art facilities, and a vibrant community."
+} = Astro.props;
+
+const siteUrl = "https://ormeautabletennis.com";
+const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_1398187735646426_1941108834981037119_n.jpg";
 ---
 
 <!doctype html>
@@ -15,7 +22,69 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Ormeau Table Tennis Club" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Ormeau Table Tennis Club",
+      "description": "Belfast's premier table tennis club, welcoming players of all ages and abilities.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "113 The Mount",
+        "addressLocality": "Belfast",
+        "postalCode": "BT5 4ND",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "54.5917474729791",
+        "longitude": "-5.951917923428"
+      },
+      "telephone": "+442890409287",
+      "email": "ormeautt@live.co.uk",
+      "url": siteUrl,
+      "priceRange": "£",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "18:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "14:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/ormeautt/",
+        "https://x.com/ormeauttc"
+      ]
+    })} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">

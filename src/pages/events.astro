@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Events - Ormeau Table Tennis Club";
+const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. From tournaments to coaching clinics and social nights, find your next table tennis experience in Belfast.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
+          <div class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <img alt="Ormeau Logo" class="h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+            <img alt="Ormeau Logo" class="h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-12">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
+          <div class="relative group">
+            <span class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer">Club</span>
+            <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a>
+              </div>
+            </div>
+          </div>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center">
+          <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="md:hidden flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+            <span class="material-icons text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full pt-20 px-6">
+      <div class="flex justify-end mb-8">
+        <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
+          <span class="material-icons text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Home</a>
+        <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">About</a>
+        <a href="/timetable" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Timetable</a>
+        <a href="/events" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Events</a>
+        <a href="/teams" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Teams</a>
+        <a href="/champions" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Champions</a>
+        <a href="/partners" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Partners</a>
+        <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Contact</a>
+        <a href="/join" class="mt-4 px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover">Join Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    // Mobile menu toggle
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() { mobileMenu.classList.remove('translate-x-full'); });
+      }
+      if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative bg-background-dark text-white overflow-hidden min-h-[60vh] flex items-center justify-center">
+    <div class="absolute inset-0 z-0">
+      <img alt="Action Shot" class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1cT6PSseQtwwCaLkZvuDF4uoMPb_JuAuXg4r-GQ_haqwYbA6zITAXkQCHQ-5p-4ArIpj-hKHiItZ98H4iynZCdOlBToBczmJkid9thwB9njgDFfHxxGos5dbZPNIosfn452F0zIo9G5ygw02_4qaNWXmFavFWcPTepAlr90WVPSWW_bCmEbrgKJKHxg7xaRRW0c2-fUSS6zqAU9pw-50BQcDaM_GUKC6EVEM8VxANTkJ9yifT0KmLoqxCe3S9e1Luy6fhuXH0OlII"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
+    </div>
+    <div class="relative z-20 max-w-5xl mx-auto px-6 py-24 flex flex-col items-center text-center">
+      <span class="inline-block py-2 px-6 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md text-sm font-bold mb-8 uppercase tracking-[0.25em] text-primary">What's On at Ormeau</span>
+      <h1 class="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05] max-w-4xl">Experience The<br/><span class="text-primary">Energy Of Ormeau</span></h1>
+      <p class="text-lg md:text-2xl text-gray-200 max-w-3xl mb-12 font-light leading-relaxed">From intense regional tournaments to community social nights, our calendar is packed with opportunities to play, improve, and connect.</p>
+      <div class="flex flex-col items-center w-full max-w-md gap-6 mt-4">
+        <a class="w-full px-12 py-5 rounded-full bg-primary text-white font-bold text-xl hover:bg-primary-hover transition-all duration-300 shadow-2xl shadow-primary/40 transform hover:-translate-y-1 text-center" href="#featured">View Upcoming Events</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+      <span class="material-icons text-white/50 text-3xl">expand_more</span>
+    </div>
+  </section>
+
+  <!-- Featured Event -->
+  <section class="py-20 bg-background-light dark:bg-background-dark" id="featured">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
+        <div class="md:w-1/2 relative min-h-[300px]">
+          <img alt="British League" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYoM4CJ58uSjw79XORjzN058Ksns9A0YuEIsnmAsrUseaba2cptWyYUHyaervb26DRFxtwL_w7ORn2H0lqEWrtGzzP07Ds6vma4UoVftDBnjKfNhsbmRquGh_hC1SV1lZaO8N_rBl7g51RfeA3MwSWSntpNyqGV_HPOxVggV8GduDrdH51LOJgVeedqB60Bz02l3R9mb2IDN2dxBdpkje0JVt1CRas0b9BIu6AoMAEYycsWMkV-xUw9netIfVR06yjv7MLhpsziBgW"/>
+          <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/40 to-transparent"></div>
+        </div>
+        <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-primary text-white text-xs font-bold rounded uppercase">Featured Event</span>
+            <span class="px-3 py-1 bg-white/10 text-white text-xs font-bold rounded uppercase">Tournament</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4">British League Premier Division</h2>
+          <p class="text-gray-300 text-lg mb-8">Ormeau TTC vs London Academy. Witness the highest level of table tennis in the UK right here in Belfast.</p>
+          <div class="grid grid-cols-4 gap-4 mb-8">
+            <div class="text-center bg-white/5 rounded-xl p-3">
+              <div class="text-3xl font-bold text-primary">12</div>
+              <div class="text-[10px] uppercase text-gray-400 font-bold">Days</div>
+            </div>
+            <div class="text-center bg-white/5 rounded-xl p-3">
+              <div class="text-3xl font-bold text-primary">08</div>
+              <div class="text-[10px] uppercase text-gray-400 font-bold">Hrs</div>
+            </div>
+            <div class="text-center bg-white/5 rounded-xl p-3">
+              <div class="text-3xl font-bold text-primary">45</div>
+              <div class="text-[10px] uppercase text-gray-400 font-bold">Mins</div>
+            </div>
+            <div class="text-center bg-white/5 rounded-xl p-3">
+              <div class="text-3xl font-bold text-primary">19</div>
+              <div class="text-[10px] uppercase text-gray-400 font-bold">Secs</div>
+            </div>
+          </div>
+          <button class="bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full transition-all text-center">Book Spectator Tickets</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="sticky top-24 z-40 bg-white dark:bg-background-dark py-6 border-y border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-wrap items-center justify-between gap-6">
+      <div class="flex flex-wrap items-center gap-3">
+        <button class="px-5 py-2 rounded-full bg-primary text-white font-bold text-sm">All Events</button>
+        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Tournaments</button>
+        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Coaching</button>
+        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Social</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events List -->
+  <section class="py-12 bg-background-light dark:bg-background-dark min-h-screen">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="space-y-8">
+        <!-- Event 1 -->
+        <div class="group flex flex-col md:flex-row items-center bg-white dark:bg-surface-dark rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all p-6 md:p-8">
+          <div class="flex-shrink-0 w-24 h-24 bg-primary text-white rounded-2xl flex flex-col items-center justify-center mb-6 md:mb-0 md:mr-10">
+            <span class="text-3xl font-black">14</span>
+            <span class="text-xs font-bold uppercase tracking-widest">OCT</span>
+          </div>
+          <div class="flex-grow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase">Tournament</span>
+              <span class="text-gray-400 text-sm flex items-center"><span class="material-icons text-sm mr-1">schedule</span>09:00 - 18:00</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition">Ulster Junior Open</h3>
+            <p class="text-gray-500 dark:text-gray-400 line-clamp-2">The premier regional tournament for junior players. Over 100 competitors expected from across the island.</p>
+          </div>
+          <div class="flex-shrink-0 flex items-center gap-4 mt-6 md:mt-0 ml-0 md:ml-10">
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">calendar_add_on</span>
+            </button>
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">share</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="group flex flex-col md:flex-row items-center bg-white dark:bg-surface-dark rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all p-6 md:p-8">
+          <div class="flex-shrink-0 w-24 h-24 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-2xl flex flex-col items-center justify-center mb-6 md:mb-0 md:mr-10">
+            <span class="text-3xl font-black">18</span>
+            <span class="text-xs font-bold uppercase tracking-widest">OCT</span>
+          </div>
+          <div class="flex-grow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 text-[10px] font-black rounded-full uppercase">Coaching</span>
+              <span class="text-gray-400 text-sm flex items-center"><span class="material-icons text-sm mr-1">schedule</span>19:30 - 21:00</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition">Advanced Technical Clinic</h3>
+            <p class="text-gray-500 dark:text-gray-400 line-clamp-2">Focused session on serve and return techniques for league players. Led by head coach Keith Knox.</p>
+          </div>
+          <div class="flex-shrink-0 flex items-center gap-4 mt-6 md:mt-0 ml-0 md:ml-10">
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">calendar_add_on</span>
+            </button>
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">share</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="group flex flex-col md:flex-row items-center bg-white dark:bg-surface-dark rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all p-6 md:p-8">
+          <div class="flex-shrink-0 w-24 h-24 bg-black text-white rounded-2xl flex flex-col items-center justify-center mb-6 md:mb-0 md:mr-10">
+            <span class="text-3xl font-black">21</span>
+            <span class="text-xs font-bold uppercase tracking-widest">OCT</span>
+          </div>
+          <div class="flex-grow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-3 py-1 bg-black text-white text-[10px] font-black rounded-full uppercase">Social</span>
+              <span class="text-gray-400 text-sm flex items-center"><span class="material-icons text-sm mr-1">schedule</span>20:00 - 23:00</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition">Friday Night Rumble</h3>
+            <p class="text-gray-500 dark:text-gray-400 line-clamp-2">Social handicap tournament for all levels. Music, snacks, and competitive fun for everyone.</p>
+          </div>
+          <div class="flex-shrink-0 flex items-center gap-4 mt-6 md:mt-0 ml-0 md:ml-10">
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">calendar_add_on</span>
+            </button>
+            <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-light dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition">
+              <span class="material-icons">share</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button class="px-10 py-4 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center gap-2 mx-auto">Load More Events <span class="material-icons">keyboard_arrow_down</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center mb-6">
+            <img alt="Ormeau Logo" class="h-10 w-auto" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Belfast's premier table tennis club, welcoming players of all ages and abilities since 2013. Founded by Keith & Gervis Knox.</p>
+          <div class="flex space-x-3">
+            <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+            </a>
+            <a href="https://x.com/ormeauttc" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition" href="/">Home</a></li>
+            <li><a class="hover:text-primary transition" href="/about">About Us</a></li>
+            <li><a class="hover:text-primary transition" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a></li>
+            <li><a class="hover:text-primary transition class="nav-link" href="/events">Events</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a></li>
+            <li><a class="hover:text-primary transition" href="/join">Join</a></li>
+            <li><a class="hover:text-primary transition" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-3 text-lg mt-0.5">place</span>
+              <span>113 The Mount,<br/>Belfast, BT5 4ND</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">email</span>
+              <a href="mailto:ormeautt@live.co.uk" class="hover:text-primary transition">ormeautt@live.co.uk</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email"/>
+            <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2026 Ormeau Table Tennis Club. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a class="hover:text-primary transition" href="/privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition" href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

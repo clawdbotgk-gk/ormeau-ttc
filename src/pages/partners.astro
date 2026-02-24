@@ -1,0 +1,349 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Partners - Ormeau Table Tennis Club";
+const pageDescription = "Meet the sponsors and partners who support Ormeau Table Tennis Club. Together we provide world-class facilities and coaching to our community in Belfast.";
+const pageImage = "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_1358210349644165_5176070366626030508_n.jpg";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:image" content={pageImage} />
+  <meta property="og:url" content="https://ormeautabletennis.com/partners" />
+  <meta property="og:type" content="website" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:image" content={pageImage} />
+
+  <!-- Navigation -->
+  <!-- NAV_PLACEHOLDER_START -->
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
+          <a href="/" class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <img alt="Ormeau Logo" class="h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+            <img alt="Ormeau Logo" class="h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </a>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-12">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
+          <div class="relative group">
+            <span class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer">Club</span>
+            <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a>
+              </div>
+            </div>
+          </div>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center">
+          <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+          <span class="material-icons text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full pt-20 px-6">
+      <div class="flex justify-end mb-8">
+        <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
+          <span class="material-icons text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Home</a>
+        <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">About</a>
+        <a href="/timetable" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Timetable</a>
+        <a href="/events" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Events</a>
+        <a href="/teams" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Teams</a>
+        <a href="/champions" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Champions</a>
+        <a href="/partners" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Partners</a>
+        <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Contact</a>
+        <a href="/join" class="mt-4 px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover">Join Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() { mobileMenu.classList.remove('translate-x-full'); });
+      }
+      if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Hero Section: Community Impact -->
+  <section class="relative w-full px-4 md:px-8 pt-8 pb-12">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl">
+        <img alt="Club members with sponsor banners" class="h-full w-full object-cover brightness-75" src="https://scontent.fbhd1-2.fna.fbcdn.net/v/t1.6435-9/168465893_3987671477981645_7202077643737766560_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f798df&_nc_ohc=78xQ6ACxfdAQ7kNvwFwtDH5&_nc_oc=Adlkn8XzpDEWGVpxN1xzSMHL9o3mwcCnjdCgiuCCK45IOvFr-Fl35OydLxyF-_tpT9iqBTWi9CHOTxS0fRY1cCuP&_nc_zt=23&_nc_ht=scontent.fbhd1-1.fna&_nc_gid=-0C9N0Goo3X2CdgAZnuxKg&oh=00_Aft-tO580mNbri9nEFkihjIQtPjbcRzBzosPJJJblv_tzw&oe=69C3CE52"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+          <h1 class="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl tracking-tight">
+            Empowering Sport Through <span class="text-primary">Community Support</span>
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg text-gray-200 font-medium leading-relaxed">
+            Our sponsors are more than just logos; they are the backbone of our community. Together, we provide world-class facilities and coaching to over 150 members.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Impact Quick Stats -->
+      <div class="relative -mt-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-4">
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
+          <span class="text-primary text-3xl font-black">10+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Partners</span>
+        </div>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
+          <span class="text-primary text-3xl font-black">£1000s</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Annual Investment</span>
+        </div>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
+          <span class="text-primary text-3xl font-black">20+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Coached Weekly Sessions</span>
+        </div>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
+          <span class="text-primary text-3xl font-black">150+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Members</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Grid -->
+  <section class="px-4 md:px-8 py-16">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">Our Partners</h2>
+          <div class="mt-2 h-1.5 w-24 rounded-full bg-primary"></div>
+        </div>
+        <p class="max-w-md text-gray-600 dark:text-gray-400 font-medium">
+          Working together with organisations that share our vision for table tennis in Belfast and Northern Ireland.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Partner Card 1 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://logos-api.apistemic.com/domain:mtb-law.co.uk" alt="MTB Law" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">McCartan Turkington Breen</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            A leading full-service law firm in Belfast with almost 50 years of experience.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://mtb-law.co.uk/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+        
+        <!-- Partner Card 2 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://logos-api.apistemic.com/domain:lockton.com" alt="Lockton" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Lockton Insurance</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            The world's largest independent global insurance broker.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://global.lockton.com/offices/uk-belfast" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+        
+        <!-- Partner Card 3 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://glowmetrics.com/wp-content/uploads/2025/09/glowmetrics-logo-2025-1200x345.png" alt="GlowMetrics" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">GlowMetrics</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Belfast-based digital marketing agency specialising in data analytics and SEO.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://glowmetrics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+
+        <!-- Partner Card 4 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://logos-api.apistemic.com/domain:chubb.com" alt="Chubb" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Chubb Insurance</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Global leader in insurance providing protection for businesses and employees.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://www.chubb.com/uk-en/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+        
+        <!-- Partner Card 5 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://gmaglogistics.com/wp-content/uploads/elementor/thumbs/logo_png-white-2-p10nxc330joz3rem22n4b9zy3gyjesfq9cqf4l9ji8.png" alt="GMAg Logistics" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">GMAg Logistics</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Dynamic transport and logistics company operating across Ireland.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://gmaglogistics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+
+        <!-- Partner Card 6 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://marypeterstrust.org/wp-content/uploads/2018/07/widget-logo.png" alt="Mary Peters Trust" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Mary Peters Trust</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Northern Ireland's leading sports charity supporting young athletes for 50 years.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://marypeterstrust.org/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+
+        <!-- Partner Card 7 -->
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://tabletennisulster.com/wp-content/uploads/2024/02/logo1.png" alt="Table Tennis Ulster" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Table Tennis Ulster</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            The governing body for table tennis in Ulster.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://tabletennisulster.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Sponsor -->
+  <section class="px-4 md:px-8 py-16 bg-gray-50 dark:bg-gray-900/50">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">Equipment Sponsor</h2>
+          <div class="mt-2 h-1.5 w-24 rounded-full bg-primary"></div>
+        </div>
+      </div>
+      
+      <div class="flex justify-center">
+        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border-2 border-primary max-w-md w-full">
+          <div class="mb-6 flex h-24 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+            <img src="https://www.teessport.com/images/modules/promo_units/retina-1744714892-63908400.png" alt="Teesport Equipment" class="h-full w-auto object-contain" />
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Teesport Equipment</h3>
+          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Leading supplier of quality table tennis tables, bats, nets, and balls. Providing top-tier equipment for our club and competitions.
+          </p>
+          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://www.teessport.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="px-4 md:px-8 py-20">
+    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl bg-gray-900 text-white shadow-2xl">
+      <div class="relative flex flex-col items-center justify-center gap-6 p-12 text-center md:p-20">
+        <div class="absolute inset-0 bg-primary/10 opacity-50"></div>
+        <h2 class="relative z-10 text-3xl font-black md:text-5xl">Become a Partner</h2>
+        <p class="relative z-10 max-w-xl text-lg text-gray-300">
+          Join us in building a vibrant sports community. Your support directly impacts youth development and community health.
+        </p>
+        <div class="relative z-10 mt-4 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="h-14 rounded-full bg-primary px-10 text-lg font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform inline-flex items-center">Get In Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center mb-6">
+            <img alt="Ormeau Logo" class="h-10 w-auto" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Belfast's premier table tennis club, welcoming players of all ages and abilities since 2013. Founded by Keith & Gervis Knox.</p>
+          <div class="flex space-x-3">
+            <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+            </a>
+            <a href="https://x.com/ormeauttc" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition" href="/">Home</a></li>
+            <li><a class="hover:text-primary transition" href="/about">About Us</a></li>
+            <li><a class="hover:text-primary transition" href="/timetable">Timetable</a></li>
+            <li><a class="hover:text-primary transition" href="/events">Events</a></li>
+            <li><a class="hover:text-primary transition" href="/teams">Teams</a></li>
+            <li><a class="hover:text-primary transition" href="/champions">Champions</a></li>
+            <li><a class="hover:text-primary transition" href="/partners">Partners</a></li>
+            <li><a class="hover:text-primary transition" href="/join">Join</a></li>
+            <li><a class="hover:text-primary transition" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-3 text-lg mt-0.5">place</span>
+              <span>113 The Mount,<br/>Belfast, BT5 4ND</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">email</span>
+              <a href="mailto:ormeautt@live.co.uk" class="hover:text-primary transition">ormeautt@live.co.uk</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email"/>
+            <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2026 Ormeau Table Tennis Club. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a class="hover:text-primary transition" href="/privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition" href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

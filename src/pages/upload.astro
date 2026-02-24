@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Upload Media - Ormeau Table Tennis Club";
+const pageDescription = "Internal upload portal for Ormeau TTC team photos and media.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="relative overflow-hidden rounded-xl">
+            <img alt="Ormeau Logo" class="h-14 w-auto" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </a>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-8">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium" href="/">Home</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium" href="/teams">Teams</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium" href="/partners">Partners</a>
+        </div>
+        <div class="hidden md:flex">
+          <a class="px-6 py-2.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover" href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/20 rounded-full mb-4">
+          <span class="material-icons text-4xl text-primary">photo_library</span>
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-3">Ormeau TTC Media Hub</h1>
+        <p class="text-gray-400 text-lg">Upload team photos, event images, and club media</p>
+        <p class="text-gray-500 text-sm mt-2">Images go directly to club Google Drive</p>
+      </div>
+
+      <!-- Google Form Embed -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdqXzT2w4X2T2K3K5K6K7K8K9K0L1L2L3L4L5L6L7L8L9L0/viewform?embedded=true" 
+          width="100%" 
+          height="800" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          class="w-full"
+        >
+          Loading...
+        </iframe>
+      </div>
+
+      <!-- Alternative: Direct Link -->
+      <div class="mt-8 text-center">
+        <p class="text-gray-400 mb-4">Or use the Google Form directly:</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqXzT2w4X2T2K3K5K6K7K8K9K0L1L2L3L4L5L6L7L8L9L0/viewform" 
+           target="_blank"
+           class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover">
+          <span>Open Google Form</span>
+          <span class="material-icons">open_in_new</span>
+        </a>
+      </div>
+
+      <!-- Instructions -->
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800/50 backdrop-blur rounded-xl p-6 border border-gray-700">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="material-icons text-primary">1</span>
+            </span>
+            <h3 class="text-white font-bold">Fill in details</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Add your name, email, and select the category (Teams, Events, etc)</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur rounded-xl p-6 border border-gray-700">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="material-icons text-primary">2</span>
+            </span>
+            <h3 class="text-white font-bold">Upload photos</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Click "Add file" to select photos from your device (max 10MB each)</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur rounded-xl p-6 border border-gray-700">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="material-icons text-primary">3</span>
+            </span>
+            <h3 class="text-white font-bold">Submit</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Click submit - photos go straight to club Drive!</p>
+        </div>
+      </div>
+
+      <!-- Get Access -->
+      <div class="mt-10 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-2xl p-6 border border-primary/30 text-center">
+        <h3 class="text-white font-bold mb-2">Need Upload Access?</h3>
+        <p class="text-gray-400 text-sm mb-4">Contact the club admin to get access to the upload form.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-2 bg-primary text-white font-bold rounded-full hover:bg-primary-hover">
+          Contact Admin
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

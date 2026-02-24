@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Our Teams - Ormeau Table Tennis Club";
+const pageDescription = "Meet the players representing Ormeau Table Tennis Club at national level. From Premier Division champions to rising junior stars.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
+          <div class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <img alt="Ormeau Logo" class="h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+            <img alt="Ormeau Logo" class="h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-12">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
+          <div class="relative group">
+            <span class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer">Club</span>
+            <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a>
+              </div>
+            </div>
+          </div>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center">
+          <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="md:hidden flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+            <span class="material-icons text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full pt-20 px-6">
+      <div class="flex justify-end mb-8">
+        <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
+          <span class="material-icons text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Home</a>
+        <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">About</a>
+        <a href="/timetable" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Timetable</a>
+        <a href="/events" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Events</a>
+        <a href="/teams" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Teams</a>
+        <a href="/champions" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Champions</a>
+        <a href="/partners" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Partners</a>
+        <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Contact</a>
+        <a href="/join" class="mt-4 px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover">Join Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    // Mobile menu toggle
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() { mobileMenu.classList.remove('translate-x-full'); });
+      }
+      if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative w-full px-4 md:px-8 pt-8 pb-12">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl">
+        <img alt="Ormeau TTC Teams" class="h-full w-full object-cover brightness-75" src="https://scontent.fbhd1-1.fna.fbcdn.net/v/t1.6435-9/74599539_2657304704351669_3401317389206290432_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f798df&_nc_ohc=78xQ6ACxfdAQ7kNvwFwtDH5&_nc_oc=Adlkn8XzpDEWGVpxN1xzSMHL9o3mwcCnjdCgiuCCK45IOvFr-Fl35OydLxyF-_tpT9iqBTWi9CHOTxS0fRY1cCuP&_nc_zt=23&_nc_ht=scontent.fbhd1-1.fna&_nc_gid=-0C9N0Goo3X2CdgAZnuxKg&oh=00_Aft-tO580mNbri9nEFkihjIQtPjbcRzBzosPJJJblv_tzw&oe=69C3CE52"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+          <h1 class="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl tracking-tight">Our Teams</h1>
+          <p class="mt-4 max-w-2xl text-lg text-gray-200 font-medium leading-relaxed">Showcasing the talent and dedication behind Ormeau Table Tennis Club. From our Premier Division champions to our rising junior stars.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premier Division -->
+  <section class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 flex items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-800">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Premier Division</h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Our elite squad competing at the highest national level.</p>
+        </div>
+        <span class="hidden sm:inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <span class="material-icons">trophy</span>
+        </span>
+      </div>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Player Card 1 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/50">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Keith Knox" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/33714951_2266436823367244_3227841053075701760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f798df&_nc_ohc=XCYdjORkGrsQ7kNvwGNsPO9&_nc_oc=AdmmuaqIsGwVGieU-8cZ0ux8pe8wz1YjYYwzLkO2EzYcl5Ul_sckxbS236KKpE-_x473l0Vkc42Y93AzGUucB0zs&_nc_zt=23&_nc_ht=scontent-lhr8-1.xx&_nc_gid=-bC64Soh4sCl7wbkW0KtzA&oh=00_AftZKhDlsSjLDapBPV5Fs2FD_ccSdlH71I0059BU4BceYA&oe=69C2E1D8"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Keith Knox</h3>
+              <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">Rank #1</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Offensive Looper</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Keith is a veteran of the club with 3 national titles and known for his explosive forehand loops.</p>
+            <button class="mt-auto w-full rounded-lg bg-gray-100 py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 2 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/50">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Gavin Maguire" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/503972889_1276981694433698_272834738140930775_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=abTDmPWuqrYQ7kNvwFS6aN9&_nc_oc=AdkZDFFn5nAZ_Fgq_xnN2Y47h0r168TCGIeXY0sYYOcT0PIMYpFb5VfCoajoA5L1buTwvu0dspzrsc0dE9GjfVG9&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=usM-cXdlMqlCn4RrPVI5Hg&oh=00_AfvW7QwDzWtnpIhdjT0E_Uxzc3ZdZkPLTt5yDAKP4oUKtg&oe=69A134A5"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Gavin Maguire</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300">Rank #3</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Defensive Chopper</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Gavin brings international experience to the top squad, frustrating opponents with heavy backspin.</p>
+            <button class="mt-auto w-full rounded-lg bg-gray-100 py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 3 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/50">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Ashley Givan" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/503129550_1272175178247683_8639876095737464898_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=k0iMKk7fLhEQ7kNvwEymbJt&_nc_oc=AdkijiWXIV0duxqSKYyHuJNK1SyOSI07WQhs5xZ_aBAqqehRVvglDBpF-5tJY9OdMs1Fb0yW45eecPntlH0fljJl&_nc_zt=23&_nc_ht=scontent-lhr8-1.xx&_nc_gid=iyFCPW7vWRquuGPz_vAURQ&oh=00_AfuLtn2GhhORef-4WxntXVS9qPn7DR_DaT6lAkKtTf0Q5A&oe=69A11EBF"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Ashley Givan</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300">Rank #5</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">All-Rounder</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Ashley is known for his lightning-fast backhand counters and tactical awareness during long rallies.</p>
+            <button class="mt-auto w-full rounded-lg bg-gray-100 py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 4 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/50">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Zak Earley" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/638290534_1253115230131717_8670556813026375757_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=iu6if3p5abQQ7kNvwEuxJo_&_nc_oc=Adk0rDIS5fXSst427CLmGbKQFSwRSV78L-FSxA9e-oNvYY1vF-9UITj9JmXp_KVvIx770-73yGSgmPDCjXKbr9mm&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=6_xaye8_k4wW5tKLRyUWjg&oh=00_Afs6oArB9_q434wznOt2rXLdAhuxmsCeL2vJkziOLisbJQ&oe=69A1305B"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Zak Earley</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300">Rank #8</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Shakehand Grip</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Zak has moved up quickly from the junior ranks this season, showing incredible promise and speed.</p>
+            <button class="mt-auto w-full rounded-lg bg-gray-100 py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary">View Full Stats</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Division 1 -->
+  <section class="bg-white py-16 dark:bg-background-dark sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 flex items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-800">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Division 1</h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Competitive players aiming for premier promotion.</p>
+        </div>
+        <span class="hidden sm:inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+          <span class="material-icons">group</span>
+        </span>
+      </div>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Player Card 5 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/30">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Sarah Collins" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_1358210349644165_5176070366626030508_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=CD4sUhLKOoQQ7kNvwGum8_6&_nc_oc=Adln0MRW0Q5CUy0fiX9krP2F5YRInpCOnEMhrwY5sRHDhNhqWSSbowpeiW-HaJBCo_2uOFfN4b2-ZNUo3_O-mB_c&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=jlJDXAjrpWzroj0ViyrYVA&oh=00_AfsbTJYb6kTDoya7KYfUUkKgGggkCDtqRa3TgdzPIRD3Hw&oe=69A14A16"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Sarah Collins</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300">Rank #12</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Left-Handed Attack</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">A fierce competitor with a unique lefty serve that often catches opponents off guard.</p>
+            <button class="mt-auto w-full rounded-lg bg-white py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary shadow-sm">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 6 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/30">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="David Chen" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/504208604_1277110327754168_7764173663901954055_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=kAXb68MowaUQ7kNvwExm_Az&_nc_oc=AdneeJlftFiWniITbOD2gDck7MEabDjHBaRTtByrT6S5pDhurFuf4F3KxuPOzEhLPRAwsFnqao_1DEDkaxVHbn7R&_nc_zt=23&_nc_ht=scontent-lhr8-1.xx&_nc_gid=1BI88OOpaRbzTbZ6OJAL4A&oh=00_Afsg19s2tVuQmkSc7ZkCSE4YLAeJIL7XSMWujNihzDmuoQ&oe=69A15439"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">David Chen</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300">Rank #15</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Penhold Grip</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">One of the few penhold players in the league, bringing a classic style with modern aggression.</p>
+            <button class="mt-auto w-full rounded-lg bg-white py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary shadow-sm">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 7 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/30">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Michael O'Neil" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/472097205_18436817173073663_5490438834406823754_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=NcPUGWBLRykQ7kNvwHYcHbS&_nc_oc=AdkBxIzXRXgsZiA2L9q9v9Cs5gJwZMOkn0dGghQMghedUs4nKXBeeb2M61MV9KT-P_hC6noebTmdduf6-4SIvT-s&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=v3cWrFyljo8BELoBx_K0Qg&oh=00_Aft3QGhV7RKypePvbZkrw2OOx1MPKEmO24JzJHh2DGjRcw&oe=69A14545"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Michael O'Neil</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300">Rank #18</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Blocker</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">A steady hand under pressure, Michael excels at blocking powerful drives and waiting for errors.</p>
+            <button class="mt-auto w-full rounded-lg bg-white py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary shadow-sm">View Full Stats</button>
+          </div>
+        </div>
+
+        <!-- Player Card 8 -->
+        <div class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-primary dark:bg-gray-800/30">
+          <div class="aspect-[4/5] w-full overflow-hidden bg-gray-200">
+            <img alt="Emma Wilson" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/494757653_1244216044376930_7577755996940669042_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=SM0_a2YqR3wQ7kNvwHOzJAY&_nc_oc=Adl24-glDKSeEvy6xM1MMMdX70PzMStw5DL-Y2HFK0449CbgAwI3tE9V9OnAwuMpljP8TqkkZ2LfLZQqdTpPJ-9L&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=NXn46Yc8lx8yyXKGJ2TeYQ&oh=00_Afsrf-dRBe8mU43KuDgYwj-eiFxLSj3SQ1C6T_fbUs8EUg&oe=69A14F25"/>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Emma Wilson</h3>
+              <span class="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300">Rank #21</span>
+            </div>
+            <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Control Specialist</p>
+            <p class="mb-6 flex-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Emma's placement is impeccable, moving opponents around the table with ease.</p>
+            <button class="mt-auto w-full rounded-lg bg-white py-2.5 text-sm font-bold text-gray-900 opacity-0 transition-all hover:bg-primary hover:text-white group-hover:opacity-100 dark:bg-gray-700 dark:text-white dark:hover:bg-primary shadow-sm">View Full Stats</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center mb-6">
+            <img alt="Ormeau Logo" class="h-10 w-auto" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Belfast's premier table tennis club, welcoming players of all ages and abilities since 2013. Founded by Keith & Gervis Knox.</p>
+          <div class="flex space-x-3">
+            <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+            </a>
+            <a href="https://x.com/ormeauttc" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition" href="/">Home</a></li>
+            <li><a class="hover:text-primary transition" href="/about">About Us</a></li>
+            <li><a class="hover:text-primary transition" href="/timetable">Timetable</a></li>
+            <li><a class="hover:text-primary transition" href="/events">Events</a></li>
+            <li><a class="hover:text-primary transition" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a></li>
+            <li><a class="hover:text-primary transition" href="/join">Join</a></li>
+            <li><a class="hover:text-primary transition" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-3 text-lg mt-0.5">place</span>
+              <span>113 The Mount,<br/>Belfast, BT5 4ND</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">email</span>
+              <a href="mailto:ormeautt@live.co.uk" class="hover:text-primary transition">ormeautt@live.co.uk</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email"/>
+            <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2026 Ormeau Table Tennis Club. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a class="hover:text-primary transition" href="/privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition" href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

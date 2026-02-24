@@ -1,0 +1,463 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Join Ormeau Table Tennis Club" description="Join Ormeau Table Tennis Club today. Membership options for juniors, adults, and social players. Start your table tennis journey in Belfast.">
+  <!-- Navigation -->
+  <!-- NAV_PLACEHOLDER_START -->
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-28">
+        <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
+          <div class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <img alt="Ormeau Logo" class="h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+            <img alt="Ormeau Logo" class="h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          </div>
+        </div>
+        <div class="hidden md:flex flex-1 justify-center space-x-12">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
+          <div class="relative group">
+            <span class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer">Club</span>
+            <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary nav-link" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a>
+              </div>
+            </div>
+          </div>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center">
+          <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+            <span class="material-icons text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script is:inline>
+    (function() {
+      const path = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if ((path === '/' && href === '/') || href === path || href === path + '/') {
+          link.classList.add('text-primary', 'dark:text-primary');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full pt-20 px-6">
+      <div class="flex justify-end mb-8">
+        <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
+          <span class="material-icons text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Home</a>
+        <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">About</a>
+        <a href="/timetable" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Timetable</a>
+        <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Contact</a>
+        <a href="/join" class="mt-4 px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover">Join Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() { mobileMenu.classList.remove('translate-x-full'); });
+      }
+      if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
+      }
+    })();
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+    <img alt="Energetic Table Tennis Match" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmNhx9DcVoL4_5AXMDmWPKI2hlO3PCRJI-zNdFwOl_kguCtcte-dAa8PDQ1PE_7aGClgU0q3yJMnmYO-sgfRWZ7CmJIB589AeghxfXJbCi5AruaoAtvySKsfXoIcewNlhmavCvd8o1KY1E_BT4KQ6_8UtNwIja5Z6Alw2B9qklSI_dBbxsQCFfcgpfzxz_Qguo5_o-TnulxBTXbgmaZfpMwT2NuigfZUa6o6iWP9lTEv5XobL1BP9ZFDvgQPT8DcMkC1OQv8ybHeRi"/>
+    <div class="hero-gradient absolute inset-0"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+      <span class="inline-block py-1 px-4 rounded-full bg-primary text-white text-sm font-bold mb-6 uppercase tracking-widest">Ready To Play?</span>
+      <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 drop-shadow-2xl"> Here's How To <span class="text-primary">Join Ormeau.</span> </h1>
+      <p class="text-xl md:text-2xl text-gray-100 leading-relaxed font-light mb-10 max-w-3xl mx-auto"> We operate a 'Try-It' first approach. Before committing to a membership, we invite all prospective members to a trial session. </p>
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 inline-flex flex-col md:flex-row items-center gap-6 shadow-2xl">
+        <div class="bg-primary text-white p-3 rounded-full shrink-0">
+          <span class="material-symbols-outlined text-3xl">info</span>
+        </div>
+        <div class="text-left">
+          <h4 class="text-lg font-bold text-primary mb-1 uppercase tracking-tight">Current Availability Alert</h4>
+          <p class="text-sm text-gray-100">Sessions are at full capacity. We are <span class="font-bold underline">NOT</span> accepting casual table bookings.</p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <span class="material-icons text-white text-4xl">keyboard_double_arrow_down</span>
+    </div>
+  </section>
+
+  <!-- Step 1 -->
+  <section class="py-0 overflow-hidden">
+    <div class="flex flex-col lg:flex-row h-screen min-h-[600px]">
+      <div class="lg:w-1/2 relative overflow-hidden group">
+        <img alt="Step 1 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc1X5thJ6Q2CIfsBgVQZUYyxPOGoThRy3IEkiDO4nJl9t5IshtnA36gghncmMJkKyX5KKWB9d8vn9EIwKMXoDUMF4Vsk2lpEs205LF4GNLLb-1reEkedkDnsX5YjOE6JOL_CTe9SHSr8siBFFgCKEvj-YvzXsdp3i2TlD5XPhRjH21wnTl2ZXxua9GzEN2FLzjqZVcS9l0CRvRuBs8gj4PwXJflwXEM8rXuyjgmxEhvOUkGIWp2cbViieVDuYoXFla9a_-QfbXhvHz"/>
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-[15vw] font-black text-white/20">01</span>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex items-center px-8 md:px-20 py-16 bg-white dark:bg-background-dark">
+        <div class="max-w-md">
+          <span class="text-primary font-bold text-sm tracking-[0.3em] uppercase mb-4 block">Stage One</span>
+          <h3 class="text-4xl md:text-5xl font-bold mb-6">Try A Saturday Session</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg leading-relaxed">Join us on Saturday to experience our atmosphere and world-class facilities first-hand.</p>
+          <div class="w-full bg-surface-light dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-xl">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <th class="py-3 text-left font-semibold text-gray-900 dark:text-white">Group</th>
+                  <th class="py-3 text-right font-semibold text-gray-900 dark:text-white">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-4 text-left text-gray-600 dark:text-gray-400">Juniors (U18)</td>
+                  <td class="py-4 text-right font-bold text-primary text-xl">2.30pm</td>
+                </tr>
+                <tr>
+                  <td class="py-4 text-left text-gray-600 dark:text-gray-400">Adults</td>
+                  <td class="py-4 text-right font-bold text-primary text-xl">3.45pm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="flex flex-col lg:flex-row-reverse h-screen min-h-[600px]">
+      <div class="lg:w-1/2 relative overflow-hidden group">
+        <img alt="Step 2 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAtuMqpCEG0fIisRtK_uwTznD0pwX-fr8K1zj8OznnJWP7vjeUjOb0aS24lmuqoqKTazBKYTCwnvO21KX3D_nhDAddivrRj3N55K1hGcZZiu3r-PV65b2KEGcq5x7wvKhfAMQiZKxR2J5eNW8Zo141Tvk6X9VBS74JqMD1l8pavOUQv3gKpbPtQGYA-sPj-_Vt3fvqM8yMCK40ttegV3y5PgUahkkw1_R2-xLzrD-oAaGxUJ2Pf10fVSuEsyv3wfIGCt_Jt2YOt8xo"/>
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-[15vw] font-black text-white/20">02</span>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex items-center px-8 md:px-20 py-16 bg-surface-light dark:bg-surface-dark">
+        <div class="max-w-md">
+          <span class="text-primary font-bold text-sm tracking-[0.3em] uppercase mb-4 block">Stage Two</span>
+          <h3 class="text-4xl md:text-5xl font-bold mb-6">Level Assessment</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">Our coaching team will assess your current level during the trial session to ensure you're placed in the appropriate coaching or social group for the best developmental experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="flex flex-col lg:flex-row h-screen min-h-[600px]">
+      <div class="lg:w-1/2 relative overflow-hidden group">
+        <img alt="Step 3 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSjdbXR52G1gT4EujTxwT0alLGr5v6UL-NKp-0qosxqauqCSgStyS3PuyX9LcDHuPrKprsjWo9BJqRpBHL-IELKdNc14LzhX5b7tF-s_m694h0UElINrtpweSi_Raa29ci_XNbfyD6ovtbJynfaPBdulj4c_gHwq5qTz-LfFBX_EMMCec_pKgZMj9u-9d_qvz8A5dM9K7ZXXEf0PGKXAXIKZVaij1J8W629cHRD5qJXBbErB-g2b_MjTKrKdn3tzAAg6lApX5VDsb9"/>
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-[15vw] font-black text-white/20">03</span>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex items-center px-8 md:px-20 py-16 bg-white dark:bg-background-dark">
+        <div class="max-w-md">
+          <span class="text-primary font-bold text-sm tracking-[0.3em] uppercase mb-4 block">Stage Three</span>
+          <h3 class="text-4xl md:text-5xl font-bold mb-6">Register Interest</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">Once assessed, we'll invite you to register your interest for a permanent spot in our monthly membership program and become part of the Ormeau community.</p>
+          <a href="/contact" class="mt-8 inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-hover transition-all shadow-xl uppercase tracking-widest text-sm">Register Interest Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark relative">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Simple Monthly Packages</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">All memberships are paid via easy monthly direct debit, giving you hassle-free access to our facilities.</p>
+        <div class="flex items-center justify-center gap-2 opacity-70 grayscale hover:grayscale-0 transition-all">
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Secure Payments via</span>
+          <img alt="GoCardless" class="h-8 w-auto" src="https://cdn.gocardless.com/assets/logos/logo-full-native.svg"/>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Junior -->
+        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Junior</h3>
+            <p class="text-gray-500 text-sm">Ages 6 - 17 years</p>
+          </div>
+          <div class="mb-8 flex items-baseline">
+            <span class="text-5xl font-bold text-gray-900 dark:text-white">£20</span>
+            <span class="text-gray-500 ml-2">/month</span>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Weekly Coaching Session
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Weekend League Eligibility
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Access to Club Kit
+            </li>
+          </ul>
+          <a href="/contact" class="w-full py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all text-center">Select Plan</a>
+        </div>
+        
+        <!-- Adult -->
+        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border-2 border-primary shadow-2xl flex flex-col h-full relative transform md:scale-110 z-10 overflow-hidden group">
+          <div class="absolute top-0 right-0 bg-primary text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest rounded-bl-xl">Most Popular</div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Adult</h3>
+            <p class="text-gray-500 text-sm">Competitive & Development</p>
+          </div>
+          <div class="mb-8 flex items-baseline">
+            <span class="text-5xl font-bold text-gray-900 dark:text-white">£20</span>
+            <span class="text-gray-500 ml-2">/month</span>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-center gap-3 text-sm font-semibold">
+              <span class="material-icons text-primary text-lg">check_circle</span> Structured Coaching Session
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Local League Opportunities
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Full Club Voting Rights
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Discounted Tournament Entry
+            </li>
+          </ul>
+          <a href="/contact" class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-hover transition-all text-center">Select Plan</a>
+        </div>
+        
+        <!-- Social -->
+        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-500">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Social</h3>
+            <p class="text-gray-500 text-sm">Recreational Play</p>
+          </div>
+          <div class="mb-8 flex items-baseline">
+            <span class="text-5xl font-bold text-gray-900 dark:text-white">£20</span>
+            <span class="text-gray-500 ml-2">/month</span>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Weekly Social Matchplay
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Informal Coaching Tips
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-icons text-primary text-lg">check_circle</span> Community Social Events
+            </li>
+          </ul>
+          <a href="/contact" class="w-full py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all text-center">Select Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-24 bg-white dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Membership Benefits Comparison</h2>
+        <p class="text-gray-500">Understand what your monthly subscription covers.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-surface-light dark:bg-surface-dark text-left">
+              <th class="p-6 font-bold border-b border-gray-200 dark:border-gray-700">Feature</th>
+              <th class="p-6 font-bold border-b border-gray-200 dark:border-gray-700">Coached Sessions</th>
+              <th class="p-6 font-bold border-b border-gray-200 dark:border-gray-700">Social Play</th>
+              <th class="p-6 font-bold border-b border-gray-200 dark:border-gray-700">Open Play</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+            <tr>
+              <td class="p-6 font-medium">Professional Coaching</td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+              <td class="p-6 text-gray-300 dark:text-gray-600"><span class="material-icons">cancel</span></td>
+              <td class="p-6 text-gray-300 dark:text-gray-600"><span class="material-icons">cancel</span></td>
+            </tr>
+            <tr>
+              <td class="p-6 font-medium">Match Practice</td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+            </tr>
+            <tr>
+              <td class="p-6 font-medium">Tournament Entry</td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+              <td class="p-6 text-gray-300 dark:text-gray-600"><span class="material-icons">cancel</span></td>
+              <td class="p-6 text-primary"><span class="material-icons">check_circle</span></td>
+            </tr>
+            <tr>
+              <td class="p-6 font-medium">Table Booking Access</td>
+              <td class="p-6 text-gray-300 dark:text-gray-600"><span class="material-icons">cancel</span></td>
+              <td class="p-6 text-gray-300 dark:text-gray-600"><span class="material-icons">cancel</span></td>
+              <td class="p-6 text-primary font-bold">Limited</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+        <p class="text-gray-500">Quick answers to common membership enquiries.</p>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm" open>
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-bold text-gray-900 dark:text-white">Can I book a table without joining?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Currently, we are at full capacity and do not offer casual table bookings for non-members. Participation is through our structured membership programs and Saturday trial sessions only.
+          </div>
+        </details>
+        <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-bold text-gray-900 dark:text-white">What is the minimum age for Juniors?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Our Junior academy accepts players from age 6 and up. We offer coaching pathways for all ability levels within the youth section.
+          </div>
+        </details>
+        <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-bold text-gray-900 dark:text-white">Is there a long-term contract?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            No, our memberships are rolling monthly subscriptions. We require 30 days notice for cancellation, but there is no long-term tie-in.
+          </div>
+        </details>
+        <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-bold text-gray-900 dark:text-white">Do I need my own equipment for the trial?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            While we recommend players eventually purchase their own bat, we can provide equipment for your first few sessions. Just wear sports clothing and indoor trainers.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden bg-primary group">
+    <div class="absolute inset-0 opacity-10 grayscale mix-blend-overlay">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr5ZYUqSr67umNFQBjUXdmYvuyqDAzBbNKd4Kq1wktWGLcYn5ogtLA7y7YVdR4d7tLOaq3b9DIwTKuiuvoavDonQeZoVEG-eZyLb52qd2OZZfzsJ7TlRmBiF5aJ9omD6fYoAD3MfFJnZRO-U4F9_rAvj6eZjzAFLJwjGCgTnYW1J8aEWajqLHG6L4_nDwTnllpT7T0kBXD90R4J3vMoYWHfim4zkO_OGLzzGPmNvdr_7RasQ7z1jAaCOudsHoYD1A1KFSW4roR7Sc"/>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <h2 class="text-5xl md:text-6xl font-bold mb-8">Ready To Get Started?</h2>
+      <p class="text-xl opacity-90 mb-12 font-light max-w-2xl mx-auto"> Secure your place at the Saturday trial session and take the first step towards joining Belfast's premier table tennis club. </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="/contact" class="px-12 py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-2xl uppercase tracking-widest text-sm">Register Your Interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center mb-6">
+            <img alt="Ormeau Logo" class="h-10 w-auto" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+            
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Belfast's premier table tennis club, welcoming players of all ages and abilities since 2013. Founded by Keith & Gervis Knox.</p>
+          <div class="flex space-x-3">
+            <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+            </a>
+            <a href="https://x.com/ormeauttc" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition class="nav-link" href="/">Home</a></li>
+            <li><a class="hover:text-primary transition class="nav-link" href="/about">About Us</a></li>
+            <li><a class="hover:text-primary transition class="nav-link" href="/timetable">Timetable</a></li>
+            <li><a class="hover:text-primary transition class="nav-link" href="/join">Join</a></li>
+            <li><a class="hover:text-primary transition class="nav-link" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start">
+              <span class="material-icons text-primary mr-3 text-lg mt-0.5">place</span>
+              <span>113 The Mount,<br/>Belfast, BT5 4ND</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-primary mr-3 text-lg">email</span>
+              <a href="mailto:ormeautt@live.co.uk" class="hover:text-primary transition">ormeautt@live.co.uk</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-white">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email"/>
+            <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2026 Ormeau Table Tennis Club. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a class="hover:text-primary transition" href="/privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition" href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
