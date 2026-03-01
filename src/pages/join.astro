@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Join Ormeau Table Tennis Club" description="Join Ormeau Table Tennis Club today. Membership options for juniors, adults, and social players. Start your table tennis journey in Belfast.">
   <!-- Navigation -->
-  <!-- NAV_PLACEHOLDER_START -->
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="flex justify-between items-center h-28">
         <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
@@ -17,10 +17,12 @@ import Layout from '../layouts/Layout.astro';
           <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
           <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
           <div class="relative group">
-            <span class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer">Club <span class="material-icons text-sm">expand_more</span></span>>
-            <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+            <button type="button" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer flex items-center gap-1" aria-expanded="false" aria-haspopup="true" aria-label="Club menu">
+              Club <span class="material-icons text-sm" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
               <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
-                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary nav-link" href="/timetable">Timetable</a>
+                <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
                 <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
                 <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
                 <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
@@ -34,8 +36,8 @@ import Layout from '../layouts/Layout.astro';
           <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
         </div>
         <div class="md:hidden flex items-center">
-          <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
-            <span class="material-icons text-3xl">menu</span>
+          <button id="mobile-menu-btn" class="md:hidden flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
+            <span class="material-icons text-3xl" aria-hidden="true">menu</span>
           </button>
         </div>
       </div>
