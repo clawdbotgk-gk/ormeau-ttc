@@ -487,7 +487,8 @@ import Layout from '../layouts/Layout.astro';
           <h4 class="text-lg font-bold mb-6 text-white">Newsletter</h4>
           <p class="text-gray-400 text-sm mb-4">Subscribe for club news and updates.</p>
           <form id="newsletter-form" class="flex flex-col gap-3">
-            <input class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email"/>
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input id="newsletter-email" class="bg-gray-800 border border-gray-700 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent text-white w-full" placeholder="Your email" type="email" required/>
             <button class="bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-hover transition" type="submit">Subscribe</button>
           </form>
         </div>

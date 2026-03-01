@@ -68,3 +68,13 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Mobile hero font-size reduction below 480px */
+@media (max-width: 480px) {
+  section#main-content h1 {
+    font-size: 1.875rem !important;
+  }
+  section#main-content h1 span {
+    font-size: 1.5rem !important;
+  }
+}
