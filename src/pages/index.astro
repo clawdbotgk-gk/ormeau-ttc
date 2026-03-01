@@ -6,8 +6,13 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <!-- Skip Link for Keyboard Users -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:font-bold">
+    Skip to main content
+  </a>
+
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+  <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="flex justify-between items-center h-28">
         <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
@@ -134,7 +139,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
     });
   </script>
 
-  <section class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
+  <section id="main-content" class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
     <div class="absolute inset-0 bg-black/60 z-10"></div>
     <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg');"></div>
     <div class="relative z-20 max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 py-32 flex flex-col items-center text-center">
