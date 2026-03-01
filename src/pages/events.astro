@@ -47,13 +47,27 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
   <script is:inline>
     (function() {
-      const path = window.location.pathname;
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href');
-        if ((path === '/' && href === '/') || href === path || href === path + '/') {
-          link.classList.add('text-primary', 'dark:text-primary');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+          mobileMenu.classList.remove('translate-x-full');
+        } else {
+          mobileMenu.classList.add('translate-x-full');
         }
-      });
+      }
+      
+      if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMenu);
+      }
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      }
     })();
   </script>
 

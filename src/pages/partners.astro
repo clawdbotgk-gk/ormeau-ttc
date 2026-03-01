@@ -83,21 +83,23 @@ const pageImage = "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_
       const menuBtn = document.getElementById('mobile-menu-btn');
       const closeBtn = document.getElementById('mobile-menu-close');
       const mobileMenu = document.getElementById('mobile-menu');
-      if (menuBtn && mobileMenu) {
-        function toggleMenu() { if (mobileMenu.classList.contains('translate-x-full')) { mobileMenu.classList.remove('translate-x-full'); } else { mobileMenu.classList.add('translate-x-full'); } } if (menuBtn) { menuBtn.addEventListener('click', toggleMenu); }
+      
+      function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+          mobileMenu.classList.remove('translate-x-full');
+        } else {
+          mobileMenu.classList.add('translate-x-full');
+        }
       }
-      if (closeBtn && mobileMenu) {
-        closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
-      // Toggle menu open/close
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function() {
-          if (mobileMenu.classList.contains('translate-x-full')) {
-            mobileMenu.classList.remove('translate-x-full');
-          } else {
-            mobileMenu.classList.add('translate-x-full');
-          }
+      
+      if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMenu);
+      }
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('translate-x-full');
         });
-      }
       }
     })();
   </script>
