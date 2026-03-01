@@ -121,32 +121,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
 
   <section class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
     <div class="absolute inset-0 bg-black/60 z-10"></div>
-    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0"></div>
-    <script is:inline>
-      (function() {
-        const heroImages = [
-          'https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg',
-          'https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_1398187735646426_1941108834981037119_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=EjBazk4Dk5UQ7kNvwHzYke1&_nc_oc=Adl44Hyxl_y5aHjbJ88iGKyHgv6-LpBuFi-foI6ujX9Oph2DNRXg0tcZevbJwzZVrkKbYZSSCN-YroWvwAGA3XxQ&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=UH24c_LGVJjWiKSq5BykAA&oh=00_AfsagNBARQDgl9i-9PfdGy_fPNQCMv2d3b_zhFOL56nKiQ&oe=69A12B94',
-          'https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/634893031_1511368354328363_7141347949061633020_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=YTeytOvcV2QQ7kNvwFKd2of&_nc_oc=AdlECqZhYW7D2fX1O4BmTDfZkdOEjmqoK-qwBwAddTHjsxzdPfRHKbEi-5TZupfMPgOQhF0Q60V9GQdi88mdFG2I&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=nYnEeYxmtm3QXWSR6ygb4A&oh=00_Aftlc-oQjnyS9VrtqogWjLDtDCkTSx9AB8KbHwk3FFbMrQ&oe=69A119D1',
-          'https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/503972889_1276981694433698_272834738140930775_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=abTDmPWuqrYQ7kNvwFS6aN9&_nc_oc=AdkZDFFn5nAZ_Fgq_xnN2Y47h0r168TCGIeXY0sYYOcT0PIMYpFb5VfCoajoA5L1buTwvu0dspzrsc0dE9GjfVG9&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=usM-cXdlMqlCn4RrPVI5Hg&oh=00_AfvW7QwDzWtnpIhdjT0E_Uxzc3ZdZkPLTt5yDAKP4oUKtg&oe=69A134A5',
-          'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/503129550_1272175178247683_8639876095737464898_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=k0iMKk7fLhEQ7kNvwEymbJt&_nc_oc=AdkijiWXIV0duxqSKYyHuJNK1SyOSI07WQhs5xZ_aBAqqehRVvglDBpF-5tJY9OdMs1Fb0yW45eecPntlH0fljJl&_nc_zt=23&_nc_ht=scontent-lhr8-1.xx&_nc_gid=iyFCPW7vWRquuGPz_vAURQ&oh=00_AfuLtn2GhhORef-4WxntXVS9qPn7DR_DaT6lAkKtTf0Q5A&oe=69A11EBF',
-          'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/502712538_1270912591707275_5798362362919968800_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=ZzUSFRCoIAoQ7kNvwGRZ2Pl&_nc_oc=AdkRus01e_y5B-_i7da-wPnvTxYplBPCrBpqzLoIUv3TQYZC8S5UuBX3JcqGdfpRD52NNwaecnOdiIkWU83LDm5J&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=aYOTXinRkUry_QGrGpIK4w&oh=00_AftR80V70G5rdmGT3ieGFeCodH_GCAXKYQEP0IOsL2G86Q&oe=69A129EA'
-        ];
-        
-        const heroBg = document.getElementById('hero-bg');
-        
-        function showNextImage() {
-          const randomIndex = Math.floor(Math.random() * heroImages.length);
-          heroBg.style.backgroundImage = 'url(' + heroImages[randomIndex] + ')';
-        }
-        
-        // Show random image on load
-        showNextImage();
-        
-        // Rotate every 5 seconds
-        setInterval(showNextImage, 5000);
-      })();
-    </script>
+    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg');"></div>
     <div class="relative z-20 max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 py-32 flex flex-col items-center text-center">
       <span class="inline-block py-2 px-6 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md text-sm font-bold mb-10 uppercase tracking-[0.2em] text-primary">Table Tennis For Everyone</span>
       <h1 class="text-5xl md:text-8xl font-bold tracking-tight mb-10 leading-[1.1] max-w-5xl"> ORMEAU <span class="text-primary">Table Tennis Club</span> <span class="block text-3xl md:text-5xl mt-4">Belfast</span> </h1>
