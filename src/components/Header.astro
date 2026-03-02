@@ -1,5 +1,4 @@
----
----
+<!-- Navigation -->
 <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800" aria-label="Main navigation">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
     <div class="flex justify-between items-center h-28">
@@ -13,10 +12,10 @@
         <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
         <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
         <div class="relative group">
-          <button class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer flex items-center gap-1" aria-expanded="false" aria-haspopup="true" aria-label="Club menu">
+          <button type="button" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer flex items-center gap-1" aria-expanded="false" aria-haspopup="true" aria-label="Club menu">
             Club <span class="material-icons text-sm" aria-hidden="true">expand_more</span>
           </button>
-          <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
               <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
               <a class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
@@ -32,7 +31,7 @@
         <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
       </div>
       <div class="md:hidden flex items-center">
-        <button id="mobile-menu-btn" class="md:hidden flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2" aria-label="Open menu">
+        <button id="mobile-menu-btn" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none p-2">
           <span class="material-icons text-3xl" aria-hidden="true">menu</span>
         </button>
       </div>
@@ -40,10 +39,23 @@
   </div>
 </nav>
 
+<script is:inline>
+  (function() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const href = link.getAttribute('href');
+      if ((path === '/' && href === '/') || href === path || href === path + '/') {
+        link.classList.add('text-primary', 'dark:text-primary');
+      }
+    });
+  })();
+</script>
+
+<!-- Mobile Menu Panel -->
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
   <div class="flex flex-col h-full pt-20 px-6">
     <div class="flex justify-end mb-8">
-      <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300" aria-label="Close menu">
+      <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
         <span class="material-icons text-3xl" aria-hidden="true">close</span>
       </button>
     </div>
@@ -62,27 +74,24 @@
 </div>
 
 <script is:inline>
-(function() {
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const closeBtn = document.getElementById('mobile-menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  function toggleMenu() {
-    if (mobileMenu.classList.contains('translate-x-full')) {
-      mobileMenu.classList.remove('translate-x-full');
-    } else {
-      mobileMenu.classList.add('translate-x-full');
+  // Mobile menu toggle
+  (function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobileMenu.classList.remove('translate-x-full');
+      });
     }
-  }
-  
-  if (menuBtn) {
-    menuBtn.addEventListener('click', toggleMenu);
-  }
-  
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function() {
-      mobileMenu.classList.add('translate-x-full');
-    });
-  }
-})();
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobileMenu.classList.add('translate-x-full');
+      });
+    }
+  })();
 </script>
