@@ -72,10 +72,10 @@ import Footer from '../components/Footer.astro';
       const menuBtn = document.getElementById('mobile-menu-btn');
       const closeBtn = document.getElementById('mobile-menu-close');
       const mobileMenu = document.getElementById('mobile-menu');
-      if (menuBtn && mobileMenu) {
+      if (menuBtn) {
         menuBtn.addEventListener('click', function() { mobileMenu.classList.remove('translate-x-full'); });
       }
-      if (closeBtn && mobileMenu) {
+      if (closeBtn) {
         closeBtn.addEventListener('click', function() { mobileMenu.classList.add('translate-x-full'); });
       }
     })();

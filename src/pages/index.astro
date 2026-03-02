@@ -94,30 +94,17 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
       const closeBtn = document.getElementById('mobile-menu-close');
       const mobileMenu = document.getElementById('mobile-menu');
       
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function() {
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function(e) {
+          e.preventDefault();
           mobileMenu.classList.remove('translate-x-full');
         });
       }
       
-      if (closeBtn && mobileMenu) {
-        closeBtn.addEventListener('click', function() {
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
           mobileMenu.classList.add('translate-x-full');
-        });
-      }
-
-      // Close menu when clicking hamburger again (toggle)
-      if (menuBtn && mobileMenu) {
-        let isOpen = false;
-        const observer = new MutationObserver(function() {
-          isOpen = !mobileMenu.classList.contains('translate-x-full');
-        });
-        observer.observe(mobileMenu, { attributes: true, attributeFilter: ['class'] });
-        
-        menuBtn.addEventListener('click', function() {
-          if (!mobileMenu.classList.contains('translate-x-full')) {
-            mobileMenu.classList.add('translate-x-full');
-          }
         });
       }
     })();

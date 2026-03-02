@@ -89,7 +89,7 @@ import Footer from '../components/Footer.astro';
         mobileMenu.classList.add('translate-x-full');
       }
       
-      if (menuBtn && mobileMenu) {
+      if (menuBtn) {
         menuBtn.addEventListener('click', function() {
           if (mobileMenu.classList.contains('translate-x-full')) {
             openMenu();
@@ -99,7 +99,7 @@ import Footer from '../components/Footer.astro';
         });
       }
       
-      if (closeBtn && mobileMenu) {
+      if (closeBtn) {
         closeBtn.addEventListener('click', closeMenu);
       }
     })();
