@@ -27,7 +27,8 @@
         </div>
         <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
       </div>
-      <div class="hidden md:flex items-center">
+      <div class="hidden md:flex items-center gap-4">
+        <a class="px-8 py-3.5 rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transform hover:-translate-y-0.5 active:translate-y-0" href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer">Club App</a>
         <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
       </div>
       <div class="md:hidden flex items-center">
@@ -52,24 +53,38 @@
 </script>
 
 <!-- Mobile Menu Panel -->
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-background-light dark:bg-background-dark transform translate-x-full transition-transform duration-300 md:hidden">
-  <div class="flex flex-col h-full pt-20 px-6">
-    <div class="flex justify-end mb-8">
-      <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300">
-        <span class="material-icons text-3xl" aria-hidden="true">close</span>
-      </button>
+<div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
+  <!-- Backdrop -->
+  <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  
+  <!-- Menu Panel -->
+  <div class="absolute right-0 top-0 h-full w-80 max-w-full bg-background-light dark:bg-background-dark shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+    <div class="flex flex-col h-full pt-20 px-6">
+      <div class="flex justify-end mb-8">
+        <button id="mobile-menu-close" class="p-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">
+          <span class="material-icons text-3xl" aria-hidden="true">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-xl">
+        <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary transition-colors mobile-nav-link">Home</a>
+        <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary transition-colors mobile-nav-link">About</a>
+        <div class="space-y-4">
+          <div class="font-semibold text-gray-700 dark:text-gray-300">Club</div>
+          <div class="ml-4 space-y-3">
+            <a href="/timetable" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mobile-nav-link">Timetable</a>
+            <a href="/events" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mobile-nav-link">Events</a>
+            <a href="/teams" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mobile-nav-link">Teams</a>
+            <a href="/champions" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mobile-nav-link">Champions</a>
+            <a href="/partners" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mobile-nav-link">Partners</a>
+          </div>
+        </div>
+        <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary transition-colors mobile-nav-link">Contact</a>
+        <div class="flex flex-col gap-3 mt-4">
+          <a href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-blue-600 text-white font-bold text-center rounded-full hover:bg-blue-700 transition-colors">Club App</a>
+          <a href="/join" class="px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover transition-colors">Join Now</a>
+        </div>
+      </nav>
     </div>
-    <nav class="flex flex-col space-y-6 text-xl items-center">
-      <a href="/" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Home</a>
-      <a href="/about" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">About</a>
-      <a href="/timetable" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Timetable</a>
-      <a href="/events" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Events</a>
-      <a href="/teams" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Teams</a>
-      <a href="/champions" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Champions</a>
-      <a href="/partners" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Partners</a>
-      <a href="/contact" class="text-gray-700 dark:text-gray-300 font-semibold hover:text-primary">Contact</a>
-      <a href="/join" class="mt-4 px-6 py-3 bg-primary text-white font-bold text-center rounded-full hover:bg-primary-hover">Join Now</a>
-    </nav>
   </div>
 </div>
 
@@ -79,19 +94,69 @@
     const menuBtn = document.getElementById('mobile-menu-btn');
     const closeBtn = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
     
+    // Open mobile menu
+    function openMobileMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenuPanel.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden'; // Prevent body scroll
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuPanel.classList.add('translate-x-full');
+      document.body.style.overflow = ''; // Restore body scroll
+    }
+    
+    // Menu button click
     if (menuBtn) {
       menuBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        mobileMenu.classList.remove('translate-x-full');
+        openMobileMenu();
       });
     }
     
+    // Close button click
     if (closeBtn) {
       closeBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        mobileMenu.classList.add('translate-x-full');
+        closeMobileMenu();
       });
     }
+    
+    // Backdrop click
+    if (backdrop) {
+      backdrop.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMobileMenu();
+      });
+    }
+    
+    // Escape key handler
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    });
+    
+    // Close menu when clicking on navigation links
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        closeMobileMenu();
+      });
+    });
+    
+    // Set active state for mobile navigation
+    const path = window.location.pathname;
+    mobileNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if ((path === '/' && href === '/') || href === path || href === path + '/') {
+        link.classList.add('text-primary', 'dark:text-primary');
+      }
+    });
   })();
 </script>
