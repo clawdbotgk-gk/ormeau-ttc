@@ -23,6 +23,46 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Scroll animations - fade-in-up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+.animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+.animate-fade-in-up.delay-300 { animation-delay: 0.3s; }
+.animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+/* Improve contrast for gray text on dark backgrounds */
+.text-gray-400 {
+  color: #b0b0b0 !important;
+}
+
+.text-gray-500 {
+  color: #a3a3a3 !important;
+}
+
+.text-gray-300 {
+  color: #d4d4d4 !important;
 }
 
 /* Material Icons */
@@ -70,7 +110,7 @@ body {
 }
 
 /* Mobile optimizations */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   /* Hero section adjustments */
   section#main-content {
     min-height: 100vh;
@@ -84,7 +124,27 @@ body {
   }
   
   section#main-content h1 span.block {
-    font-size: 1.875rem !important;
+    font-size: 2rem !important;
+    margin-top: 0.25rem !important;
+  }
+  
+  /* Badge: reduce letter-spacing and add horizontal padding */
+  section#main-content > div > span {
+    letter-spacing: 0.1em !important;
+    padding-inline: 16px !important;
+  }
+  
+  /* Dark gradient overlay from bottom to 60% */
+  section#main-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    z-index: 15;
+    pointer-events: none;
   }
   
   /* Reduce padding on mobile sections */
@@ -96,17 +156,22 @@ body {
 
 @media (max-width: 480px) {
   section#main-content h1 {
-    font-size: 2rem !important;
+    font-size: 2.25rem !important;
   }
   
   section#main-content h1 span.block {
-    font-size: 1.5rem !important;
+    font-size: 1.75rem !important;
   }
   
-  /* Smaller buttons on very small screens */
-  section#main-content a {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    font-size: 0.875rem !important;
+  /* Stack buttons vertically, full-width, 12px gap */
+  section#main-content > div > div {
+    flex-direction: column !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+  
+  section#main-content > div > div a {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }

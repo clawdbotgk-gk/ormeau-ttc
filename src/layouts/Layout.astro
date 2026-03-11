@@ -93,11 +93,28 @@ const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_13
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#1a1a1a] text-[#f9fafb] transition-colors duration-300">
+  <body class="bg-[#1a1a1a] text-[#e5e5e5] transition-colors duration-300">
     <slot />
     <script is:inline>
       // Force dark mode by default
       document.documentElement.classList.add('dark');
+    </script>
+    <script is:inline>
+      // Scroll animations with Intersection Observer
+      (function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      })();
     </script>
   </body>
 </html>

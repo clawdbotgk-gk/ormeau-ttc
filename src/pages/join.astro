@@ -38,61 +38,105 @@ import Footer from '../components/Footer.astro';
       <span class="inline-block py-1 px-4 rounded-full bg-primary text-white text-sm font-bold mb-6 uppercase tracking-widest">Ready To Play?</span>
       <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 drop-shadow-2xl"> Here's How To <span class="text-primary">Join Ormeau.</span> </h1>
       <p class="text-xl md:text-2xl text-gray-100 leading-relaxed font-light mb-10 max-w-3xl mx-auto"> We operate a 'Try-It' first approach. Before committing to a membership, we invite all prospective members to a trial session. </p>
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 inline-flex flex-col md:flex-row items-center gap-6 shadow-2xl">
-        <div class="bg-primary text-white p-3 rounded-full shrink-0">
-          <span class="material-symbols-outlined text-3xl">info</span>
-        </div>
-        <div class="text-left">
-          <h4 class="text-lg font-bold text-primary mb-1 uppercase tracking-tight">Current Availability Alert</h4>
-          <p class="text-sm text-gray-100">Sessions are at full capacity. We are <span class="font-bold underline">NOT</span> accepting casual table bookings.</p>
-        </div>
-      </div>
     </div>
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
       <span class="material-icons text-white text-4xl">keyboard_double_arrow_down</span>
     </div>
   </section>
 
-  <!-- Step 1 -->
-  <section class="py-0 overflow-hidden">
-    <div class="flex flex-col lg:flex-row h-screen min-h-[600px]">
-      <div class="lg:w-1/2 relative overflow-hidden group">
-        <img alt="Step 1 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/session.jpg"/>
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-          <span class="text-[15vw] font-black text-white/20">01</span>
-        </div>
-      </div>
-      <div class="lg:w-1/2 flex items-center px-8 md:px-20 py-16 bg-white dark:bg-background-dark">
-        <div class="max-w-md">
-          <span class="text-primary font-bold text-sm tracking-[0.3em] uppercase mb-4 block">Stage One</span>
-          <h3 class="text-4xl md:text-5xl font-bold mb-6">Try A Saturday Session</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg leading-relaxed">Join us on Saturday to experience our atmosphere and world-class facilities first-hand.</p>
-          <div class="w-full bg-[#262626] rounded-2xl p-6 border border-gray-800 shadow-xl">
-            <table class="w-full">
-              <thead>
-                <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <th class="py-3 text-left font-semibold text-gray-900 dark:text-white">Group</th>
-                  <th class="py-3 text-right font-semibold text-gray-900 dark:text-white">Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="py-4 text-left text-gray-600 dark:text-gray-400">Juniors (U18)</td>
-                  <td class="py-4 text-right font-bold text-primary text-xl">2.30pm</td>
-                </tr>
-                <tr>
-                  <td class="py-4 text-left text-gray-600 dark:text-gray-400">Adults</td>
-                  <td class="py-4 text-right font-bold text-primary text-xl">3.45pm</td>
-                </tr>
-              </tbody>
-            </table>
+  <!-- Availability Alert Banner -->
+  <div class="bg-white dark:bg-background-dark pt-6 pb-2 px-4 md:hidden">
+    <div class="bg-red-500/15 border-l-4 border-red-500 rounded-lg p-4">
+      <p class="text-[0.9rem] text-gray-900 dark:text-white"><span class="font-bold text-red-500">NOT</span> accepting casual table bookings. Sessions at full capacity.</p>
+    </div>
+  </div>
+
+  <!-- Step 1 Mobile Timeline -->
+  <section class="py-8 md:py-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Mobile Timeline View -->
+      <div class="md:hidden">
+        <div class="relative pl-8">
+          <div class="absolute left-[14px] top-0 bottom-0 w-0.5 bg-primary/30"></div>
+          <!-- Step 1 -->
+          <div class="relative mb-8">
+            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold z-10">1</div>
+            <div class="flex gap-4">
+              <img alt="Step 1" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/session.jpg"/>
+              <div>
+                <span class="text-primary font-bold text-xs tracking-[0.3em] uppercase">Stage One</span>
+                <h3 class="text-xl font-bold mb-2">Try A Saturday Session</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Join us on Saturday to experience our atmosphere first-hand.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative mb-8">
+            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold z-10">2</div>
+            <div class="flex gap-4">
+              <img alt="Step 2" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/515415772_1302762105188990_7596606888817418356_n.jpg"/>
+              <div>
+                <span class="text-primary font-bold text-xs tracking-[0.3em] uppercase">Stage Two</span>
+                <h3 class="text-xl font-bold mb-2">Level Assessment</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Our coaching team will assess your level during the trial.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative">
+            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold z-10">3</div>
+            <div class="flex gap-4">
+              <img alt="Step 3" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/513677495_1295372392594628_2770204490077987141_n.jpg"/>
+              <div>
+                <span class="text-primary font-bold text-xs tracking-[0.3em] uppercase">Stage Three</span>
+                <h3 class="text-xl font-bold mb-2">Register Interest</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">We'll invite you to register for a permanent spot.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- Desktop Full View -->
+      <div class="hidden md:block">
+        <!-- Step 1 -->
+        <div class="flex flex-col lg:flex-row h-screen min-h-[600px]">
+          <div class="lg:w-1/2 relative overflow-hidden group">
+            <img alt="Step 1 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/session.jpg"/>
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-[15vw] font-black text-white/20">01</span>
+            </div>
+          </div>
+          <div class="lg:w-1/2 flex items-center px-8 md:px-20 py-16 bg-white dark:bg-background-dark">
+            <div class="max-w-md">
+              <span class="text-primary font-bold text-sm tracking-[0.3em] uppercase mb-4 block">Stage One</span>
+              <h3 class="text-4xl md:text-5xl font-bold mb-6">Try A Saturday Session</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg leading-relaxed">Join us on Saturday to experience our atmosphere and world-class facilities first-hand.</p>
+              <div class="w-full bg-[#262626] rounded-2xl p-6 border border-gray-800 shadow-xl">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-gray-200 dark:border-gray-700">
+                      <th class="py-3 text-left font-semibold text-gray-900 dark:text-white">Group</th>
+                      <th class="py-3 text-right font-semibold text-gray-900 dark:text-white">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-4 text-left text-gray-600 dark:text-gray-400">Juniors (U18)</td>
+                      <td class="py-4 text-right font-bold text-primary text-xl">2.30pm</td>
+                    </tr>
+                    <tr>
+                      <td class="py-4 text-left text-gray-600 dark:text-gray-400">Adults</td>
+                      <td class="py-4 text-right font-bold text-primary text-xl">3.45pm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Step 2 -->
+        <!-- Step 2 -->
     <div class="flex flex-col lg:flex-row-reverse h-screen min-h-[600px]">
       <div class="lg:w-1/2 relative overflow-hidden group">
         <img alt="Step 2 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/515415772_1302762105188990_7596606888817418356_n.jpg"/>
@@ -109,8 +153,10 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Step 3 -->
+  <!-- Step 3 Desktop -->
+  <section class="hidden md:block py-0 overflow-hidden">
     <div class="flex flex-col lg:flex-row h-screen min-h-[600px]">
       <div class="lg:w-1/2 relative overflow-hidden group">
         <img alt="Step 3 Photo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/513677495_1295372392594628_2770204490077987141_n.jpg"/>
@@ -141,18 +187,18 @@ import Footer from '../components/Footer.astro';
           <img alt="GoCardless" class="h-10 w-auto" src="https://images.ctfassets.net/8y4on51kf6pi/871df425-3951-406a-89c4-9e08c9ef5a2b/33dd163ca3eb0e6da30d812015c2f996/GoCardless_Wordmark_-_Web_-_Neg_-_White.svg?fm=png&w=1200&h=630&fit=pad&q=100&bg=rgb:1c1b18"/>
         </div>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <!-- Junior -->
-        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-2">Junior</h3>
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
+          <div class="mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Junior</h3>
             <p class="text-gray-500 text-sm">Ages 8-17 years old</p>
           </div>
-          <div class="mb-8 flex items-baseline">
-            <span class="text-5xl font-bold text-gray-900 dark:text-white">£25</span>
+          <div class="mb-6 md:mb-8 flex items-baseline">
+            <span class="text-[2.5rem] font-bold text-gray-900 dark:text-white">£25</span>
             <span class="text-gray-500 ml-2">/month</span>
           </div>
-          <ul class="space-y-4 mb-10 flex-grow">
+          <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
             <li class="flex items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Weekly Coaching Session
             </li>
@@ -166,16 +212,16 @@ import Footer from '../components/Footer.astro';
                   </div>
         
         <!-- Adult -->
-        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border-2 border-primary shadow-2xl flex flex-col h-full relative transform md:scale-110 z-10 overflow-hidden group">
-          <div class="absolute top-0 right-0 bg-primary text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest rounded-bl-xl">Most Popular</div>
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-2">Adult</h3>
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border-2 border-primary shadow-2xl flex flex-col h-full relative transform md:scale-110 z-10 overflow-hidden group">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-b-xl md:rounded-bl-xl md:rounded-tr-none">Most Popular</div>
+          <div class="mb-6 md:mb-8 mt-2 md:mt-0">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Adult</h3>
             <p class="text-gray-500 text-sm">All Abilities</p>
           </div>
-          <div class="mb-8 flex items-baseline">
-            <span class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">From £25<span class="text-2xl font-light"> p/month</span></span>
+          <div class="mb-6 md:mb-8 flex items-baseline">
+            <span class="text-[2.5rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">From £25<span class="text-lg md:text-2xl font-light"> p/month</span></span>
           </div>
-          <ul class="space-y-4 mb-10 flex-grow">
+          <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
             <li class="flex items-center gap-3 text-sm font-semibold">
               <span class="material-icons text-primary text-lg">check_circle</span> Structured Coaching Session
             </li>
@@ -189,16 +235,16 @@ import Footer from '../components/Footer.astro';
                   </div>
         
         <!-- Social -->
-        <div class="bg-white dark:bg-background-dark p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-500">
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-2">Social</h3>
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-500">
+          <div class="mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Social</h3>
             <p class="text-gray-500 text-sm">Recreational Play</p>
           </div>
-          <div class="mb-8 flex items-baseline">
-            <span class="text-5xl font-bold text-gray-900 dark:text-white">£25</span>
+          <div class="mb-6 md:mb-8 flex items-baseline">
+            <span class="text-[2.5rem] font-bold text-gray-900 dark:text-white">£25</span>
             <span class="text-gray-500 ml-2">/month</span>
           </div>
-          <ul class="space-y-4 mb-10 flex-grow">
+          <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
             <li class="flex items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Low intensity play
             </li>
@@ -222,8 +268,9 @@ import Footer from '../components/Footer.astro';
         <h2 class="text-3xl font-bold mb-4">Membership Benefits Comparison</h2>
         <p class="text-gray-500">Understand what your monthly subscription covers.</p>
       </div>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse">
+      <div class="overflow-x-auto relative">
+        <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-background-dark to-transparent pointer-events-none md:hidden"></div>
+        <table class="w-full border-collapse min-w-[600px]">
           <thead>
             <tr class="bg-[#262626] text-left">
               <th class="p-6 font-bold border-b border-gray-200 dark:border-gray-700">Feature</th>
@@ -270,40 +317,40 @@ import Footer from '../components/Footer.astro';
         <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
         <p class="text-gray-500">Quick answers to common membership enquiries.</p>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-3 md:space-y-4">
         <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm" open>
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="font-bold text-gray-900 dark:text-white">Can I book a table without joining?</span>
-            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none min-h-[48px]">
+            <span class="font-bold text-gray-900 dark:text-white pr-4">Can I book a table without joining?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180 flex-shrink-0">expand_more</span>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Currently, we are at full capacity and do not offer casual table bookings for non-members. Participation is through our structured membership programs and Saturday trial sessions only.
           </div>
         </details>
         <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="font-bold text-gray-900 dark:text-white">What is the minimum age for Juniors?</span>
-            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none min-h-[48px] hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <span class="font-bold text-gray-900 dark:text-white pr-4">What is the minimum age for Juniors?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180 flex-shrink-0">expand_more</span>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Our Junior academy accepts players from age 7 and up. We offer coaching pathways for all ability levels within the youth section.
           </div>
         </details>
         <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="font-bold text-gray-900 dark:text-white">Is there a long-term contract?</span>
-            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none min-h-[48px] hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <span class="font-bold text-gray-900 dark:text-white pr-4">Is there a long-term contract?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180 flex-shrink-0">expand_more</span>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             No, our memberships are rolling monthly subscriptions. We require 30 days notice for cancellation, but there is no long-term tie-in.
           </div>
         </details>
         <details class="group bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="font-bold text-gray-900 dark:text-white">Do I need my own equipment for the trial?</span>
-            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none min-h-[48px] hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <span class="font-bold text-gray-900 dark:text-white pr-4">Do I need my own equipment for the trial?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180 flex-shrink-0">expand_more</span>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             While we recommend players eventually purchase their own bat, we can provide equipment for your first few sessions. Just wear sports clothing and indoor trainers.
           </div>
         </details>
@@ -319,8 +366,8 @@ import Footer from '../components/Footer.astro';
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
       <h2 class="text-5xl md:text-6xl font-bold mb-8">Ready To Get Started?</h2>
       <p class="text-xl opacity-90 mb-12 font-light max-w-2xl mx-auto"> Secure your place at the Saturday trial session and take the first step towards joining Belfast's premier table tennis club. </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <a href="/contact" class="px-12 py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-2xl uppercase tracking-widest text-sm">Register Your Interest</a>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <a href="/contact" class="w-full sm:w-auto px-6 sm:px-12 py-4 sm:py-5 bg-white text-primary font-bold rounded-lg sm:rounded-full hover:bg-gray-100 transition-all shadow-2xl uppercase tracking-widest text-[1.1rem] sm:text-sm text-center" style="padding-top: 16px; padding-bottom: 16px;">Register Your Interest</a>
       </div>
     </div>
   </section>
