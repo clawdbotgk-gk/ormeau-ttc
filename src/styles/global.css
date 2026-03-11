@@ -134,7 +134,7 @@ body {
     padding-inline: 16px !important;
   }
   
-  /* Dark gradient overlay from bottom to 60% */
+  /* Dark gradient overlay - stronger for better text contrast */
   section#main-content::after {
     content: '';
     position: absolute;
@@ -142,9 +142,17 @@ body {
     left: 0;
     right: 0;
     height: 60%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.2) 100%);
     z-index: 15;
     pointer-events: none;
+  }
+  
+  /* Ghost button contrast on mobile */
+  section#main-content a[href*="how-it-works"],
+  section#main-content a.btn-ghost,
+  section#main-content a.border-white {
+    background: rgba(0,0,0,0.4) !important;
+    backdrop-filter: blur(4px);
   }
   
   /* Reduce padding on mobile sections */
