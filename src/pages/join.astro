@@ -22,11 +22,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Availability Alert Banner -->
-  <div class="bg-white dark:bg-background-dark pt-6 pb-2 px-4 md:hidden">
-    <div class="bg-red-500/15 border-l-4 border-red-500 rounded-lg p-4">
-      <p class="text-[0.9rem] text-gray-900 dark:text-white"><span class="font-bold text-red-500">NOT</span> accepting casual table bookings. Sessions at full capacity.</p>
-    </div>
-  </div>
+  <!-- Removed: NOT accepting casual table bookings message -->
 
   <!-- Step 1 Mobile Timeline -->
   <section class="py-8 md:py-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
@@ -166,69 +162,69 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <!-- Junior -->
-        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center">
           <div class="mb-6 md:mb-8">
             <h3 class="text-xl md:text-2xl font-bold mb-2">Junior</h3>
             <p class="text-gray-500 text-sm">Ages 8-17 years old</p>
           </div>
-          <div class="mb-6 md:mb-8 flex items-baseline">
+          <div class="mb-6 md:mb-8 flex items-baseline justify-center">
             <span class="text-[2.5rem] font-bold text-gray-900 dark:text-white">£25</span>
             <span class="text-gray-500 ml-2">/month</span>
           </div>
           <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Weekly Coaching Session
             </li>
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Competitive Play
             </li>
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Discounted Equipment
             </li>
           </ul>
                   </div>
         
         <!-- Adult -->
-        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border-2 border-primary shadow-2xl flex flex-col h-full relative transform md:scale-110 z-10 overflow-hidden group">
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border-2 border-primary shadow-2xl flex flex-col h-full relative transform md:scale-110 z-10 overflow-hidden group text-center">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-b-xl md:rounded-bl-xl md:rounded-tr-none">Most Popular</div>
-          <div class="mb-6 md:mb-8 mt-2 md:mt-0">
+          <div class="mb-6 md:mb-8 mt-2 md:mt-0 text-center">
             <h3 class="text-xl md:text-2xl font-bold mb-2">Adult</h3>
             <p class="text-gray-500 text-sm">All Abilities</p>
           </div>
-          <div class="mb-6 md:mb-8 flex items-baseline">
+          <div class="mb-6 md:mb-8 flex items-baseline justify-center">
             <span class="text-[2.5rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">From £25<span class="text-lg md:text-2xl font-light"> p/month</span></span>
           </div>
           <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm font-semibold">
+            <li class="flex justify-center items-center gap-3 text-sm font-semibold">
               <span class="material-icons text-primary text-lg">check_circle</span> Structured Coaching Session
             </li>
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Local League Opportunities
             </li>
-                        <li class="flex items-center gap-3 text-sm">
+                        <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Discounted Equipment
             </li>
           </ul>
                   </div>
         
         <!-- Social -->
-        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-500">
+        <div class="bg-white dark:bg-background-dark p-6 md:p-10 rounded-2xl md:rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-500 text-center">
           <div class="mb-6 md:mb-8">
             <h3 class="text-xl md:text-2xl font-bold mb-2">Social</h3>
             <p class="text-gray-500 text-sm">Recreational Play</p>
           </div>
-          <div class="mb-6 md:mb-8 flex items-baseline">
+          <div class="mb-6 md:mb-8 flex items-baseline justify-center">
             <span class="text-[2.5rem] font-bold text-gray-900 dark:text-white">£25</span>
             <span class="text-gray-500 ml-2">/month</span>
           </div>
           <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Low intensity play
             </li>
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Mixed abilities
             </li>
-            <li class="flex items-center gap-3 text-sm">
+            <li class="flex justify-center items-center gap-3 text-sm">
               <span class="material-icons text-primary text-lg">check_circle</span> Social environment
             </li>
           </ul>
@@ -245,8 +241,7 @@ import Footer from '../components/Footer.astro';
         <h2 class="text-3xl font-bold mb-4">Membership Benefits Comparison</h2>
         <p class="text-gray-500">Understand what your monthly subscription covers.</p>
       </div>
-      <div class="overflow-x-auto relative">
-        <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-background-dark to-transparent pointer-events-none md:hidden"></div>
+      <div class="overflow-x-auto">
         <table class="w-full border-collapse min-w-[600px]">
           <thead>
             <tr class="bg-[#262626] text-left">
