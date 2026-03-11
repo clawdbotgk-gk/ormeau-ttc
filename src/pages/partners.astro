@@ -9,6 +9,149 @@ const pageImage = "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <style>
+    @media (max-width: 480px) {
+      .hero-image-container {
+        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
+      }
+      .hero-text-wrapper {
+        padding: 24px 16px;
+      }
+      .hero-heading {
+        font-size: 26px;
+        line-height: 1.2;
+      }
+      .hero-subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.85);
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 16px;
+      }
+      .stat-card {
+        padding: 16px 12px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 24px;
+      }
+      .stat-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    @media (max-width: 768px) {
+      .partner-logo-container {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px 8px 0 0;
+      }
+      .partner-logo-container img {
+        max-height: 50px;
+        max-width: 160px;
+        object-fit: contain;
+      }
+      .section-header {
+        padding: 0 16px;
+        margin-bottom: 32px;
+      }
+      .section-header-container {
+        flex-direction: column;
+        text-align: left;
+        gap: 16px;
+      }
+      .section-heading {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+      .section-underline {
+        width: 64px;
+        height: 4px;
+        margin-bottom: 0;
+      }
+      .section-subtitle {
+        font-size: 15px;
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 0;
+        line-height: 1.6;
+      }
+      .partners-grid {
+        gap: 16px;
+        padding: 0 16px;
+      }
+      .equipment-heading {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 40px 16px 16px 16px;
+        border-left: 3px solid #ff3366;
+        padding-left: 12px;
+      }
+      .equipment-card {
+        background: rgba(255,255,255,0.06);
+      }
+      .equipment-photo {
+        border-radius: 12px;
+        margin: 16px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+      .cta-container {
+        margin: 32px 16px;
+        padding: 32px 20px;
+        border-radius: 16px;
+        text-align: center;
+      }
+      .cta-heading {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      .cta-description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+      .cta-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 8px;
+      }
+      .partner-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: transparent;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4b5563; /* gray-600 */
+        transition: all 0.2s ease;
+      }
+      .dark .partner-link {
+        border-color: rgba(255,255,255,0.1);
+        color: #9ca3af; /* gray-400 */
+      }
+      .partner-card:hover .partner-link {
+        border-color: #ff3366;
+        color: #ff3366;
+      }
+      .partner-link:active {
+        background: rgba(255,51,102,0.05);
+      }
+    }
+  </style>
   <!-- Open Graph -->
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />
@@ -35,136 +178,144 @@ const pageImage = "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_
   <!-- Hero Section: Community Impact -->
   <section class="relative w-full px-4 md:px-8 pt-8 pb-12">
     <div class="mx-auto max-w-7xl">
-      <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl">
+      <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl shadow-2xl hero-image-container">
         <img alt="Club members with sponsor banners" class="h-full w-full object-cover brightness-75" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/peadar%20mpt%20.jpg"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
-          <h1 class="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl tracking-tight">
-            Empowering Sport Through <span class="text-primary">Community Support</span>
-          </h1>
-          <p class="mt-4 max-w-2xl text-lg text-gray-200 font-medium leading-relaxed">
-            Our sponsors are more than just logos; they are the backbone of our community. Together, we provide world-class facilities and coaching to over 150 members.
-          </p>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/60 to-transparent flex flex-col justify-end p-8 md:p-16 hero-text-wrapper">
+          <div class="max-w-4xl transform transition-transform duration-700 translate-y-0">
+            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-white uppercase bg-primary/90 backdrop-blur-sm rounded-full shadow-lg">Our Partners</span>
+            <h1 class="text-4xl font-black leading-tight text-white md:text-6xl tracking-tight hero-heading mb-4 drop-shadow-md">
+              Empowering Sport Through <br class="hidden md:block" /><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">Community Support</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-xl text-gray-200 font-medium leading-relaxed hero-subtitle drop-shadow-sm">
+              Our sponsors are more than just logos; they are the backbone of our community. Together, we provide world-class facilities and coaching to over 150 members.
+            </p>
+          </div>
         </div>
       </div>
       
       <!-- Impact Quick Stats -->
-      <div class="relative -mt-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-4">
-        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
-          <span class="text-primary text-3xl font-black">10+</span>
-          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Partners</span>
+      <div class="relative mt-8 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-4 stats-grid">
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5 stat-card">
+          <span class="text-primary text-3xl font-black stat-number">10+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 stat-label">Partners</span>
         </div>
-        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
-          <span class="text-primary text-3xl font-black">£1000s</span>
-          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Annual Investment</span>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5 stat-card">
+          <span class="text-primary text-3xl font-black stat-number">£1000s</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 stat-label">Annual Investment</span>
         </div>
-        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
-          <span class="text-primary text-3xl font-black">20+</span>
-          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Coached Weekly Sessions</span>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5 stat-card">
+          <span class="text-primary text-3xl font-black stat-number">20+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 stat-label">Coached Weekly Sessions</span>
         </div>
-        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5">
-          <span class="text-primary text-3xl font-black">150+</span>
-          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Members</span>
+        <div class="flex flex-col items-center justify-center rounded-xl bg-white dark:bg-gray-800 p-6 shadow-xl border border-primary/5 stat-card">
+          <span class="text-primary text-3xl font-black stat-number">150+</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 stat-label">Members</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Partners Grid -->
-  <section class="px-4 md:px-8 py-16">
+  <section class="px-4 md:px-8 py-8 md:py-12">
     <div class="mx-auto max-w-7xl">
-      <div class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-        <div>
-          <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">Our Partners</h2>
-          <div class="mt-2 h-1.5 w-24 rounded-full bg-primary"></div>
-        </div>
-        <p class="max-w-md text-gray-600 dark:text-gray-400 font-medium">
+      <div class="mb-12 flex flex-col items-center text-center section-header">
+        <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white section-heading">Our Partners</h2>
+        <div class="mt-4 h-1.5 w-24 rounded-full bg-primary section-underline"></div>
+        <p class="mt-6 max-w-2xl text-gray-600 dark:text-gray-400 font-medium section-subtitle">
           Working together with organisations that share our vision for table tennis in Belfast and Northern Ireland.
         </p>
       </div>
       
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 partners-grid">
         <!-- Partner Card 1 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://logos-api.apistemic.com/domain:mtb-law.co.uk" alt="MTB Law" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">McCartan Turkington Breen</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             A leading full-service law firm in Belfast with almost 50 years of experience.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://mtb-law.co.uk/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://mtb-law.co.uk/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
         
         <!-- Partner Card 2 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://logos-api.apistemic.com/domain:lockton.com" alt="Lockton" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Lockton Insurance</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             The world's largest independent global insurance broker.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://global.lockton.com/offices/uk-belfast" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://global.lockton.com/offices/uk-belfast" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
         
         <!-- Partner Card 3 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://glowmetrics.com/wp-content/uploads/2025/09/glowmetrics-logo-2025-1200x345.png" alt="GlowMetrics" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">GlowMetrics</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Belfast-based digital marketing agency specialising in data analytics and SEO.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://glowmetrics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://glowmetrics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
 
         <!-- Partner Card 4 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://logos-api.apistemic.com/domain:chubb.com" alt="Chubb" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Chubb Insurance</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Global leader in insurance providing protection for businesses and employees.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://www.chubb.com/uk-en/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://www.chubb.com/uk-en/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
         
         <!-- Partner Card 5 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://gmaglogistics.com/wp-content/uploads/elementor/thumbs/logo_png-white-2-p10nxc330joz3rem22n4b9zy3gyjesfq9cqf4l9ji8.png" alt="GMAg Logistics" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">GMAg Logistics</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Dynamic transport and logistics company operating across Ireland.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://gmaglogistics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://gmaglogistics.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
 
         <!-- Partner Card 6 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://marypeterstrust.org/wp-content/uploads/2018/07/widget-logo.png" alt="Mary Peters Trust" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Mary Peters Trust</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             Northern Ireland's leading sports charity supporting young athletes for 50 years.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://marypeterstrust.org/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://marypeterstrust.org/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
 
         <!-- Partner Card 7 -->
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border border-gray-100 dark:border-gray-700">
-          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-6 flex h-20 items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900/50 p-4 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800 partner-logo-container">
             <img src="https://tabletennisulster.com/wp-content/uploads/2024/02/logo1.png" alt="Table Tennis Ulster" class="h-full w-auto object-contain" />
           </div>
           <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Table Tennis Ulster</h3>
           <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             The governing body for table tennis in Ulster.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://tabletennisulster.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link" href="https://tabletennisulster.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
       </div>
     </div>
@@ -172,45 +323,53 @@ const pageImage = "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/540735236_
 
   <!-- Equipment Sponsor -->
   <section class="px-4 md:px-8 py-16 bg-gray-50 dark:bg-gray-900/50">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-        <div>
-          <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">Equipment Sponsor</h2>
-          <div class="mt-2 h-1.5 w-24 rounded-full bg-primary"></div>
-        </div>
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 flex flex-col items-center text-center">
+        <h2 class="text-3xl font-black tracking-tight text-gray-900 dark:text-white equipment-heading">Equipment Sponsor</h2>
+        <div class="mt-4 h-1.5 w-24 rounded-full bg-primary"></div>
+        <p class="mt-6 max-w-2xl text-gray-600 dark:text-gray-400 font-medium">
+          We are proud to be supported by Teesport, our official equipment partner, providing top-tier facilities for our athletes.
+        </p>
       </div>
       
-      <div class="flex justify-center">
-        <div class="partner-card group flex flex-col rounded-xl bg-white dark:bg-gray-800 p-8 shadow-md border-2 border-primary max-w-md w-full">
-          <div class="mb-6 flex h-24 items-center justify-center rounded-lg bg-white dark:bg-gray-900 p-4 transition-all group-hover:scale-105">
+      <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+        <div class="partner-card group flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-8 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative flex-1 max-w-md w-full">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 via-primary/40 to-gray-200 dark:from-gray-700 dark:via-primary/40 dark:to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="mb-8 flex h-28 items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-900/50 p-6 transition-all group-hover:scale-105 border border-gray-100 dark:border-gray-800">
             <img src="https://www.teessport.com/images/modules/promo_units/retina-1744714892-63908400.png" alt="Teesport Equipment" class="h-full w-auto object-contain" />
           </div>
-          <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Teesport Equipment</h3>
-          <p class="mb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-            Leading supplier of quality table tennis tables, bats, nets, and balls. Providing top-tier equipment for our club and competitions.
+          <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Teesport Equipment</h3>
+          <p class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+            Leading supplier of quality table tennis tables, bats, nets, and balls. Providing top-tier equipment for our club and competitions across the UK and Ireland.
           </p>
-          <a class="mt-auto flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all" href="https://www.teessport.com/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-icons text-sm">arrow_forward</span></a>
+          <a class="mt-auto partner-link justify-center text-base py-3" href="https://www.teessport.com/" target="_blank" rel="noopener noreferrer">Visit Teesport Website <span class="material-icons text-sm">arrow_forward</span></a>
         </div>
-      </div>
 
-      <!-- Teesport Sponsorship Image -->
-      <div class="mt-12 flex justify-center">
-        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/sponsorship%20teessport.jpg" alt="Teesport Sponsorship" class="rounded-xl shadow-lg max-w-2xl w-full" />
+        <!-- Teesport Sponsorship Image -->
+        <div class="flex-1 w-full max-w-md md:max-w-none">
+          <div class="relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 aspect-[4/3] md:aspect-auto md:h-[450px]">
+            <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/sponsorship%20teessport.jpg" alt="Teesport Sponsorship" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-white font-medium text-sm md:text-base text-shadow-sm">Ormeau TTC athletes competing on Teesport tables at a recent national event.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Call to Action -->
   <section class="px-4 md:px-8 py-20">
-    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl bg-gray-900 text-white shadow-2xl">
+    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl bg-gray-900 text-white shadow-2xl cta-container">
       <div class="relative flex flex-col items-center justify-center gap-6 p-12 text-center md:p-20">
         <div class="absolute inset-0 bg-primary/10 opacity-50"></div>
-        <h2 class="relative z-10 text-3xl font-black md:text-5xl">Become a Partner</h2>
-        <p class="relative z-10 max-w-xl text-lg text-gray-300">
+        <h2 class="relative z-10 text-3xl font-black md:text-5xl cta-heading">Become a Partner</h2>
+        <p class="relative z-10 max-w-xl text-lg text-gray-300 cta-description">
           Join us in building a vibrant sports community. Your support directly impacts youth development and community health.
         </p>
         <div class="relative z-10 mt-4 flex flex-wrap justify-center gap-4">
-          <a href="/contact" class="h-14 rounded-full bg-primary px-10 text-lg font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform inline-flex items-center">Get In Contact</a>
+          <a href="/contact" class="h-14 rounded-full bg-primary px-10 text-lg font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform inline-flex items-center cta-button">Get In Contact</a>
         </div>
       </div>
     </div>
