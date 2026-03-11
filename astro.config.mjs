@@ -8,7 +8,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssMinify: true
+      cssMinify: true,
+      assetsInlineLimit: 4096 // 4KB - inline small CSS files
     }
   }
 });
