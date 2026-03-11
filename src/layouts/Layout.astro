@@ -91,13 +91,11 @@ const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_13
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+  <body class="bg-background-dark text-text-dark transition-colors duration-300">
     <slot />
     <script is:inline>
-      // Dark mode toggle based on system preference
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
+      // Force dark mode by default
+      document.documentElement.classList.add('dark');
     </script>
   </body>
 </html>
