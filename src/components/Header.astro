@@ -160,9 +160,12 @@
     function openMobileMenu() {
       if (mobileMenu) mobileMenu.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      if (mainHeader) {
-        mainHeader.style.transform = 'translateY(-100%)';
-      }
+      // Delay header hiding slightly so sidebar opens first
+      setTimeout(function() {
+        if (mainHeader) {
+          mainHeader.style.transform = 'translateY(-100%)';
+        }
+      }, 50);
     }
     
     // Close mobile menu
