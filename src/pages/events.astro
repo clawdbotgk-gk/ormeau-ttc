@@ -67,17 +67,17 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
   <!-- Featured Event -->
   <section class="py-20 bg-[#1a1a1a]" id="featured">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
+      <div class="featured-event-card relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
         <div class="md:w-1/2 relative min-h-[300px]">
-          <img alt="British League" class="absolute inset-0 w-full h-full object-cover" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/493933685_1241133241351877_5480171846768564305_n.jpg"/>
+          <img alt="British League" class="featured-event-image absolute inset-0 w-full h-full object-cover" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/493933685_1241133241351877_5480171846768564305_n.jpg"/>
           <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/40 to-transparent"></div>
         </div>
-        <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+        <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center featured-event-details">
           <div class="flex items-center gap-2 mb-4">
             <span class="px-3 py-1 bg-primary text-white text-xs font-bold rounded uppercase">Featured Event</span>
             <span class="px-3 py-1 bg-white/10 text-white text-xs font-bold rounded uppercase">Club Event</span>
           </div>
-          <h2 class="text-3xl md:text-5xl font-bold mb-4">Sunday Rumble</h2>
+          <h2 class="featured-event-title text-3xl md:text-5xl font-bold mb-4">Sunday Rumble</h2>
           <div class="space-y-4 mb-8">
             <div class="flex items-center gap-3">
               <span class="material-icons text-primary">event</span>
@@ -101,25 +101,90 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
               </div>
             </div>
           </div>
-          <a href="https://ormeautt.com/events/cbb3a897-87dc-4c76-8e40-06e451fa74fa" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full transition-all text-center inline-block">Register Now</a>
+          <a href="https://ormeautt.com/events/cbb3a897-87dc-4c76-8e40-06e451fa74fa" target="_blank" rel="noopener noreferrer" class="featured-register-btn bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full transition-all text-center inline-block">Register Now</a>
         </div>
       </div>
     </div>
   </section>
 
+<style>
+  @media (max-width: 768px) {
+    .featured-event-card {
+      border-width: 2px;
+    }
+    .featured-event-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+    }
+    .featured-event-details {
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .featured-register-btn {
+      padding: 16px;
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    .event-card {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .event-card-date {
+      padding: 16px;
+    }
+    .event-card-date span {
+      font-size: 1.5rem;
+    }
+    .calendar-link {
+      padding: 10px 16px;
+      border: 1px solid var(--brand-pink, #ec4899);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      display: inline-block;
+      color: var(--brand-pink, #ec4899);
+    }
+    .ttu-events-section {
+      padding-top: 40px;
+    }
+    .ttu-events-heading {
+      margin-bottom: 12px;
+    }
+    .featured-event-image {
+      aspect-ratio: 16/10;
+      border-radius: 12px;
+    }
+    .filter-bar {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 0 16px;
+      -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
+    }
+    .filter-bar .filter-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      border-radius: 20px;
+    }
+  }
+</style>
+
   <!-- TTU Events Section -->
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+  <section class="ttu-events-section py-20 bg-gray-50 dark:bg-gray-900">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-bold rounded-full uppercase tracking-wider mb-4">Table Tennis Ulster</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Upcoming TTU Events</h2>
+        <h2 class="ttu-events-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Upcoming TTU Events</h2>
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Major tournaments and events across Ulster. Click to add to your calendar.</p>
       </div>
 
       <!-- Filter Bar -->
       <section class="sticky top-24 z-40 bg-gray-50 dark:bg-gray-900 py-6 border-y border-gray-100 dark:border-gray-800 mb-12">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-wrap items-center justify-center gap-6">
-          <div class="flex flex-wrap items-center gap-3">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+          <div class="filter-bar flex flex-wrap items-center gap-3">
             <button class="filter-btn px-5 py-2 rounded-full bg-primary text-white font-bold text-sm transition-all duration-200" data-filter="all">All Events</button>
             <button class="filter-btn px-5 py-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-bold text-sm hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-200" data-filter="tournament">Tournaments</button>
             <button class="filter-btn px-5 py-2 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 font-bold text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-all duration-200" data-filter="coaching">Coaching</button>
@@ -132,20 +197,20 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
         <!-- Mar 5 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
-          <div class="h-20 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">05 MAR</span>
           </div>
           <div class="p-6">
             <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase">Tournament</span>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Kingfisher SE Regional</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">South Lakes Leisure Centre, Craigavon</p>
-            <a href="https://www.google.com/calendar/event?eid=ampkbjVxMXBiMXRqN2V1czVuZHQ3bjVhazQgY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
+            <a href="https://www.google.com/calendar/event?eid=ampkbjVxMXBiMXRqN2V1czVuZHQ3bjVhazQgY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="calendar-link text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
           </div>
         </div>
 
         <!-- Mar 14 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
-          <div class="h-20 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">14 MAR</span>
           </div>
           <div class="p-6">
@@ -158,7 +223,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
         <!-- Mar 15 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
-          <div class="h-20 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">15 MAR</span>
           </div>
           <div class="p-6">
@@ -171,7 +236,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
         <!-- Mar 19 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="coaching">
-          <div class="h-20 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">19 MAR</span>
           </div>
           <div class="p-6">
@@ -184,7 +249,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
         <!-- Mar 26 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="social">
-          <div class="h-20 bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">26 MAR</span>
           </div>
           <div class="p-6">
@@ -197,27 +262,27 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
         <!-- Apr 4 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
-          <div class="h-20 bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">04 APR</span>
           </div>
           <div class="p-6">
             <span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">Tournament</span>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Ulster Senior Open</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Lisburn Racquets Club</p>
-            <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
+            <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="calendar-link text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
           </div>
         </div>
 
         <!-- Apr 20 -->
         <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
-          <div class="h-20 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
+          <div class="event-card-date">
             <span class="text-3xl font-black text-white">20 APR</span>
           </div>
           <div class="p-6">
             <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase">Tournament</span>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Kingfisher National</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">National Stadium, Dublin</p>
-            <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
+            <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="calendar-link text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
           </div>
         </div>
 
