@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="sticky top-0 z-[100] bg-[#1a1a1a]/95 backdrop-blur-md border-b border-gray-800 header-nav" aria-label="Main navigation">
+<nav id="main-header" class="sticky top-0 z-[100] bg-[#1a1a1a]/95 backdrop-blur-md border-b border-gray-800 header-nav transition-transform duration-300" aria-label="Main navigation">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
     <div class="flex justify-between items-center px-4 md:px-6 lg:px-10 py-3 md:py-0 h-[60px] md:h-20">
       <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
@@ -155,16 +155,24 @@
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     const backdrop = document.getElementById('mobile-menu-backdrop');
     
+    const mainHeader = document.getElementById('main-header');
+    
     // Open mobile menu
     function openMobileMenu() {
       mobileMenu.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      if (mainHeader) {
+        mainHeader.style.transform = 'translateY(-100%)';
+      }
     }
     
     // Close mobile menu
     function closeMobileMenu() {
       mobileMenu.classList.add('hidden');
       document.body.style.overflow = '';
+      if (mainHeader) {
+        mainHeader.style.transform = 'translateY(0)';
+      }
     }
     
     // Menu button click
