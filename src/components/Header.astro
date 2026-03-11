@@ -148,18 +148,17 @@
 
 <script is:inline>
   // Mobile menu toggle - simplified for reliability
-  (function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const closeBtn = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     const backdrop = document.getElementById('mobile-menu-backdrop');
-    
     const mainHeader = document.getElementById('main-header');
     
     // Open mobile menu
     function openMobileMenu() {
-      mobileMenu.classList.remove('hidden');
+      if (mobileMenu) mobileMenu.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       if (mainHeader) {
         mainHeader.style.transform = 'translateY(-100%)';
@@ -168,7 +167,7 @@
     
     // Close mobile menu
     function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
+      if (mobileMenu) mobileMenu.classList.add('hidden');
       document.body.style.overflow = '';
       if (mainHeader) {
         mainHeader.style.transform = 'translateY(0)';
@@ -208,11 +207,11 @@
     });
     
     // Close menu when clicking on navigation links
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .mobile-nav-subitem');
-    mobileNavLinks.forEach(link => {
+    const navLinks = document.querySelectorAll('#mobile-menu a');
+    navLinks.forEach(link => {
       link.addEventListener('click', function() {
         closeMobileMenu();
       });
     });
-  })();
+  });
 </script>
