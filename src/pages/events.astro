@@ -69,7 +69,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
         <div class="md:w-1/2 relative min-h-[300px]">
-          <img alt="British League" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYoM4CJ58uSjw79XORjzN058Ksns9A0YuEIsnmAsrUseaba2cptWyYUHyaervb26DRFxtwL_w7ORn2H0lqEWrtGzzP07Ds6vma4UoVftDBnjKfNhsbmRquGh_hC1SV1lZaO8N_rBl7g51RfeA3MwSWSntpNyqGV_HPOxVggV8GduDrdH51LOJgVeedqB60Bz02l3R9mb2IDN2dxBdpkje0JVt1CRas0b9BIu6AoMAEYycsWMkV-xUw9netIfVR06yjv7MLhpsziBgW"/>
+          <img alt="British League" class="absolute inset-0 w-full h-full object-cover" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/493933685_1241133241351877_5480171846768564305_n.jpg"/>
           <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/40 to-transparent"></div>
         </div>
         <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
@@ -107,19 +107,6 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
     </div>
   </section>
 
-  <!-- Filter Bar -->
-  <section class="sticky top-24 z-40 bg-white dark:bg-background-dark py-6 border-y border-gray-100 dark:border-gray-800">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-wrap items-center justify-between gap-6">
-      <div class="flex flex-wrap items-center gap-3">
-        <button class="px-5 py-2 rounded-full bg-primary text-white font-bold text-sm">All Events</button>
-        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Tournaments</button>
-        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Coaching</button>
-        <button class="px-5 py-2 rounded-full bg-surface-light dark:bg-surface-dark text-gray-600 dark:text-gray-300 font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition">Social</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Events List -->
   <!-- TTU Events Section -->
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="max-w-7xl mx-auto px-6">
@@ -129,10 +116,22 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Major tournaments and events across Ulster. Click to add to your calendar.</p>
       </div>
 
+      <!-- Filter Bar -->
+      <section class="sticky top-24 z-40 bg-gray-50 dark:bg-gray-900 py-6 border-y border-gray-100 dark:border-gray-800 mb-12">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-wrap items-center justify-center gap-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <button class="filter-btn px-5 py-2 rounded-full bg-primary text-white font-bold text-sm transition-all duration-200" data-filter="all">All Events</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-bold text-sm hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-200" data-filter="tournament">Tournaments</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 font-bold text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-all duration-200" data-filter="coaching">Coaching</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 font-bold text-sm hover:bg-orange-200 dark:hover:bg-orange-800 transition-all duration-200" data-filter="social">Social</button>
+          </div>
+        </div>
+      </section>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Mar 5 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="h-20 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">05 MAR</span>
           </div>
@@ -145,7 +144,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         </div>
 
         <!-- Mar 14 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="h-20 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">14 MAR</span>
           </div>
@@ -158,7 +157,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         </div>
 
         <!-- Mar 15 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="h-20 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">15 MAR</span>
           </div>
@@ -171,53 +170,53 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         </div>
 
         <!-- Mar 19 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="coaching">
           <div class="h-20 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">19 MAR</span>
           </div>
           <div class="p-6">
-            <span class="text-xs font-bold text-green-600 dark:text-green-400 uppercase">Tournament</span>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Kingfisher NE Regional</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Our Lady of Lourdes, Ballymoney</p>
-            <span class="text-gray-400 text-sm">10:00 AM - 3:00 PM</span>
+            <span class="text-xs font-bold text-green-600 dark:text-green-400 uppercase">Coaching</span>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">TTU Coaching Course</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Lisburn Racquets Club</p>
+            <span class="text-gray-400 text-sm">9:00 AM - 5:00 PM</span>
           </div>
         </div>
 
         <!-- Mar 26 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="social">
           <div class="h-20 bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">26 MAR</span>
           </div>
           <div class="p-6">
-            <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase">Finals</span>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Ulster Schools Finals</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Venue TBC</p>
-            <span class="text-gray-400 text-sm">Regional Finals</span>
+            <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase">Social</span>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">TTU Annual Dinner</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Crown Plaza, Belfast</p>
+            <span class="text-gray-400 text-sm">7:00 PM - Late</span>
           </div>
         </div>
 
         <!-- Apr 4 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="h-20 bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">04 APR</span>
           </div>
           <div class="p-6">
-            <span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">Charity</span>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Jimmy O'Hara Memorial Cup</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ballymena Academy Gym</p>
-            <a href="https://www.google.com/calendar/event?eid=cDkwOGZnaml1ZGh1MDU0aWozaGM2cG1qOG8gY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
+            <span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">Tournament</span>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Ulster Senior Open</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Lisburn Racquets Club</p>
+            <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
           </div>
         </div>
 
         <!-- Apr 20 -->
-        <div class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="h-20 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
             <span class="text-3xl font-black text-white">20 APR</span>
           </div>
           <div class="p-6">
-            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase">Schools</span>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Kingfisher Ulster Schools Cup</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Venue TBC (U10, U12)</p>
+            <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase">Tournament</span>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Kingfisher National</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">National Stadium, Dublin</p>
             <a href="https://www.google.com/calendar/event?eid=OW5obnFlNnJzc2JpaTJyM2sxYWY1M3NoZzggY2xhd2Rib3Rna0Bt" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-sm hover:underline">+ Add to Calendar</a>
           </div>
         </div>
@@ -228,3 +227,40 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
   <Footer />
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLElement>;
+    const eventCards = document.querySelectorAll('.event-card') as NodeListOf<HTMLElement>;
+    
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', function(this: HTMLElement) {
+        // Remove active class from all buttons
+        filterButtons.forEach((btn) => {
+          btn.classList.remove('bg-primary', 'text-white');
+          btn.classList.add('bg-surface-light', 'dark:bg-surface-dark', 'text-gray-600', 'dark:text-gray-300');
+        });
+        
+        // Add active class to clicked button
+        this.classList.remove('bg-surface-light', 'dark:bg-surface-dark', 'text-gray-600', 'dark:text-gray-300');
+        this.classList.add('bg-primary', 'text-white');
+        
+        const filter = this.getAttribute('data-filter');
+        
+        // Filter event cards
+        eventCards.forEach((card) => {
+          if (filter === 'all') {
+            card.style.display = 'block';
+          } else {
+            const category = card.getAttribute('data-category');
+            if (category === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  });
+</script>
