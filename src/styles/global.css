@@ -155,6 +155,25 @@ body {
     backdrop-filter: blur(4px);
   }
   
+  /* Champions carousel on mobile */
+  .champions-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .champions-grid .champion-card {
+    min-width: 85vw;
+    scroll-snap-align: start;
+    border-radius: 12px;
+  }
+  .champions-grid .champion-card img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+  
   /* Reduce padding on mobile sections */
   section {
     padding-left: 1rem !important;
