@@ -1,11 +1,11 @@
 <!-- Navigation -->
 <nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800" aria-label="Main navigation">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-    <div class="flex justify-between items-center h-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="flex justify-between items-center h-20 sm:h-28">
       <div class="flex-shrink-0 flex items-center group cursor-pointer gap-4">
         <a href="/" class="relative overflow-hidden rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105">
-          <img alt="Ormeau Logo" class="h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
-          <img alt="Ormeau Logo" class="h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          <img alt="Ormeau Logo" class="h-10 sm:h-14 w-auto block dark:hidden" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
+          <img alt="Ormeau Logo" class="h-10 sm:h-14 w-auto hidden dark:block" src="https://ormeautabletennis.com/wp-content/uploads/2021/12/logoOrmeauInverse@2x-e1508851762736.png"/>
         </a>
       </div>
       <div class="hidden md:flex flex-1 justify-center space-x-12">
@@ -53,7 +53,7 @@
 </script>
 
 <!-- Mobile Menu Panel -->
-<div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
+<div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
   <!-- Backdrop -->
   <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
   
@@ -99,15 +99,19 @@
     
     // Open mobile menu
     function openMobileMenu() {
-      mobileMenu.classList.remove('translate-x-full');
-      mobileMenuPanel.classList.remove('translate-x-full');
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        mobileMenuPanel.classList.remove('translate-x-full');
+      }, 10);
       document.body.style.overflow = 'hidden'; // Prevent body scroll
     }
     
     // Close mobile menu
     function closeMobileMenu() {
-      mobileMenu.classList.add('translate-x-full');
       mobileMenuPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 300);
       document.body.style.overflow = ''; // Restore body scroll
     }
     
@@ -137,7 +141,7 @@
     
     // Escape key handler
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         closeMobileMenu();
       }
     });

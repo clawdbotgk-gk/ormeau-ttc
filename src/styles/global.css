@@ -69,12 +69,44 @@ body {
   scrollbar-width: none;
 }
 
-/* Mobile hero font-size reduction below 480px */
-@media (max-width: 480px) {
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Hero section adjustments */
+  section#main-content {
+    min-height: 100vh;
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  
   section#main-content h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  section#main-content h1 span.block {
     font-size: 1.875rem !important;
   }
-  section#main-content h1 span {
+  
+  /* Reduce padding on mobile sections */
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section#main-content h1 {
+    font-size: 2rem !important;
+  }
+  
+  section#main-content h1 span.block {
     font-size: 1.5rem !important;
+  }
+  
+  /* Smaller buttons on very small screens */
+  section#main-content a {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: 0.875rem !important;
   }
 }
