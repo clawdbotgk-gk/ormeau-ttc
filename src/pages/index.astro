@@ -63,7 +63,14 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
 
   <section id="main-content" class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
     <div class="absolute inset-0 bg-black/60 z-10"></div>
-    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg');" role="img" aria-label="Ormeau Table Tennis Club hero"></div>
+    <img
+      id="hero-bg"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+      src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg"
+      alt="Ormeau Table Tennis Club hero"
+      fetchpriority="high"
+      decoding="async"
+    />
     <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-32 flex flex-col items-center text-center">
       <span class="inline-block py-2 px-4 sm:px-6 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md text-xs sm:text-sm font-bold mb-6 sm:mb-10 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-primary">Table Tennis For Everyone</span>
       <h1 class="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-6 sm:mb-10 leading-[1.1] max-w-5xl"> ORMEAU <span class="text-primary">Table Tennis Club</span> <span class="block text-2xl sm:text-3xl md:text-5xl mt-2 sm:mt-4 font-light">Belfast</span> </h1>
@@ -90,7 +97,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
           <div class="w-[60px] h-1.5 bg-primary rounded-full mb-4 md:mb-8"></div>
           <p class="text-lg text-gray-300 mb-6 leading-relaxed"> Ormeau Table Tennis Club isn't just about hitting a ball back and forth. It's about personal development, resilience, and community. We've built a space where players of all ages come together to learn, compete, and support one another. </p>
           <p class="text-lg text-gray-300 mb-10 leading-relaxed"> From our humble beginnings to becoming a powerhouse in British table tennis, our core mission remains the same: to provide the best possible environment for everyone to enjoy the sport. </p>
-          <a class="inline-flex items-center text-primary font-bold text-lg hover:underline underline-offset-4 decoration-2 py-3 px-0 inline-block" class="nav-link" href="/about" style="padding: 14px 0;"> Learn More About Our Story <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span> </a>
+          <a class="inline-flex items-center text-white font-bold text-lg underline underline-offset-4 decoration-2 decoration-primary/80 hover:text-primary hover:decoration-primary py-3 px-0 inline-block" class="nav-link" href="/about" style="padding: 14px 0;"> Learn More About Our Story <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span> </a>
         </div>
       </div>
     </div>
@@ -100,8 +107,8 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
   <section class="py-16 sm:py-24 bg-[#262626]" id="how-the-club-works">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
       <div class="text-center mb-12 sm:mb-20">
-        <span class="text-primary font-bold tracking-widest uppercase text-xs sm:text-sm">Your Journey</span>
-        <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-4 sm:mb-6">How The Club Works</h2>
+        <span class="text-white font-bold tracking-widest uppercase text-xs sm:text-sm">Your Journey</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-4 sm:mb-6 text-white">How The Club Works</h2>
         <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-4 text-white/70">We have a structured pathway designed to help every player find their level and enjoy the game.</p>
       </div>
       <h2 class="sr-only">Club Pathway Steps</h2>
@@ -137,35 +144,35 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
       <div class="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
         <div class="order-1 lg:order-1 text-center lg:text-left flex flex-col items-center lg:items-start">
-          <span class="text-primary font-bold tracking-widest uppercase text-sm">Coaching</span>
-          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-8">Built By Players, For Players</h2>
+          <span class="text-white font-bold tracking-widest uppercase text-sm">Coaching</span>
+          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-8 text-white">Built By Players, For Players</h2>
           <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"> Keith and Gervis Knox didn't just build a club — they built the coaching environment they wished they'd had. Both played for Ulster and Ireland before dedicating themselves to coaching, and that playing experience shapes everything about how sessions are run at Ormeau. </p>
           <ul class="space-y-5 sm:space-y-6 mb-10 w-full max-w-2xl mx-auto lg:mx-0">
             <li class="flex flex-col items-center lg:flex-row lg:items-start">
-              <span class="material-icons text-primary lg:mr-4 mb-2 lg:mb-0 mt-0 text-2xl" aria-hidden="true">check_circle</span>
+              <span class="material-icons text-4xl sm:text-6xl text-primary/10 absolute top-4 sm:top-6 right-4 sm:right-6" aria-hidden="true">check_circle</span>
               <div>
-                <h4 class="font-bold text-lg">Coaches who've been there</h4>
+                <h3 class="font-bold text-lg">Coaches who've been there</h3>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">Our head coaches represented Ulster and Ireland before making coaching their career.</p>
               </div>
             </li>
             <li class="flex flex-col items-center lg:flex-row lg:items-start">
-              <span class="material-icons text-primary lg:mr-4 mb-2 lg:mb-0 mt-0 text-2xl" aria-hidden="true">check_circle</span>
+              <span class="material-icons text-4xl sm:text-6xl text-primary/10 absolute top-4 sm:top-6 right-4 sm:right-6" aria-hidden="true">check_circle</span>
               <div>
-                <h4 class="font-bold text-lg">Individual attention in every session</h4>
+                <h3 class="font-bold text-lg">Individual attention in every session</h3>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">Small group sizes mean every player is seen, guided, and challenged.</p>
               </div>
             </li>
             <li class="flex flex-col items-center lg:flex-row lg:items-start">
-              <span class="material-icons text-primary lg:mr-4 mb-2 lg:mb-0 mt-0 text-2xl" aria-hidden="true">check_circle</span>
+              <span class="material-icons text-4xl sm:text-6xl text-primary/10 absolute top-4 sm:top-6 right-4 sm:right-6" aria-hidden="true">check_circle</span>
               <div>
-                <h4 class="font-bold text-lg">A pathway that actually works</h4>
+                <h3 class="font-bold text-lg">A pathway that actually works</h3>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">From your first session to the British Premier League — we've walked players through every step.</p>
               </div>
             </li>
             <li class="flex flex-col items-center lg:flex-row lg:items-start">
-              <span class="material-icons text-primary lg:mr-4 mb-2 lg:mb-0 mt-0 text-2xl" aria-hidden="true">check_circle</span>
+              <span class="material-icons text-4xl sm:text-6xl text-primary/10 absolute top-4 sm:top-6 right-4 sm:right-6" aria-hidden="true">check_circle</span>
               <div>
-                <h4 class="font-bold text-lg">Coaching for every level</h4>
+                <h3 class="font-bold text-lg">Coaching for every level</h3>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">Whether you're a complete beginner or pushing for national selection, there's a session built for you.</p>
               </div>
             </li>
@@ -198,7 +205,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
             <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider border border-primary/30 mb-4 backdrop-blur-sm">Historic Win</span>
             <h3 class="text-3xl md:text-5xl font-bold mb-2 text-white drop-shadow-md">British League Premier Champions</h3>
             <p class="text-primary text-xl md:text-2xl font-medium mb-8 drop-shadow-md">2022-23 Season</p>
-            <a href="https://www.tabletennisengland.co.uk/news/2023/ormeau-crowned-champions-as-2022-23-sbl-premier-division-comes-to-a-close/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-primary/50">
+            <a href="https://www.tabletennisengland.co.uk/news/2023/ormeau-crowned-champions-as-2022-23-sbl-premier-division-comes-to-a-close/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold text-lg rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-white/30">
               Read The Story <span class="material-icons text-sm" aria-hidden="true">arrow_forward</span>
             </a>
           </div>
@@ -254,8 +261,8 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
             <div class="flex flex-col md:flex-row items-center md:items-center gap-4 mt-auto pt-6 border-t border-white/10 text-center md:text-left">
               <img alt="Jeff Harrison" class="w-14 h-14 rounded-full object-cover" src="/jeff-harrison.png" decoding="async" loading="lazy"/>
               <div>
-                <h4 class="font-bold text-white">Jeff Harrison</h4>
-                <p class="text-xs text-primary uppercase font-bold tracking-wider">Club Member</p>
+                <h3 class="font-bold text-white">Jeff Harrison</h3>
+                <p class="text-xs text-white/80 uppercase font-bold tracking-wider">Club Member</p>
               </div>
             </div>
           </div>
@@ -265,8 +272,8 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
             <div class="flex flex-col md:flex-row items-center md:items-center gap-4 mt-auto pt-6 border-t border-white/10 text-center md:text-left">
               <img alt="Deirdre Sealy" class="w-14 h-14 rounded-full object-cover" src="https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/67394003_2426293830786092_693504615483703296_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f798df&_nc_ohc=hvlRSSWBYtgQ7kNvwGtL3Ug&_nc_oc=AdmaPz35oNgVBv6TEsTWHGGjOzFQYw-GLBFq07Fr0RSmhtgcQxCtlhFWDYk7jqr6CFHwg-G7tQb3chVqCY7xmSm2&_nc_zt=23&_nc_ht=scontent-lhr8-1.xx&_nc_gid=uXe3LwM8lpvrkmc8saOVcg&oh=00_AfuxYGRWRU-LFOaYkzdZSAMzFbRyVCIAhI6UX83vDPvOsw&oe=69C2CB09"/>
               <div>
-                <h4 class="font-bold text-white">Deirdre Sealy</h4>
-                <p class="text-xs text-primary uppercase font-bold tracking-wider">Club Member</p>
+                <h3 class="font-bold text-white">Deirdre Sealy</h3>
+                <p class="text-xs text-white/80 uppercase font-bold tracking-wider">Club Member</p>
               </div>
             </div>
           </div>
@@ -276,8 +283,8 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
             <div class="flex flex-col md:flex-row items-center md:items-center gap-4 mt-auto pt-6 border-t border-white/10 text-center md:text-left">
               <img alt="Peadar Sheridan" class="w-14 h-14 rounded-full object-cover" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/peadar%20.jpg"/>
               <div>
-                <h4 class="font-bold text-white">Peadar Sheridan</h4>
-                <p class="text-xs text-primary uppercase font-bold tracking-wider">Performance Junior</p>
+                <h3 class="font-bold text-white">Peadar Sheridan</h3>
+                <p class="text-xs text-white/80 uppercase font-bold tracking-wider">Performance Junior</p>
               </div>
             </div>
           </div>
@@ -303,8 +310,8 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
           <img alt="Glowing Stars" class="absolute bottom-0 left-0 w-[65%] h-[60%] rounded-2xl object-cover shadow-2xl z-20 border-4 border-[#1a1a1a] hover:-translate-y-2 transition-transform duration-500" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/glowing%20stars.jpg"/>
         </div>
         <div class="order-1 md:order-2 text-center md:text-left flex flex-col items-center md:items-start">
-          <span class="text-primary font-bold tracking-widest uppercase text-sm">Our Culture</span>
-          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-6">Everyone Is Welcome Here</h2>
+          <span class="text-white/90 font-bold tracking-widest uppercase text-sm">Our Culture</span>
+          <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-6 text-white">Everyone Is Welcome Here</h2>
           <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">From the youngest beginner to the seasoned competitor, Ormeau has always been a club built on inclusion. Our founders Keith and Gervis Knox were awarded the BBC Northern Ireland Unsung Hero Award for doing exactly this — creating a full-time table tennis home in the heart of Belfast that works for everybody.</p>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -312,7 +319,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-icons text-2xl" aria-hidden="true">emoji_events</span>
               </div>
-              <h4 class="font-bold text-white text-lg mb-1">BBC Unsung Hero</h4>
+              <h3 class="font-bold text-white text-lg mb-1">BBC Unsung Hero</h3>
               <p class="text-sm text-gray-400">Award-winning founders</p>
             </div>
             
@@ -320,7 +327,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-icons text-2xl" aria-hidden="true">groups</span>
               </div>
-              <h4 class="font-bold text-white text-lg mb-1">150+ Members</h4>
+              <h3 class="font-bold text-white text-lg mb-1">150+ Members</h3>
               <p class="text-sm text-gray-400">A thriving, inclusive community</p>
             </div>
             
@@ -328,7 +335,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-icons text-2xl" aria-hidden="true">school</span>
               </div>
-              <h4 class="font-bold text-white text-lg mb-1">Schools Coaching</h4>
+              <h3 class="font-bold text-white text-lg mb-1">Schools Coaching</h3>
               <p class="text-sm text-gray-400">Growing the grassroots</p>
             </div>
             
@@ -336,7 +343,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-icons text-2xl" aria-hidden="true">public</span>
               </div>
-              <h4 class="font-bold text-white text-lg mb-1">World Records</h4>
+              <h3 class="font-bold text-white text-lg mb-1">World Records</h3>
               <p class="text-sm text-gray-400">Guinness World Record Holders</p>
             </div>
           </div>
@@ -350,7 +357,7 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8">Joining <span class="text-black">ORMEAU</span></h2>
       <p class="text-base sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 max-w-2xl mx-auto opacity-90"> Due to high demand, some of our sessions have a waiting list. Register your interest today and we'll get you on a table as soon as possible. </p>
-      <a href="/join" class="inline-block w-full sm:w-auto px-8 sm:px-10 py-4 bg-white text-primary font-bold text-lg rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/30">
+      <a href="/join" class="inline-block w-full sm:w-auto px-8 sm:px-10 py-4 bg-white text-black font-bold text-lg rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/30">
         Register Your Interest <span class="material-icons ml-2 align-middle text-lg" aria-hidden="true">arrow_forward</span>
       </a>
     </div>
