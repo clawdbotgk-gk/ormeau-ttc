@@ -90,20 +90,15 @@ const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_13
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://scontent-lhr6-1.xx.fbcdn.net">
-    <link rel="preconnect" href="https://logos-api.apistemic.com">
     <link rel="preload" as="image" href="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/logoOrmeauInverse%402x.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <style is:global>
-      @font-face {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 300 700;
-        font-display: swap;
-        src: local('Poppins');
-      }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+    </noscript>
   </head>
   <body class="bg-[#1a1a1a] text-[#e5e5e5] transition-colors duration-300">
     <slot />
