@@ -8,6 +8,9 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg" fetchpriority="high" />
+  </Fragment>
   <!-- Skip Link for Keyboard Users -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:font-bold">
     Skip to main content
@@ -18,26 +21,49 @@ const pageDescription = "Join Belfast's premier table tennis club. Professional 
 
   <!-- Newsletter Form Handler -->
   <script is:inline>
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      const status = document.getElementById('newsletter-status');
-      const email = form.querySelector('input[type="email"]').value;
-      
-      // Simulate subscription (replace with actual backend integration)
-      status.className = 'text-xs mt-2 text-green-400';
-      status.textContent = 'Thanks for subscribing!';
-      form.reset();
-      
-      setTimeout(function() {
-        status.classList.add('hidden');
-      }, 5000);
-    });
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        const status = document.getElementById('newsletter-status');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const formData = new FormData(form);
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Please wait...';
+        status.classList.remove('hidden', 'text-red-500', 'text-green-500');
+        status.textContent = 'Sending...';
+
+        fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            status.classList.add('text-green-500');
+            status.textContent = 'Thanks for subscribing! Check your email to confirm.';
+            form.reset();
+          } else {
+            return response.json().then(data => {
+              status.classList.add('text-red-500');
+              status.textContent = data.error || 'Oops! There was a problem submitting your form';
+            });
+          }
+        }).catch(() => {
+          status.classList.add('text-red-500');
+          status.textContent = 'Oops! There was a problem submitting your form';
+        }).finally(() => {
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Subscribe';
+        });
+      });
+    }
   </script>
 
   <section id="main-content" class="relative bg-background-dark text-white overflow-hidden min-h-screen flex items-center">
     <div class="absolute inset-0 bg-black/60 z-10"></div>
-    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg');" role="img" aria-label="Ormeau Table Tennis Club hero" fetchpriority="high"></div>
+    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/Par%20Gerell%20Ormeau%20.jpg');" role="img" aria-label="Ormeau Table Tennis Club hero"></div>
     <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-32 flex flex-col items-center text-center">
       <span class="inline-block py-2 px-4 sm:px-6 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-md text-xs sm:text-sm font-bold mb-6 sm:mb-10 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-primary">Table Tennis For Everyone</span>
       <h1 class="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-6 sm:mb-10 leading-[1.1] max-w-5xl"> ORMEAU <span class="text-primary">Table Tennis Club</span> <span class="block text-2xl sm:text-3xl md:text-5xl mt-2 sm:mt-4 font-light">Belfast</span> </h1>
