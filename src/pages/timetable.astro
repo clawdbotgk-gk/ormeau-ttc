@@ -21,31 +21,33 @@ import Footer from '../components/Footer.astro';
       height: 10px;
       min-width: 10px;
     }
-    .day-tabs {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 8px;
-      padding: 0 16px 16px;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-    }
-    .day-tabs::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 40px;
-      background: linear-gradient(to right, transparent, #1a1a1a 80%);
-      pointer-events: none;
-    }
-    .day-tab {
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      min-width: auto;
-      padding: 10px 20px;
-      font-size: 0.85rem;
+    @media (max-width: 768px) {
+      .day-tabs {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 8px;
+        padding: 16px 16px 16px;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+      .day-tabs::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background: linear-gradient(to right, transparent, #1a1a1a 80%);
+        pointer-events: none;
+      }
+      .day-tab {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        min-width: auto;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
     }
     .session-card {
       border-radius: 12px;
@@ -96,31 +98,8 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="Timetable - Ormeau Table Tennis Club" description="View Ormeau Table Tennis Club's weekly timetable.">
   <Header />
-<script is:inline>
-    (function() {
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const closeBtn = document.getElementById('mobile-menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      function toggleMenu() {
-        if (mobileMenu.classList.contains('translate-x-full')) {
-          mobileMenu.classList.remove('translate-x-full');
-        } else {
-          mobileMenu.classList.add('translate-x-full');
-        }
-      }
-      
-      if (menuBtn) {
-        menuBtn.addEventListener('click', toggleMenu);
-      }
-      
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-          mobileMenu.classList.add('translate-x-full');
-        });
-      }
-    })();
-  </script><!-- Hero Section -->
+
+<!-- Hero Section -->
   <section class="hero-section relative bg-background-dark text-white overflow-hidden">
     <div class="absolute inset-0 bg-black/70 z-10"></div>
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center z-0"></div>
@@ -147,7 +126,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <!-- Day Tabs -->
-      <div class="day-tabs flex md:flex-wrap md:justify-center gap-3 md:gap-4 mb-16 relative z-10">
+      <div class="day-tabs flex gap-3 md:gap-4 mb-16 relative z-10">
         <button class="day-tab px-6 md:px-8 py-3.5 rounded-full font-bold bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 shadow-md hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transform hover:-translate-y-0.5 transition-all duration-300 border border-gray-200 dark:border-gray-700" data-day="monday">Monday</button>
         <button class="day-tab px-6 md:px-8 py-3.5 rounded-full font-bold bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 shadow-md hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transform hover:-translate-y-0.5 transition-all duration-300 border border-gray-200 dark:border-gray-700" data-day="tuesday">Tuesday</button>
         <button class="day-tab px-6 md:px-8 py-3.5 rounded-full font-bold bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 shadow-md hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transform hover:-translate-y-0.5 transition-all duration-300 border border-gray-200 dark:border-gray-700" data-day="wednesday">Wednesday</button>

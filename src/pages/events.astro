@@ -9,41 +9,6 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
-<script is:inline>
-    (function() {
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const closeBtn = document.getElementById('mobile-menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      function toggleMenu() {
-        if (mobileMenu.classList.contains('translate-x-full')) {
-          mobileMenu.classList.remove('translate-x-full');
-        } else {
-          mobileMenu.classList.add('translate-x-full');
-        }
-      }
-      
-      if (menuBtn) {
-        menuBtn.addEventListener('click', toggleMenu);
-      }
-      
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-          mobileMenu.classList.add('translate-x-full');
-        });
-      }
-    })();
-  </script><script is:inline>
-    (function() {
-      const path = window.location.pathname;
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href');
-        if ((path === '/' && href === '/') || href === path || href === path + '/') {
-          link.classList.add('text-primary', 'dark:text-primary');
-        }
-      });
-    })();
-  </script>
 
   <!-- Hero Section -->
   <section class="relative bg-background-dark text-white overflow-hidden min-h-[60vh] flex items-center justify-center">
