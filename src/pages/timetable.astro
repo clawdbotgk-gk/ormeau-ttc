@@ -21,33 +21,23 @@ import Footer from '../components/Footer.astro';
       height: 10px;
       min-width: 10px;
     }
-    @media (max-width: 768px) {
-      .day-tabs {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 8px;
-        padding: 16px 16px 16px;
-        -webkit-overflow-scrolling: touch;
-        position: relative;
-      }
-      .day-tabs::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 40px;
-        background: linear-gradient(to right, transparent, #1a1a1a 80%);
-        pointer-events: none;
-      }
-      .day-tab {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        min-width: auto;
-        padding: 10px 20px;
-        font-size: 0.85rem;
-      }
+    .day-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+    }
+    .day-tab {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+    .timetable-section {
+      overflow-x: visible;
+      overflow-y: visible;
+    }
+    .timetable-section > div {
+      overflow-x: visible;
     }
     .session-card {
       border-radius: 12px;
@@ -112,7 +102,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Timetable Section -->
-  <section class="py-20 bg-[#1a1a1a]">
+  <section class="timetable-section py-20 bg-[#1a1a1a]">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       
       <!-- Legend -->
