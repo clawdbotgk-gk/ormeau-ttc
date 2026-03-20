@@ -4,15 +4,20 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  canonicalUrl?: string;
 }
 
 const { 
   title, 
-  description = "Ormeau Table Tennis Club - Belfast's premier table tennis club welcoming players of all ages and abilities. Professional coaching, state-of-the-art facilities, and a vibrant community."
+  description = "Ormeau Table Tennis Club - Belfast's premier table tennis club welcoming players of all ages and abilities. Professional coaching, state-of-the-art facilities, and a vibrant community.",
+  canonicalUrl
 } = Astro.props;
 
 const siteUrl = "https://ormeautabletennis.com";
 const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_1398187735646426_1941108834981037119_n.jpg";
+
+// Build the canonical URL - use prop if provided, otherwise construct from Astro.url
+const pageUrl = canonicalUrl ? canonicalUrl : `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -28,21 +33,26 @@ const ogImage = "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/560321000_13
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Ormeau Table Tennis Club" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:url" content={pageUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="630" />
     
     <!-- Structured Data - LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
