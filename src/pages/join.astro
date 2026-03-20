@@ -2,9 +2,56 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I join Ormeau Table Tennis Club?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We operate a 'Try-It' first approach. Book a trial session through our website before committing to membership. This lets you experience our coaching and facilities firsthand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What age groups do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We welcome players of all ages! From juniors (ages 6+) to adults and seniors. We have dedicated sessions for beginners, intermediate, and advanced players."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does membership cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Membership varies by category. Contact us for current pricing. We offer concessions for students and seniors, plus family discounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need my own equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No! We provide bats and balls for all sessions. We recommend eventually getting your own bat as you progress, but it's not required for beginners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I just play socially without coaching?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We have social play sessions where you can just turn up and play. Check our timetable for availability."
+      }
+    }
+  ]
+};
 ---
 
-<Layout title="Join Ormeau Table Tennis Club" description="Join Ormeau Table Tennis Club today. Membership options for juniors, adults, and social players. Start your table tennis journey in Belfast.">
+<Layout title="Join Ormeau Table Tennis Club" description="Join Ormeau Table Tennis Club today. Membership options for juniors, adults, and social players. Start your table tennis journey in Belfast." schema={faqSchema}>
   <Header />
 
 <!-- Hero Section -->
