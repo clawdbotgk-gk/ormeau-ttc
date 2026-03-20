@@ -7,7 +7,7 @@
           <img alt="Ormeau Logo" class="h-8 md:h-10 lg:h-14 w-auto" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/logoOrmeauInverse%402x.png" width="104" height="35" loading="eager"/>
         </a>
       </div>
-      <div class="hidden md:flex flex-1 justify-center space-x-12">
+      <div class="hidden md:flex flex-1 justify-center space-x-8">
         <a class="text-gray-300 hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/">Home</a>
         <a class="text-gray-300 hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/about">About</a>
         <div class="relative group">
@@ -17,7 +17,6 @@
           <div class="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
             <div class="bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
               <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/timetable">Timetable</a>
-              <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Events</a>
               <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/teams">Teams</a>
               <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/champions">Champions</a>
               <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/partners">Partners</a>
@@ -35,11 +34,22 @@
             </div>
           </div>
         </div>
+        <div class="relative group">
+          <button type="button" class="text-gray-300 hover:text-primary font-medium text-lg transition-all duration-200 cursor-pointer flex items-center gap-1" aria-expanded="false" aria-haspopup="true" aria-label="Compete menu">
+            Compete <span class="material-icons text-sm" aria-hidden="true">expand_more</span>
+          </button>
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
+            <div class="bg-gray-800 rounded-lg shadow-xl py-2 min-w-40">
+              <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/events">Calendar</a>
+              <a class="block px-4 py-2 text-gray-200 hover:bg-primary/10 hover:text-primary" href="/little-wing-junior-league">Little Wing Junior League</a>
+            </div>
+          </div>
+        </div>
         <a class="text-gray-300 hover:text-primary font-medium text-lg transition-all duration-200 nav-link" href="/contact">Contact</a>
       </div>
-      <div class="hidden md:flex items-center gap-4">
-        <a class="px-8 py-3.5 rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transform hover:-translate-y-0.5 active:translate-y-0" href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer">Club App</a>
-        <a class="px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0" href="/join">Join Now</a>
+      <div class="hidden md:flex items-center gap-3">
+        <a class="inline-flex items-center justify-center h-10 px-5 rounded-full bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap" href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer">Club App</a>
+        <a class="inline-flex items-center justify-center h-10 px-5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap" href="/join">Join Now</a>
       </div>
       <div class="md:hidden flex items-center">
         <button id="mobile-menu-btn" class="flex items-center justify-center text-gray-300 hover:text-primary focus:outline-none p-2 min-w-[44px] min-h-[44px]" aria-label="Toggle menu" aria-expanded="false">
@@ -128,6 +138,11 @@
         <a href="/eastercamps" class="mobile-nav-subitem nav-link px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">Easter Camp</a>
       </div>
 
+      <div class="text-[11px] font-bold uppercase tracking-widest text-gray-500 px-3 py-2 mt-4 mb-1">Compete</div>
+      <div class="flex flex-col bg-white/5 rounded-xl overflow-hidden shadow-inner mb-2">
+        <a href="/little-wing-junior-league" class="mobile-nav-subitem nav-link px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">Little Wing Junior League</a>
+      </div>
+
       <div class="text-[11px] font-bold uppercase tracking-widest text-gray-500 px-3 py-2 mt-4 mb-1">More</div>
       
       <a href="/about" class="mobile-nav-item menu-item nav-link flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">
@@ -147,14 +162,14 @@
     
     <!-- Action Buttons - fixed at bottom -->
     <div class="flex-shrink-0 p-4 bg-gradient-to-t from-[#171717] via-[#1a1a1a] to-transparent border-t border-white/5">
-      <div class="flex flex-col gap-2.5">
-        <a href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-[#2563eb]/10 hover:bg-[#2563eb]/20 text-blue-400 font-bold rounded-xl transition-all border border-[#2563eb]/20">
+      <div class="flex flex-col gap-2">
+        <a href="https://ormeautt.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-2.5 bg-[#2563eb]/10 hover:bg-[#2563eb]/20 text-blue-400 font-bold rounded-xl transition-all border border-[#2563eb]/20 text-sm">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
           </svg>
           Club App
         </a>
-        <a href="/join" class="flex items-center justify-center gap-2 w-full py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20">
+        <a href="/join" class="flex items-center justify-center gap-2 w-full py-2.5 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 text-sm">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
