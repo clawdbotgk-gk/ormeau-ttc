@@ -3,9 +3,30 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 // Cognito Forms embed
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Ormeau Table Tennis Club",
+  "description": "Get in touch with Ormeau Table Tennis Club for membership inquiries, coaching sessions, and general enquiries.",
+  "url": "https://ormeautabletennis.com/contact",
+  "mainEntity": {
+    "@type": "SportsClub",
+    "name": "Ormeau Table Tennis Club",
+    "telephone": "+442890409287",
+    "email": "ormeautt@live.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "113 The Mount",
+      "addressLocality": "Belfast",
+      "postalCode": "BT5 4ND",
+      "addressCountry": "GB"
+    }
+  }
+};
 ---
 
-<Layout title="Contact Us - Ormeau Table Tennis Club" description="Get in touch with Ormeau Table Tennis Club. Contact us for membership inquiries, coaching sessions, and general enquiries at 113 The Mount, Belfast.">
+<Layout title="Contact Us - Ormeau Table Tennis Club" description="Get in touch with Ormeau Table Tennis Club. Contact us for membership inquiries, coaching sessions, and general enquiries at 113 The Mount, Belfast." schema={contactSchema}>
   <Header />
 <script is:inline>
     (function() {
