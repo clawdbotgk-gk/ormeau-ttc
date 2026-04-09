@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Easter Camps 2026 — Ormeau Table Tennis Club";
-const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8–12), invite-only NextGen and Performance squads. Two weeks, 30 March – 10 April 2026 at Ormeau TTC.";
+const pageTitle = "Easter Camps — Ormeau Table Tennis Club";
+const pageDescription = "Easter table tennis camps at Ormeau TTC in Belfast. Our 2026 camps have now finished — dates for next year's camps will be announced here in future.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -19,10 +19,18 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "When will next year's Easter camp dates be announced?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Easter 2026 camps have now concluded. We will publish dates and booking information for future camps on this page when they are confirmed."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does my child need to be an Ormeau member to attend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The Beginner Camp is open to everyone aged 8–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
+            "text": "When beginner camp runs, it is open to everyone aged 8–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
           }
         },
         {
@@ -31,14 +39,6 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "These camps are reserved for players specifically selected by the Ormeau coaching team based on ability, commitment, and development potential."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can my child attend both weeks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Beginners can book Week 1, Week 2, or both (10% off the second week). NextGen players attend the week they are assigned to. Performance players can attend both weeks."
           }
         },
         {
@@ -72,17 +72,17 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/70"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center space-y-8">
-      <span class="inline-block px-5 py-2 rounded-full bg-primary/20 border border-primary/50 backdrop-blur text-xs md:text-sm font-bold uppercase tracking-[0.35em]">Easter Camps 2026</span>
+      <span class="inline-block px-5 py-2 rounded-full bg-primary/20 border border-primary/50 backdrop-blur text-xs md:text-sm font-bold uppercase tracking-[0.35em]">Easter Camps 2026 — concluded</span>
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
-        Two Weeks Of<br />
-        <span class="text-primary">Table Tennis.</span>
+        Thank You For<br />
+        <span class="text-primary">A Great Easter.</span>
       </h1>
       <p class="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light">
-        Three camps. Two weeks. One world-class facility. Whether your child is picking up a bat for the first time or training for the next level — there's a place for them this Easter at Ormeau.
+        Our Easter 2026 camps have now finished. We will publish dates and booking details for next year's camps on this page when they are confirmed.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#beginners" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">Book Beginner Camp</a>
-        <a href="#camps" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-semibold text-sm tracking-widest uppercase hover:bg-white/20 transition-all">View All Camps</a>
+        <a href="#beginners" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">Beginner Camp</a>
+        <a href="#camps" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-semibold text-sm tracking-widest uppercase hover:bg-white/20 transition-all">Camp overview</a>
       </div>
     </div>
   </section>
@@ -91,9 +91,9 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
   <section class="py-20 bg-surface-dark" id="camps">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 space-y-12">
       <div class="text-center max-w-3xl mx-auto space-y-4">
-        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">What's On</span>
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Easter 2026</span>
         <h2 class="text-3xl md:text-5xl font-bold text-white">Three Camps, Every Level.</h2>
-        <p class="text-gray-300 text-lg">This Easter we're running dedicated camps for beginners, high-potential juniors, and performance players — all under one roof at our permanent facility on The Mount. Every session is led by a qualified coach with sparring and multiball support.</p>
+        <p class="text-gray-300 text-lg">We ran dedicated camps for beginners, high-potential juniors, and performance players at our facility on The Mount — each session led by qualified coaches with sparring and multiball support. Dates for next year's camps will be announced here in future.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4 shadow-xl">
@@ -133,7 +133,11 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="order-2 lg:order-1 space-y-4">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Open To All</span>
         <h2 class="text-3xl md:text-4xl font-bold text-green-300">Beginner Camp</h2>
-        <p class="text-lg text-gray-200">The perfect introduction to table tennis for kids aged 8–12. No experience? No problem. Across five mornings they'll learn grip, stance, basic strokes, serving, and rallying in a supportive environment. All equipment provided — just bring sports clothing and indoor trainers.</p>
+        <div class="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-5 space-y-2">
+          <p class="text-emerald-200 font-semibold text-lg">Easter 2026 beginner camp has now finished.</p>
+          <p class="text-gray-300 text-sm">We will publish dates and booking for next year's beginner camp on this page when they are confirmed.</p>
+        </div>
+        <p class="text-lg text-gray-200">When it runs, beginner camp is the perfect introduction to table tennis for kids aged 8–12. No experience? No problem. Across five mornings they learn grip, stance, basic strokes, serving, and rallying in a supportive environment. All equipment is provided — players bring sports clothing and indoor trainers.</p>
         <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">groups</span>
@@ -141,19 +145,19 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">schedule</span>
-            <div class="text-sm">9:30am – 11:00am, Monday to Friday (90 minutes per day).</div>
+            <div class="text-sm">Typically 9:30am – 11:00am, Monday to Friday (90 minutes per day).</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">event</span>
-            <div class="text-sm">Week 1: 30 March – 3 April or Week 2: 6 – 10 April.</div>
+            <div class="text-sm">Easter 2026 ran across two weeks; future dates will be announced here.</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">confirmation_number</span>
-            <div class="text-sm">14 places available per week.</div>
+            <div class="text-sm">Up to 14 places per week when booking opens.</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">payments</span>
-            <div class="text-sm">£75 per week (£15 per day).</div>
+            <div class="text-sm">Easter 2026 was £75 per week (£15 per day); future pricing may vary.</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="text-primary text-lg" aria-hidden="true">🏓</span>
@@ -173,13 +177,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
           </ul>
         </div>
         <div class="pt-2">
-          <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="material-icons text-red-600">block</span>
-              <span class="font-bold text-red-600">Beginner Camp CANCELLED</span>
-            </div>
-          </div>
-          <a href="https://buy.stripe.com/fZubJ1fiIaGp0JZelAgfu35" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-400 text-white font-bold rounded-full cursor-not-allowed opacity-50 uppercase tracking-widest text-sm" target="_blank" rel="noopener noreferrer">Register For Beginner Camp <span class="material-icons text-base">arrow_forward</span></a>
+          <p class="text-gray-400 text-sm mb-4">Registration is closed while we prepare next year's camp. Check back here for updates or <a href="/contact" class="text-primary font-semibold hover:underline">contact us</a> with any questions.</p>
         </div>
       </div>
       <div class="order-1 lg:order-2 bg-[#161616] border border-gray-800 rounded-3xl shadow-2xl flex flex-col gap-4 justify-center p-4">
@@ -195,13 +193,11 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="order-2 lg:order-1 space-y-4">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Invite Only</span>
         <h2 class="text-3xl md:text-4xl font-bold text-sky-300">NextGen Camp</h2>
-        <p class="text-lg text-gray-200">Intensive development for our most promising young players. Three hours per day of structured coaching, multiball, sparring, and tactical work led by the Ormeau coaching team.</p>
-        <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 mb-4">
-          <div class="flex items-center gap-2">
-            <span class="material-icons text-red-600">error</span>
-            <span class="font-bold text-red-600">Week 1 (30 March - 3 April) is now FULL</span>
-          </div>
+        <div class="bg-sky-950/40 border border-sky-500/30 rounded-2xl p-5 space-y-2 mb-4">
+          <p class="text-sky-200 font-semibold">Easter 2026 NextGen camps have now finished.</p>
+          <p class="text-gray-300 text-sm">Future invite-only NextGen dates will be communicated to selected players and published here when confirmed.</p>
         </div>
+        <p class="text-lg text-gray-200">Intensive development for our most promising young players. Three hours per day of structured coaching, multiball, sparring, and tactical work led by the Ormeau coaching team.</p>
         <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lock</span><div class="text-sm">Invite only — selected by the coaching team.</div></div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">schedule</span><div class="text-sm">11:30am – 2:30pm, Monday to Friday (3 hours per day).</div></div>
@@ -219,13 +215,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
           </ul>
         </div>
         <div class="pt-2">
-          <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="material-icons text-red-600">block</span>
-              <span class="font-bold text-red-600">Week 1 Registration CLOSED - Full</span>
-            </div>
-          </div>
-          <a href="https://buy.stripe.com/28E5kD5I8g0JfETa5kgfu36" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-sky-300 text-gray-900 font-bold text-sm tracking-widest uppercase hover:bg-sky-200 transition-all shadow-lg shadow-sky-300/40" target="_blank" rel="noopener noreferrer">Register for NextGen Week 2 <span class="material-icons text-base">arrow_forward</span></a>
+          <p class="text-gray-400 text-sm">Registration for Easter 2026 has closed. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> if you have questions about future camps.</p>
         </div>
       </div>
       <div class="order-1 lg:order-2 bg-[#161616] border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
@@ -244,6 +234,10 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="order-1 lg:order-2 space-y-4">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Invite Only</span>
         <h2 class="text-3xl md:text-4xl font-bold text-amber-300">Performance Camp</h2>
+        <div class="bg-amber-950/40 border border-amber-500/30 rounded-2xl p-5 space-y-2 mb-4">
+          <p class="text-amber-200 font-semibold">Easter 2026 Performance camps have now finished.</p>
+          <p class="text-gray-300 text-sm">Invited players will hear about future performance camps through the coaching team; public dates will appear here when confirmed.</p>
+        </div>
         <p class="text-lg text-gray-200">Elite training for performance squad players. Three hours of intensive daily training with lead coaches and dedicated sparring partners — designed to sharpen technique, build match fitness, and prepare for competitions.</p>
         <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lock</span><div class="text-sm">Invite only — for current performance squad players.</div></div>
@@ -261,7 +255,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
           </ul>
         </div>
         <div class="pt-2">
-          <a href="https://buy.stripe.com/8x200j9Yo8yhboD4L0gfu37" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-300 text-gray-900 font-bold text-sm tracking-widest uppercase hover:bg-amber-200 transition-all shadow-lg shadow-amber-300/40" target="_blank" rel="noopener noreferrer">Register for Performance <span class="material-icons text-base">arrow_forward</span></a>
+          <p class="text-gray-400 text-sm">Registration for Easter 2026 has closed. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> for queries about future performance camps.</p>
         </div>
       </div>
     </div>
@@ -273,19 +267,19 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="text-center space-y-3">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Daily Schedule</span>
         <h2 class="text-3xl md:text-4xl font-bold text-white">Camp Timetable</h2>
-        <p class="text-gray-300 max-w-3xl mx-auto">All three camps run simultaneously each day. Drop-off and pick-up times are below.</p>
+        <p class="text-gray-300 max-w-3xl mx-auto">Schedule below reflects Easter 2026 (for reference). Future timetables will be published when next year's dates are announced.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4">
-          <h3 class="text-xl font-semibold text-white">Week 1 — Mon 30 March to Fri 3 April</h3>
+          <h3 class="text-xl font-semibold text-white">Week 1 (2026) — Mon 30 March to Fri 3 April</h3>
           <div class="space-y-3">
             <div class="flex items-center justify-between text-gray-200"><span>9:30am – 11:00am</span><span class="font-semibold text-green-300">Beginner Camp</span></div>
-            <div class="flex items-center justify-between text-gray-200"><span>11:30am – 2:30pm</span><span class="font-semibold text-red-400 line-through">NextGen 1 - FULL</span></div>
+            <div class="flex items-center justify-between text-gray-200"><span>11:30am – 2:30pm</span><span class="font-semibold text-sky-300">NextGen 1 - FULL</span></div>
             <div class="flex items-center justify-between text-gray-200"><span>3:00pm – 6:00pm</span><span class="font-semibold text-amber-300">Performance Camp</span></div>
           </div>
         </div>
         <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4">
-          <h3 class="text-xl font-semibold text-white">Week 2 — Mon 6 April to Fri 10 April</h3>
+          <h3 class="text-xl font-semibold text-white">Week 2 (2026) — Mon 6 April to Fri 10 April</h3>
           <div class="space-y-3">
             <div class="flex items-center justify-between text-gray-200"><span>9:30am – 11:00am</span><span class="font-semibold text-green-300">Beginner Camp</span></div>
             <div class="flex items-center justify-between text-gray-200"><span>11:30am – 2:30pm</span><span class="font-semibold text-sky-300">NextGen 2</span></div>
@@ -302,6 +296,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="text-center space-y-3">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Pricing</span>
         <h2 class="text-3xl md:text-4xl font-bold text-white">Camp Pricing</h2>
+        <p class="text-gray-400 text-sm max-w-2xl mx-auto">Figures below were for Easter 2026. Pricing for future camps will be confirmed when bookings open.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-8 flex flex-col gap-4 shadow-xl">
@@ -321,13 +316,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
             <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Fun end-of-week competition</li>
           </ul>
           <div class="pt-2">
-            <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3 mb-4">
-              <div class="flex items-center gap-2">
-                <span class="material-icons text-red-600">block</span>
-                <span class="font-bold text-red-600 text-sm">Beginner Camp CANCELLED</span>
-              </div>
-            </div>
-            <a href="https://buy.stripe.com/fZubJ1fiIaGp0JZelAgfu35" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gray-400 text-white font-bold uppercase tracking-[0.2em] cursor-not-allowed opacity-50" target="_blank" rel="noopener noreferrer">Register Beginner</a>
+            <p class="text-gray-400 text-xs mb-3">Easter 2026 concluded — registration closed. Next year's dates will be announced here.</p>
           </div>
         </div>
 
@@ -337,12 +326,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
             <h3 class="text-2xl font-bold text-sky-300">NextGen Camp</h3>
             <p class="text-gray-400 text-sm">High-potential juniors</p>
           </div>
-          <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3">
-            <div class="flex items-center gap-2">
-              <span class="material-icons text-red-600">error</span>
-              <span class="font-bold text-red-600 text-sm">Week 1 is FULL - Only Week 2 Available</span>
-            </div>
-          </div>
+          <p class="text-gray-400 text-xs">Easter 2026 concluded — registration closed.</p>
           <div class="flex items-baseline gap-2">
             <span class="text-4xl font-black text-sky-300">£100</span>
             <span class="text-gray-400">/week</span>
@@ -355,7 +339,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
             <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Multiball and tactical work</li>
           </ul>
           <div class="pt-2">
-            <a href="https://buy.stripe.com/28E5kD5I8g0JfETa5kgfu36" class="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-full bg-sky-300 text-gray-900 font-bold text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-sky-200 transition shadow-lg shadow-sky-300/40 whitespace-nowrap" target="_blank" rel="noopener noreferrer">Register NextGen Week 2</a>
+            <span class="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-full bg-white/10 border border-white/20 text-gray-400 font-bold text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] cursor-default whitespace-nowrap">Registration closed</span>
           </div>
         </div>
 
@@ -377,7 +361,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
             <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Competition preparation focus</li>
           </ul>
           <div class="pt-2">
-            <a href="https://buy.stripe.com/8x200j9Yo8yhboD4L0gfu37" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-amber-300 text-gray-900 font-bold uppercase tracking-[0.2em] hover:bg-amber-200 transition shadow-lg shadow-amber-300/40" target="_blank" rel="noopener noreferrer">Register Performance</a>
+            <span class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-gray-400 font-bold uppercase tracking-[0.2em] cursor-default">Registration closed</span>
           </div>
         </div>
       </div>
@@ -411,10 +395,17 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <div class="space-y-3">
         <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden" open>
           <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">When will next year's Easter camp dates be announced?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Our Easter 2026 camps have now finished. We will publish dates and booking information for future camps on this page when they are confirmed.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
             <span class="font-semibold text-white pr-4">Does my child need to be an Ormeau member to attend?</span>
             <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
           </summary>
-          <div class="px-5 pb-5 text-gray-300 text-sm">No. The Beginner Camp is open to everyone aged 8–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team.</div>
+          <div class="px-5 pb-5 text-gray-300 text-sm">When beginner camp runs, it is open to everyone aged 8–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team.</div>
         </details>
         <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
@@ -428,7 +419,7 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
             <span class="font-semibold text-white pr-4">Can my child attend both weeks?</span>
             <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
           </summary>
-          <div class="px-5 pb-5 text-gray-300 text-sm">Yes. Beginners can book Week 1, Week 2, or both (10% off the second week). NextGen players attend the week they are assigned to. Performance players can attend both weeks.</div>
+          <div class="px-5 pb-5 text-gray-300 text-sm">When bookings open for future camps, beginners are usually able to book Week 1, Week 2, or both — we will confirm options and any multi-week offer when dates are published. NextGen players are assigned to a week; performance players may be able to attend both weeks where offered.</div>
         </details>
         <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
@@ -468,11 +459,11 @@ const pageDescription = "Easter table tennis camps in Belfast: Beginner (ages 8�
       <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr5ZYUqSr67umNFQBjUXdmYvuyqDAzBbNKd4Kq1wktWGLcYn5ogtLA7y7YVdR4d7tLOaq3b9DIwTKuiuvoavDonQeZoVEG-eZyLb52qd2OZZfzsJ7TlRmBiF5aJ9omD6fYoAD3MfFJnZRO-U4F9_rAvj6eZjzAFLJwjGCgTnYW1J8aEWajqLHG6L4_nDwTnllpT7T0kBXD90R4J3vMoYWHfim4zkO_OGLzzGPmNvdr_7RasQ7z1jAaCOudsHoYD1A1KFSW4roR7Sc" alt="Background" loading="lazy" />
     </div>
     <div class="relative max-w-5xl mx-auto px-6 text-center text-white space-y-6">
-      <h2 class="text-4xl md:text-5xl font-bold">Secure Your Place.</h2>
-      <p class="text-lg md:text-xl max-w-3xl mx-auto font-light">Beginner Camp places are limited to 14 per week and will fill quickly. NextGen and Performance players — check your invitation and confirm your spot as soon as possible.</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Thank You — See You Next Time.</h2>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto font-light">Easter 2026 camps have now concluded. We will share dates for next year's camps on this page in future. In the meantime, get in touch if you have questions about coaching or membership.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-        <a href="#beginners" class="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg uppercase tracking-widest text-sm">Register For Beginner Camp</a>
-        <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-primary/20 border border-white/30 text-white font-bold rounded-full hover:bg-primary/30 transition-all uppercase tracking-widest text-sm">Contact Us With Questions</a>
+        <a href="#beginners" class="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg uppercase tracking-widest text-sm">Beginner Camp info</a>
+        <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-primary/20 border border-white/30 text-white font-bold rounded-full hover:bg-primary/30 transition-all uppercase tracking-widest text-sm">Contact us</a>
       </div>
     </div>
   </section>
