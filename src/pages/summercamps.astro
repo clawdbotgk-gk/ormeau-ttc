@@ -4,16 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Summer Camps 2026 — Ormeau Table Tennis Club";
-const pageDescription = "Beginner to Improver summer table tennis camp in Belfast, July & August 2026. From £75 per child per week; multi-camp bundles available. Ages 9–12.";
+const pageDescription = "Summer table tennis camps at Ormeau TTC, Belfast — July & August 2026. Booking open now; register via the form on this page. From £75 per child per week. Ages 9–12.";
 
-/** Summer camp weeks (2026) — Beginner to Improver & NextGen. */
+/** Summer camp weeks (2026) — Beginner to Improver. */
 const biWeek1 = "Monday 20 – Friday 24 July 2026";
 const biWeek2 = "Monday 10 – Friday 14 August 2026";
 const biWeekOptional = "Monday 17 – Friday 21 August 2026";
 /** Beginner to Improver — daily session time */
 const beginnerCampTime = "10:00–12:00";
-/** NextGen — daily session time */
-const nextGenCampTime = "1:00pm–4:00pm";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -31,7 +29,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
           "name": "When do summer camps run?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Beginner to Improver and NextGen follow the same summer weeks: 20–24 July 2026, 10–14 August 2026, and an optional third week 17–21 August (TBC). Beginner to Improver sessions run 10:00–12:00 Monday to Friday. NextGen sessions run 1:00pm–4:00pm Monday to Friday. NextGen places are invite-only — players are assigned to a week by the coaching team. Performance camp dates are communicated by invitation. Booking for Beginner to Improver will be published on this page when open."
+            "text": "Beginner to Improver runs in summer 2026 on: 20–24 July, 10–14 August, and an optional third week 17–21 August (TBC). Sessions are 10:00–12:00 Monday to Friday. Booking is open on the Ormeau website — use the registration form on the summer camps page."
           }
         },
         {
@@ -39,15 +37,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
           "name": "Does my child need to be an Ormeau member to attend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Beginner to Improver camp is open to everyone aged 9–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does invite only mean for NextGen and Performance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "These camps are reserved for players specifically selected by the Ormeau coaching team based on ability, commitment, and development potential."
+            "text": "The Beginner to Improver camp is open to everyone aged 9–12, regardless of club membership."
           }
         },
         {
@@ -55,7 +45,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
           "name": "Does my child need their own equipment?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not for the Beginner to Improver camp — we provide bats and balls. For NextGen and Performance camps, players should bring their own bat."
+            "text": "No — we provide bats and balls for the Beginner to Improver camp."
           }
         },
         {
@@ -89,11 +79,11 @@ const nextGenCampTime = "1:00pm–4:00pm";
         Five mornings of coaching, fun, and new skills — ages 9–12, no experience needed. Belfast, July &amp; August 2026.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap pt-2">
-        <a href="#register-interest" class="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-white font-bold text-sm md:text-base tracking-widest uppercase hover:bg-primary-hover transition-all shadow-xl shadow-primary/30">Register interest</a>
+        <a href="#register-interest" class="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-white font-bold text-sm md:text-base tracking-widest uppercase hover:bg-primary-hover transition-all shadow-xl shadow-primary/30">Book now</a>
         <a href="#whats-included" class="w-full sm:w-auto px-8 py-4 rounded-full border-2 border-white/40 text-white font-semibold text-sm tracking-wide hover:bg-white/10 transition-all">See what's included</a>
       </div>
-      <p class="text-sm text-gray-400 max-w-lg mx-auto">
-        Booking will open on this page when ready. Coaching pathways for invited players: <a href="#invite-only-programmes" class="text-gray-300 underline decoration-white/25 hover:text-white">NextGen &amp; Performance</a>
+      <p class="text-sm text-green-400 max-w-lg mx-auto">
+        <strong class="text-green-300 font-semibold">Booking open now</strong> — register using the form below.
       </p>
     </div>
   </section>
@@ -120,7 +110,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
             <dd class="text-gray-100">{biWeek2}</dd>
           </div>
           <div class="space-y-1 sm:col-span-2">
-            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Camp 3 · Optional week (TBC)</dt>
+            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Camp 3 · Week 3</dt>
             <dd class="text-gray-100">{biWeekOptional}</dd>
           </div>
           <div class="space-y-1 sm:col-span-2">
@@ -130,8 +120,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
         </dl>
 
         <div class="mt-6 pt-6 border-t border-white/10">
-          <h3 class="text-lg font-semibold text-green-300 mb-1">Weekly camp pricing</h3>
-          <p class="text-gray-500 text-xs mb-4">All prices in GBP. Final selection and payment are completed in the registration form below.</p>
+          <h3 class="text-lg font-semibold text-green-300 mb-4">Weekly camp pricing</h3>
           <div class="overflow-x-auto rounded-xl border border-white/10">
             <table class="w-full text-sm text-left text-gray-300 min-w-[320px]">
               <caption class="sr-only">Summer camp prices by option</caption>
@@ -155,10 +144,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
               </tbody>
             </table>
           </div>
-          <p class="text-gray-500 text-xs mt-3">Camp 1, 2 and 3 match the three week blocks above (including optional Camp 3 when it runs).</p>
         </div>
-
-        <p class="text-gray-500 text-xs mt-4 pt-4 border-t border-white/10">Register below to choose your option. Optional week subject to demand — we will confirm on this page.</p>
       </div>
 
       <p class="text-lg text-gray-200 text-center max-w-3xl mx-auto leading-relaxed">
@@ -178,18 +164,19 @@ const nextGenCampTime = "1:00pm–4:00pm";
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-white text-center mb-4">Last summer at camp</h3>
+        <h3 class="text-lg font-semibold text-white text-center mb-4">Previous Summer Camps</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl overflow-hidden">
           <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%201.jpg" alt="Junior players at Ormeau summer camp" class="w-full aspect-square object-cover" loading="lazy" />
           <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%202.jpg" alt="Coaching on the hall floor" class="w-full aspect-square object-cover" loading="lazy" />
-          <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/nextgen.jpg" alt="Young players training" class="w-full aspect-square object-cover" loading="lazy" />
-          <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp%202.jpg" alt="Match-style practice" class="w-full aspect-square object-cover" loading="lazy" />
+          <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/hall.jpg" alt="Ormeau TTC hall" class="w-full aspect-square object-cover" loading="lazy" />
+          <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%201.jpg" alt="Summer camp at Ormeau" class="w-full aspect-square object-cover" loading="lazy" />
         </div>
       </div>
 
       <div id="register-interest" class="rounded-3xl border border-gray-800 bg-[#1a1a1a] p-6 md:p-10 scroll-mt-24">
-        <h3 class="text-xl md:text-2xl font-bold text-white text-center mb-2">Register your interest</h3>
-        <p class="text-gray-400 text-sm text-center mb-8 max-w-md mx-auto">Complete the form below — we will be in touch about summer camp places.</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white text-center mb-2">Booking open now</h3>
+        <p class="text-gray-400 text-sm text-center mb-3 max-w-md mx-auto">Complete the registration form below to book your child's place.</p>
+        <p class="text-gray-400 text-sm text-center mb-8 max-w-lg mx-auto font-normal">Spaces are limited — once a week is full, it's closed.</p>
         <div class="w-full max-w-2xl mx-auto overflow-hidden rounded-xl bg-white">
           <iframe
             title="Summer camp registration — Cognito Form"
@@ -200,11 +187,10 @@ const nextGenCampTime = "1:00pm–4:00pm";
           ></iframe>
         </div>
         <script is:inline src="https://www.cognitoforms.com/f/iframe.js"></script>
-        <p class="text-center text-gray-500 text-xs mt-6">Prefer email? <a href="mailto:ormeautt@live.co.uk?subject=Summer%20camp%20interest" class="text-primary hover:underline">ormeautt@live.co.uk</a></p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#register-interest" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-colors shadow-lg">Register interest</a>
+        <a href="#register-interest" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-colors shadow-lg">Book now</a>
         <a href="/contact" class="text-gray-400 text-sm hover:text-white transition-colors">Questions? Contact us</a>
       </div>
     </div>
@@ -215,7 +201,7 @@ const nextGenCampTime = "1:00pm–4:00pm";
     <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 space-y-12">
       <div class="text-center space-y-3">
         <h2 id="social-heading" class="text-2xl md:text-3xl font-bold text-white">Trusted by local families</h2>
-        <p class="text-primary font-semibold text-lg md:text-xl">Dozens of juniors train with us at holiday camps each summer.</p>
+        <p class="text-primary text-lg md:text-xl font-normal">Over 80 juniors joined our camps last summer.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <blockquote class="bg-[#1a1a1a] border border-gray-800 rounded-2xl p-6 text-gray-300 text-sm leading-relaxed">
@@ -231,7 +217,6 @@ const nextGenCampTime = "1:00pm–4:00pm";
           <footer class="text-gray-500 text-xs">— Parent, South Belfast</footer>
         </blockquote>
       </div>
-      <p class="text-center text-gray-600 text-xs max-w-lg mx-auto">Illustrative examples — swap in real quotes from parents when you have permission.</p>
     </div>
   </section>
 
@@ -253,7 +238,6 @@ const nextGenCampTime = "1:00pm–4:00pm";
             <li>Indoor trainers (non-marking soles) and comfortable sports clothes</li>
             <li>Water bottle</li>
           </ul>
-          <p class="text-gray-500 text-xs">Invite-only afternoon programmes: bring a packed lunch if needed and your own bat — your coach will confirm.</p>
         </div>
       </details>
       <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
@@ -274,22 +258,9 @@ const nextGenCampTime = "1:00pm–4:00pm";
         <div class="px-5 pb-5 text-gray-300 text-sm space-y-4 border-t border-gray-800 pt-4">
           <p><strong class="text-white">Membership?</strong> Beginner camp is open to all aged 9–12 — not limited to club members.</p>
           <p><strong class="text-white">Cancellations or injury?</strong> Contact us as soon as you can. Refunds or credits are considered case by case; we cannot guarantee refunds for non-attendance.</p>
-          <p><strong class="text-white">Invite-only programmes?</strong> See <a href="#invite-only-programmes" class="text-primary font-medium hover:underline">NextGen &amp; Performance</a> below. Dates for the open camp are in <a href="#schedule" class="text-primary font-medium hover:underline">the box above</a>.</p>
+          <p><strong class="text-white">Dates and pricing?</strong> See <a href="#schedule" class="text-primary font-medium hover:underline">the schedule box above</a>. For anything else, <a href="/contact" class="text-primary font-medium hover:underline">contact us</a>.</p>
         </div>
       </details>
-    </div>
-  </section>
-
-  <!-- Section 4: NextGen & Performance — brief -->
-  <section class="py-12 md:py-14 bg-surface-dark border-t border-gray-800/80" id="invite-only-programmes">
-    <div class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 space-y-6 text-center">
-      <span class="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-500">Not bookable on this page</span>
-      <h2 class="text-xl font-bold text-gray-300">NextGen &amp; Performance <span class="text-gray-500 font-normal">(invite only)</span></h2>
-      <div class="text-left space-y-4 text-gray-400 text-sm leading-relaxed">
-        <p id="nextgen"><strong class="text-sky-400">NextGen.</strong> Afternoon sessions ({nextGenCampTime}, Mon–Fri) for invited juniors — same July/August weeks as the open camp; your week is assigned by the coaching team. Not for general booking.</p>
-        <p id="performance"><strong class="text-amber-400">Performance.</strong> For current performance squad players only. Dates and structure are shared by invitation. If your child trains with us at that level, your coach will advise.</p>
-        <p class="text-center text-xs text-gray-600"><a href="/contact" class="text-gray-400 hover:text-white underline">Contact the club</a> if you are unsure which programme applies.</p>
-      </div>
     </div>
   </section>
 
@@ -299,9 +270,9 @@ const nextGenCampTime = "1:00pm–4:00pm";
       <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr5ZYUqSr67umNFQBjUXdmYvuyqDAzBbNKd4Kq1wktWGLcYn5ogtLA7y7YVdR4d7tLOaq3b9DIwTKuiuvoavDonQeZoVEG-eZyLb52qd2OZZfzsJ7TlRmBiF5aJ9omD6fYoAD3MfFJnZRO-U4F9_rAvj6eZjzAFLJwjGCgTnYW1J8aEWajqLHG6L4_nDwTnllpT7T0kBXD90R4J3vMoYWHfim4zkO_OGLzzGPmNvdr_7RasQ7z1jAaCOudsHoYD1A1KFSW4roR7Sc" alt="" loading="lazy" />
     </div>
     <div class="relative max-w-3xl mx-auto px-6 text-center text-white space-y-6">
-      <h2 class="text-3xl md:text-4xl font-bold">Save a place for summer</h2>
-      <p class="text-lg md:text-xl font-light opacity-95">Register interest for <strong class="font-semibold">Beginner to Improver</strong> — we will email you when booking opens. Places per week are limited.</p>
-      <a href="#register-interest" class="inline-flex items-center justify-center w-full sm:w-auto min-w-[240px] px-10 py-5 rounded-full bg-white text-primary font-bold text-sm md:text-base tracking-widest uppercase hover:bg-gray-100 transition-all shadow-xl">Register interest</a>
+      <h2 class="text-3xl md:text-4xl font-bold">Booking open now</h2>
+      <p class="text-lg md:text-xl font-light opacity-95"><strong class="font-semibold">Beginner to Improver</strong> — use the registration form below. We'll confirm your booking by email. Spaces are limited — once a week is full, it's closed.</p>
+      <a href="#register-interest" class="inline-flex items-center justify-center w-full sm:w-auto min-w-[240px] px-10 py-5 rounded-full bg-white text-primary font-bold text-sm md:text-base tracking-widest uppercase hover:bg-gray-100 transition-all shadow-xl">Book now</a>
       <p class="text-sm opacity-80"><a href="#schedule" class="underline decoration-white/40 hover:decoration-white">Dates &amp; times</a> · <a href="/contact" class="underline decoration-white/40 hover:decoration-white">Contact</a></p>
     </div>
   </section>
