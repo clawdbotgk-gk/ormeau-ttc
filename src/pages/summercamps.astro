@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Summer Camps 2026 — Ormeau Table Tennis Club";
-const pageDescription = "Beginner to Improver summer table tennis camp in Belfast, July & August 2026. Ages 9–12, no experience needed. Register interest for Ormeau TTC holiday camps.";
+const pageDescription = "Beginner to Improver summer table tennis camp in Belfast, July & August 2026. From £75 per child per week; multi-camp bundles available. Ages 9–12.";
 
 /** Summer camp weeks (2026) — Beginner to Improver & NextGen. */
 const biWeek1 = "Monday 20 – Friday 24 July 2026";
@@ -14,8 +14,6 @@ const biWeekOptional = "Monday 17 – Friday 21 August 2026";
 const beginnerCampTime = "10:00–12:00";
 /** NextGen — daily session time */
 const nextGenCampTime = "1:00pm–4:00pm";
-/** Pricing — update when confirmed */
-const beginnerCampPrice = "To be confirmed";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -111,30 +109,56 @@ const beginnerCampPrice = "To be confirmed";
 
       <!-- Dates, times, price — single detailed block (only place full specifics appear besides hero tagline) -->
       <div id="schedule" class="rounded-3xl border-2 border-primary/40 bg-gradient-to-br from-emerald-950/40 to-[#121212] p-6 md:p-8 shadow-xl scroll-mt-24">
-        <h3 class="text-lg font-semibold text-green-300 mb-4">Dates, times &amp; price</h3>
+        <h3 class="text-lg font-semibold text-green-300 mb-4">Dates &amp; times</h3>
         <dl class="grid sm:grid-cols-2 gap-4 text-sm text-gray-300">
           <div class="space-y-1">
-            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Week 1</dt>
+            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Camp 1 · Week 1</dt>
             <dd class="text-gray-100">{biWeek1}</dd>
           </div>
           <div class="space-y-1">
-            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Week 2</dt>
+            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Camp 2 · Week 2</dt>
             <dd class="text-gray-100">{biWeek2}</dd>
           </div>
           <div class="space-y-1 sm:col-span-2">
-            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Optional third week (TBC)</dt>
+            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Camp 3 · Optional week (TBC)</dt>
             <dd class="text-gray-100">{biWeekOptional}</dd>
           </div>
-          <div class="space-y-1">
+          <div class="space-y-1 sm:col-span-2">
             <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Daily time</dt>
             <dd class="text-gray-100">{beginnerCampTime} · Monday to Friday · five mornings per week</dd>
           </div>
-          <div class="space-y-1">
-            <dt class="text-gray-500 uppercase text-[10px] tracking-wider">Price</dt>
-            <dd class="text-gray-100 font-semibold text-primary">{beginnerCampPrice}</dd>
-          </div>
         </dl>
-        <p class="text-gray-500 text-xs mt-4 pt-4 border-t border-white/10">Online booking will appear on this page when it opens. Optional week subject to demand — we will confirm here.</p>
+
+        <div class="mt-6 pt-6 border-t border-white/10">
+          <h3 class="text-lg font-semibold text-green-300 mb-1">Weekly camp pricing</h3>
+          <p class="text-gray-500 text-xs mb-4">All prices in GBP. Final selection and payment are completed in the registration form below.</p>
+          <div class="overflow-x-auto rounded-xl border border-white/10">
+            <table class="w-full text-sm text-left text-gray-300 min-w-[320px]">
+              <caption class="sr-only">Summer camp prices by option</caption>
+              <thead>
+                <tr class="border-b border-gray-700 bg-black/20">
+                  <th scope="col" class="px-4 py-3 font-semibold text-gray-200">Option</th>
+                  <th scope="col" class="px-4 py-3 font-semibold text-gray-200 text-right whitespace-nowrap">Price</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-800">
+                <tr><td class="px-4 py-2.5">Camp 1 (1 child)</td><td class="px-4 py-2.5 text-right font-medium text-white">£75</td></tr>
+                <tr><td class="px-4 py-2.5">Camp 2 (1 child)</td><td class="px-4 py-2.5 text-right font-medium text-white">£75</td></tr>
+                <tr><td class="px-4 py-2.5">Camp 3 (1 child)</td><td class="px-4 py-2.5 text-right font-medium text-white">£75</td></tr>
+                <tr><td class="px-4 py-2.5">Camp 1 (2 children)</td><td class="px-4 py-2.5 text-right font-medium text-white">£140</td></tr>
+                <tr><td class="px-4 py-2.5">Camp 2 (2 children)</td><td class="px-4 py-2.5 text-right font-medium text-white">£140</td></tr>
+                <tr><td class="px-4 py-2.5">Camp 3 (2 children)</td><td class="px-4 py-2.5 text-right font-medium text-white">£140</td></tr>
+                <tr class="bg-primary/5"><td class="px-4 py-2.5">Two camps (1 child)</td><td class="px-4 py-2.5 text-right font-medium text-primary">£140</td></tr>
+                <tr class="bg-primary/5"><td class="px-4 py-2.5">Three camps (1 child)</td><td class="px-4 py-2.5 text-right font-medium text-primary">£200</td></tr>
+                <tr class="bg-primary/5"><td class="px-4 py-2.5">Two camps (2 children)</td><td class="px-4 py-2.5 text-right font-medium text-primary">£260</td></tr>
+                <tr class="bg-primary/5"><td class="px-4 py-2.5">Three camps (2 children)</td><td class="px-4 py-2.5 text-right font-medium text-primary">£350</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-500 text-xs mt-3">Camp 1, 2 and 3 match the three week blocks above (including optional Camp 3 when it runs).</p>
+        </div>
+
+        <p class="text-gray-500 text-xs mt-4 pt-4 border-t border-white/10">Register below to choose your option. Optional week subject to demand — we will confirm on this page.</p>
       </div>
 
       <p class="text-lg text-gray-200 text-center max-w-3xl mx-auto leading-relaxed">
