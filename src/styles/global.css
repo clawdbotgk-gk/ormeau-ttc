@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use .dark on <html> (see Layout.astro) — default v4 dark: follows OS only, which breaks mobile light mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #e91e5a;
   --color-primary-hover: #c7174b;
