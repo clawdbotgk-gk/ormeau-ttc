@@ -4,7 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Summer Camps 2026 — Ormeau Table Tennis Club";
-const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beginner to Improver (open to all, ages 8–14), invite-only NextGen and Performance squads. Dates and booking coming soon.";
+const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beginner to Improver 10:00–12:00 daily; NextGen 1:00pm–4:00pm daily. Same weeks: 20–24 July and 10–14 August 2026 (17–21 August TBC). Invite-only NextGen and Performance. Booking details coming soon.";
+
+/** Summer camp weeks (2026) — Beginner to Improver & NextGen. */
+const biWeek1 = "Monday 20 – Friday 24 July 2026";
+const biWeek2 = "Monday 10 – Friday 14 August 2026";
+const biWeekOptional = "Monday 17 – Friday 21 August 2026";
+/** Beginner to Improver — daily session time */
+const beginnerCampTime = "10:00–12:00";
+/** NextGen — daily session time */
+const nextGenCampTime = "1:00pm–4:00pm";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -22,7 +31,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
           "name": "When do summer camps run?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Summer camps take place during the school holiday period (July–August). Exact dates and booking details will be published on this page when confirmed."
+            "text": "Beginner to Improver and NextGen follow the same summer weeks: 20–24 July 2026, 10–14 August 2026, and an optional third week 17–21 August (TBC). Beginner to Improver sessions run 10:00–12:00 Monday to Friday. NextGen sessions run 1:00pm–4:00pm Monday to Friday. NextGen places are invite-only — players are assigned to a week by the coaching team. Performance camp dates are communicated by invitation. Booking for Beginner to Improver will be published on this page when open."
           }
         },
         {
@@ -30,7 +39,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
           "name": "Does my child need to be an Ormeau member to attend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Beginner to Improver camp is open to everyone aged 8–14, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
+            "text": "The Beginner to Improver camp is open to everyone aged 9–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
           }
         },
         {
@@ -86,7 +95,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
         <span class="text-primary">Table Tennis.</span>
       </h1>
       <p class="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light">
-        Camps for every level — whether your child is picking up a bat for the first time or pushing toward competitive play. Dates and booking coming soon.
+        Camps for every level — whether your child is picking up a bat for the first time or pushing toward competitive play. Beginner to Improver weeks are set for July and August; booking opens here soon.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="#beginner-improver" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">Beginner to Improver</a>
@@ -109,10 +118,11 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
         <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4 shadow-xl">
           <span class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-300 text-[10px] font-bold uppercase tracking-[0.3em]">Open To All</span>
           <h3 class="text-2xl font-bold text-green-300">Beginner to Improver</h3>
-          <p class="text-gray-300">A structured, fun camp for children aged 8–14 who are new to table tennis or want to consolidate early skills. No experience needed — we provide all the equipment and coaching.</p>
+          <p class="text-gray-300">A structured, fun camp for children aged 9–12 who are new to table tennis or want to consolidate early skills. No experience needed — we provide all the equipment and coaching.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Main weeks: <span class="text-gray-200">{biWeek1}</span> and <span class="text-gray-200">{biWeek2}</span>. Optional third week: <span class="text-gray-200">{biWeekOptional}</span> (TBC). Daily <span class="text-gray-200">{beginnerCampTime}</span>.</p>
           <div class="flex flex-wrap gap-2 text-xs text-gray-200">
-            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Ages 8–14</span>
-            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">90 mins/day</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Ages 9–12</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">{beginnerCampTime} daily</span>
             <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Limited places</span>
           </div>
           <a href="#beginner-improver" class="inline-flex items-center gap-2 text-green-300 font-semibold text-sm hover:text-green-200 transition-colors">Find out more <span class="material-icons text-base">arrow_forward</span></a>
@@ -121,9 +131,10 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
           <span class="inline-block px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-[10px] font-bold uppercase tracking-[0.3em]">Invite Only</span>
           <h3 class="text-2xl font-bold text-sky-300">NextGen Camp</h3>
           <p class="text-gray-300">Intensive development camp for our highest-potential young players. Focuses on technique, tactical awareness, and competitive readiness with our lead coaching team.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Same weeks as Beginner to Improver: <span class="text-gray-200">{biWeek1}</span> and <span class="text-gray-200">{biWeek2}</span>. Optional third week: <span class="text-gray-200">{biWeekOptional}</span> (TBC). Daily <span class="text-gray-200">{nextGenCampTime}</span>. Invite only — week assigned by coaches.</p>
           <div class="flex flex-wrap gap-2 text-xs text-gray-200">
             <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">By invitation</span>
-            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">3 hrs/day</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">{nextGenCampTime} daily</span>
             <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Limited places</span>
           </div>
           <a href="#nextgen" class="inline-flex items-center gap-2 text-sky-300 font-semibold text-sm hover:text-sky-200 transition-colors">Find out more <span class="material-icons text-base">arrow_forward</span></a>
@@ -148,23 +159,24 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
       <div class="order-2 lg:order-1 space-y-4">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Open To All</span>
         <h2 class="text-3xl md:text-4xl font-bold text-green-300">Beginner to Improver</h2>
-        <div class="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-5 space-y-2">
-          <p class="text-emerald-200 font-semibold text-lg">Dates and booking — coming soon.</p>
-          <p class="text-gray-300 text-sm">We will publish exact dates, pricing, and booking for this summer's camp on this page when they are confirmed.</p>
+        <div class="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-5 space-y-3">
+          <p class="text-emerald-200 font-semibold text-lg">Beginner to Improver — 2026 weeks</p>
+          <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+            <li><strong class="text-gray-200">Week 1:</strong> {biWeek1}</li>
+            <li><strong class="text-gray-200">Week 2:</strong> {biWeek2}</li>
+            <li><strong class="text-gray-200">Optional third week</strong> (TBC): {biWeekOptional}</li>
+          </ul>
+          <p class="text-gray-300 text-sm">Daily time: <strong class="text-gray-100">{beginnerCampTime}</strong> (Monday–Friday). Pricing and booking will be published on this page when they open.</p>
         </div>
-        <p class="text-lg text-gray-200">The perfect camp for children aged 8–14 who are brand new to table tennis or looking to sharpen what they already know. Across five mornings they will learn grip, stance, basic and intermediate strokes, serving, rallying, and match play in a supportive environment. All equipment is provided — just bring sports clothing and indoor trainers.</p>
+        <p class="text-lg text-gray-200">The perfect camp for children aged 9–12 who are brand new to table tennis or looking to sharpen what they already know. Across five mornings ({beginnerCampTime} each day) they will learn grip, stance, basic and intermediate strokes, serving, rallying, and match play in a supportive environment. All equipment is provided — just bring sports clothing and indoor trainers.</p>
         <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">groups</span>
-            <div class="text-sm">Ages 8–14. Open to all — no club membership required.</div>
+            <div class="text-sm">Ages 9–12. Open to all — no club membership required.</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">schedule</span>
-            <div class="text-sm">Morning sessions, Monday to Friday (approx. 90 minutes per day).</div>
-          </div>
-          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
-            <span class="material-icons text-primary">event</span>
-            <div class="text-sm">Summer 2026 — exact weeks to be confirmed.</div>
+            <div class="text-sm">{beginnerCampTime}, Monday to Friday (2 hours per day).</div>
           </div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
             <span class="material-icons text-primary">confirmation_number</span>
@@ -192,7 +204,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
           </ul>
         </div>
         <div class="pt-2">
-          <p class="text-gray-400 text-sm">Booking will open on this page when dates are confirmed. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> if you have any questions.</p>
+          <p class="text-gray-400 text-sm">Booking will open on this page when ready. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> if you have any questions.</p>
         </div>
       </div>
       <div class="order-1 lg:order-2 bg-[#161616] border border-gray-800 rounded-3xl shadow-2xl flex flex-col gap-4 justify-center p-4">
@@ -208,15 +220,21 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
       <div class="order-2 lg:order-1 space-y-4">
         <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Invite Only</span>
         <h2 class="text-3xl md:text-4xl font-bold text-sky-300">NextGen Camp</h2>
-        <div class="bg-sky-950/40 border border-sky-500/30 rounded-2xl p-5 space-y-2">
-          <p class="text-sky-200 font-semibold text-lg">Dates and invitations — coming soon.</p>
-          <p class="text-gray-300 text-sm">Selected players will be contacted by the coaching team. Confirmed dates will also appear here.</p>
+        <div class="bg-sky-950/40 border border-sky-500/30 rounded-2xl p-5 space-y-3">
+          <p class="text-sky-200 font-semibold text-lg">NextGen — 2026 weeks (same calendar as Beginner to Improver)</p>
+          <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+            <li><strong class="text-gray-200">Week 1:</strong> {biWeek1}</li>
+            <li><strong class="text-gray-200">Week 2:</strong> {biWeek2}</li>
+            <li><strong class="text-gray-200">Optional third week</strong> (TBC): {biWeekOptional}</li>
+          </ul>
+          <p class="text-gray-300 text-sm">Daily time: <strong class="text-gray-100">{nextGenCampTime}</strong> (Monday–Friday).</p>
+          <p class="text-gray-300 text-sm border-t border-sky-500/20 pt-3">Invite only — selected players are assigned to a week by the coaching team. Invitations and pricing will be confirmed directly with invited players.</p>
         </div>
-        <p class="text-lg text-gray-200">Intensive development for our most promising young players. Three hours per day of structured coaching, multiball, sparring, and tactical work led by the Ormeau coaching team.</p>
+        <p class="text-lg text-gray-200">Intensive development for our most promising young players. Three hours per day ({nextGenCampTime}) of structured coaching, multiball, sparring, and tactical work led by the Ormeau coaching team.</p>
         <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lock</span><div class="text-sm">Invite only — selected by the coaching team.</div></div>
-          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">schedule</span><div class="text-sm">Three hours per day, Monday to Friday.</div></div>
-          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">event</span><div class="text-sm">Summer 2026 — exact weeks to be confirmed.</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">schedule</span><div class="text-sm">{nextGenCampTime}, Monday to Friday (3 hours per day).</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4 sm:col-span-2"><span class="material-icons text-primary shrink-0">event</span><div class="text-sm">Same three summer weeks as above — your assigned week will be confirmed with your invitation.</div></div>
           <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">confirmation_number</span><div class="text-sm">Limited to 12 places per camp.</div></div>
         </div>
         <div class="bg-[#121212] border border-gray-800 rounded-2xl p-6 space-y-3">
@@ -282,7 +300,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
       <div class="grid md:grid-cols-2 gap-4 text-gray-200">
         <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">checklist</span><p>Sports clothing and indoor trainers (non-marking soles)</p></div>
         <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">water_drop</span><p>Water bottle — stay hydrated in the summer heat</p></div>
-        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lunch_dining</span><p>Packed lunch or snack (NextGen and Performance — 3hr sessions)</p></div>
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lunch_dining</span><p>Packed lunch or snack for NextGen ({nextGenCampTime}) and Performance (multi-hour sessions)</p></div>
         <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="text-primary text-lg" aria-hidden="true">🏓</span><span class="sr-only">Table tennis bat</span><p>Own bat if they have one (not required for Beginner to Improver)</p></div>
       </div>
     </div>
@@ -301,14 +319,19 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
             <span class="font-semibold text-white pr-4">When do summer camps run?</span>
             <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
           </summary>
-          <div class="px-5 pb-5 text-gray-300 text-sm">Summer camps take place during the school holiday period (July–August). Exact dates and booking details will be published on this page when confirmed.</div>
+          <div class="px-5 pb-5 text-gray-300 text-sm space-y-2">
+            <p><strong class="text-gray-100">Beginner to Improver</strong> runs Monday to Friday, <strong class="text-gray-100">{beginnerCampTime}</strong> each day. Main weeks: {biWeek1} and {biWeek2}. An optional third week ({biWeekOptional}) (TBC).</p>
+            <p><strong class="text-gray-100">NextGen</strong> uses the same three weeks, <strong class="text-gray-100">{nextGenCampTime}</strong> (Monday–Friday); places are invite-only and players are assigned to a week by the coaching team.</p>
+            <p><strong class="text-gray-100">Performance</strong> is invite-only — dates are shared with selected players.</p>
+            <p>Booking for Beginner to Improver will appear on this page when it opens.</p>
+          </div>
         </details>
         <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
             <span class="font-semibold text-white pr-4">Does my child need to be an Ormeau member to attend?</span>
             <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
           </summary>
-          <div class="px-5 pb-5 text-gray-300 text-sm">The Beginner to Improver camp is open to everyone aged 8–14, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team.</div>
+          <div class="px-5 pb-5 text-gray-300 text-sm">The Beginner to Improver camp is open to everyone aged 9–12, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team.</div>
         </details>
         <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
           <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
@@ -363,7 +386,7 @@ const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beg
     </div>
     <div class="relative max-w-5xl mx-auto px-6 text-center text-white space-y-6">
       <h2 class="text-4xl md:text-5xl font-bold">Summer Is Coming.</h2>
-      <p class="text-lg md:text-xl max-w-3xl mx-auto font-light">Beginner to Improver places will be limited and fill quickly. NextGen and Performance players — keep an eye on your invitation. Dates and booking will be published here soon.</p>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto font-light">Beginner to Improver: {beginnerCampTime} daily. NextGen: {nextGenCampTime} daily — same weeks: {biWeek1} and {biWeek2}, plus optional {biWeekOptional} (TBC). Beginner places will be limited; NextGen is by invitation. Performance players — watch for your invitation. Booking will be published here soon.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
         <a href="#beginner-improver" class="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg uppercase tracking-widest text-sm">Beginner to Improver</a>
         <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-primary/20 border border-white/30 text-white font-bold rounded-full hover:bg-primary/30 transition-all uppercase tracking-widest text-sm">Contact us</a>
