@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Summer Camps 2026 — Ormeau Table Tennis Club";
+const pageDescription = "Summer table tennis camps at Ormeau TTC in Belfast. Beginner to Improver (open to all, ages 8–14), invite-only NextGen and Performance squads. Dates and booking coming soon.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+
+  <Fragment slot="head">
+    <meta property="og:image" content="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp.jpg" />
+    <meta name="twitter:image" content="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp.jpg" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When do summer camps run?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Summer camps take place during the school holiday period (July–August). Exact dates and booking details will be published on this page when confirmed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my child need to be an Ormeau member to attend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Beginner to Improver camp is open to everyone aged 8–14, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does invite only mean for NextGen and Performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These camps are reserved for players specifically selected by the Ormeau coaching team based on ability, commitment, and development potential."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Beginner to Improver and NextGen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beginner to Improver is open to everyone and focuses on learning core skills from scratch or consolidating early technique. NextGen is invite-only for players who have progressed beyond the basics and are being developed toward competitive play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my child need their own equipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not for the Beginner to Improver camp — we provide bats and balls. For NextGen and Performance camps, players should bring their own bat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there parking at the venue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is limited on-street parking on The Mount and surrounding streets. The venue is well served by public transport."
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="relative bg-background-dark text-white overflow-hidden min-h-[70vh] flex items-center justify-center" id="top">
+    <div class="absolute inset-0 z-0">
+      <img
+        alt="Summer camp training at Ormeau TTC"
+        class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125"
+        src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%201.jpg"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/70"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center space-y-8">
+      <span class="inline-block px-5 py-2 rounded-full bg-primary/20 border border-primary/50 backdrop-blur text-xs md:text-sm font-bold uppercase tracking-[0.35em]">Summer Camps 2026</span>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
+        A Summer Of<br />
+        <span class="text-primary">Table Tennis.</span>
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light">
+        Camps for every level — whether your child is picking up a bat for the first time or pushing toward competitive play. Dates and booking coming soon.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#beginner-improver" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">Beginner to Improver</a>
+        <a href="#nextgen" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-semibold text-sm tracking-widest uppercase hover:bg-white/20 transition-all">NextGen Camp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20 bg-surface-dark" id="camps">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Summer 2026</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-white">Three Camps, Every Level.</h2>
+        <p class="text-gray-300 text-lg">This summer we are running camps for beginners and improvers, high-potential juniors, and performance players — all at our permanent facility on The Mount. Every session is led by a qualified coach with sparring and multiball support.</p>
+      </div>
+
+      <!-- Main two camps -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-300 text-[10px] font-bold uppercase tracking-[0.3em]">Open To All</span>
+          <h3 class="text-2xl font-bold text-green-300">Beginner to Improver</h3>
+          <p class="text-gray-300">A structured, fun camp for children aged 8–14 who are new to table tennis or want to consolidate early skills. No experience needed — we provide all the equipment and coaching.</p>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-200">
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Ages 8–14</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">90 mins/day</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Limited places</span>
+          </div>
+          <a href="#beginner-improver" class="inline-flex items-center gap-2 text-green-300 font-semibold text-sm hover:text-green-200 transition-colors">Find out more <span class="material-icons text-base">arrow_forward</span></a>
+        </div>
+        <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="inline-block px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-[10px] font-bold uppercase tracking-[0.3em]">Invite Only</span>
+          <h3 class="text-2xl font-bold text-sky-300">NextGen Camp</h3>
+          <p class="text-gray-300">Intensive development camp for our highest-potential young players. Focuses on technique, tactical awareness, and competitive readiness with our lead coaching team.</p>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-200">
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">By invitation</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">3 hrs/day</span>
+            <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Limited places</span>
+          </div>
+          <a href="#nextgen" class="inline-flex items-center gap-2 text-sky-300 font-semibold text-sm hover:text-sky-200 transition-colors">Find out more <span class="material-icons text-base">arrow_forward</span></a>
+        </div>
+      </div>
+
+      <!-- Performance strip -->
+      <div class="bg-[#1f1f1f] border border-gray-800 rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 shadow-xl">
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] font-bold uppercase tracking-[0.3em]">Invite Only</span>
+          <h3 class="text-xl font-bold text-amber-300">Performance Camp</h3>
+        </div>
+        <p class="text-gray-300 text-sm flex-1">Elite-level training for performance squad players. Invited players will be contacted directly by the coaching team — details below.</p>
+        <a href="#performance" class="inline-flex items-center gap-2 text-amber-300 font-semibold text-sm hover:text-amber-200 transition-colors whitespace-nowrap">Learn more <span class="material-icons text-base">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beginner to Improver -->
+  <section class="py-20 bg-background-dark" id="beginner-improver">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1 space-y-4">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Open To All</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-green-300">Beginner to Improver</h2>
+        <div class="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-5 space-y-2">
+          <p class="text-emerald-200 font-semibold text-lg">Dates and booking — coming soon.</p>
+          <p class="text-gray-300 text-sm">We will publish exact dates, pricing, and booking for this summer's camp on this page when they are confirmed.</p>
+        </div>
+        <p class="text-lg text-gray-200">The perfect camp for children aged 8–14 who are brand new to table tennis or looking to sharpen what they already know. Across five mornings they will learn grip, stance, basic and intermediate strokes, serving, rallying, and match play in a supportive environment. All equipment is provided — just bring sports clothing and indoor trainers.</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="material-icons text-primary">groups</span>
+            <div class="text-sm">Ages 8–14. Open to all — no club membership required.</div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="material-icons text-primary">schedule</span>
+            <div class="text-sm">Morning sessions, Monday to Friday (approx. 90 minutes per day).</div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="material-icons text-primary">event</span>
+            <div class="text-sm">Summer 2026 — exact weeks to be confirmed.</div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="material-icons text-primary">confirmation_number</span>
+            <div class="text-sm">Limited places per week — book early to avoid disappointment.</div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="material-icons text-primary">payments</span>
+            <div class="text-sm">Pricing to be confirmed when booking opens.</div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="text-primary text-lg" aria-hidden="true">🏓</span>
+            <span class="sr-only">Table tennis bat</span>
+            <div class="text-sm">All equipment provided. No experience needed.</div>
+          </div>
+        </div>
+        <div class="bg-[#121212] border border-gray-800 rounded-2xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">What They'll Learn</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>How to hold a bat correctly and the ready position</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Forehand and backhand push and drive</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Serving technique and receiving</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Rally building and point play</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Introduction to spin and placement</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Table tennis rules, etiquette, and fun competitions</li>
+          </ul>
+        </div>
+        <div class="pt-2">
+          <p class="text-gray-400 text-sm">Booking will open on this page when dates are confirmed. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> if you have any questions.</p>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 bg-[#161616] border border-gray-800 rounded-3xl shadow-2xl flex flex-col gap-4 justify-center p-4">
+        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%201.jpg" alt="Beginner to Improver camp" class="w-full h-56 sm:h-64 md:h-80 object-cover rounded-2xl" loading="lazy" />
+        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/camps%202.jpg" alt="Coaching at Ormeau" class="w-full h-56 sm:h-64 md:h-80 object-cover rounded-2xl" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NextGen -->
+  <section class="py-20 bg-surface-dark" id="nextgen">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1 space-y-4">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Invite Only</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-sky-300">NextGen Camp</h2>
+        <div class="bg-sky-950/40 border border-sky-500/30 rounded-2xl p-5 space-y-2">
+          <p class="text-sky-200 font-semibold text-lg">Dates and invitations — coming soon.</p>
+          <p class="text-gray-300 text-sm">Selected players will be contacted by the coaching team. Confirmed dates will also appear here.</p>
+        </div>
+        <p class="text-lg text-gray-200">Intensive development for our most promising young players. Three hours per day of structured coaching, multiball, sparring, and tactical work led by the Ormeau coaching team.</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lock</span><div class="text-sm">Invite only — selected by the coaching team.</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">schedule</span><div class="text-sm">Three hours per day, Monday to Friday.</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">event</span><div class="text-sm">Summer 2026 — exact weeks to be confirmed.</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">confirmation_number</span><div class="text-sm">Limited to 12 places per camp.</div></div>
+        </div>
+        <div class="bg-[#121212] border border-gray-800 rounded-2xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">What's Covered</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Advanced stroke development and technique refinement</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Tactical patterns and match-play strategies</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Multiball and footwork drills</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Structured sparring with experienced partners</li>
+          </ul>
+        </div>
+        <div class="pt-2">
+          <p class="text-gray-400 text-sm">Invitations will go out before booking opens. <a href="/contact" class="text-primary font-semibold hover:underline">Contact us</a> if you have questions about the NextGen programme.</p>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 bg-[#161616] border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/nextgen.jpg" alt="NextGen training" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance -->
+  <section class="py-20 bg-background-dark" id="performance">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="bg-[#161616] border border-gray-800 rounded-3xl overflow-hidden shadow-2xl order-2 lg:order-1 flex flex-col gap-4 p-4">
+        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp%202.jpg" alt="Performance camp training" class="w-full h-56 sm:h-64 md:h-80 object-cover rounded-2xl" loading="lazy" />
+        <img src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp%203.jpg" alt="Performance camp sparring" class="w-full h-56 sm:h-64 md:h-80 object-cover rounded-2xl" loading="lazy" />
+      </div>
+      <div class="order-1 lg:order-2 space-y-4">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Invite Only</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-300">Performance Camp</h2>
+        <div class="bg-amber-950/40 border border-amber-500/30 rounded-2xl p-5 space-y-2">
+          <p class="text-amber-200 font-semibold">By invitation from the coaching team only.</p>
+          <p class="text-gray-300 text-sm">Performance camp is reserved for current squad players. Invited players will be contacted directly with dates and details — there is no public booking for this camp.</p>
+        </div>
+        <p class="text-lg text-gray-200">Elite training for performance squad players. Intensive daily sessions with lead coaches and dedicated sparring partners — designed to sharpen technique, build match fitness, and prepare for competitions.</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-gray-200">
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lock</span><div class="text-sm">Invite only — for current performance squad players.</div></div>
+          <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">schedule</span><div class="text-sm">Three hours per day, Monday to Friday.</div></div>
+        </div>
+        <div class="bg-[#121212] border border-gray-800 rounded-2xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">What's Covered</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>High-intensity match-play and point-building patterns</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Multiball at competition intensity</li>
+            <li class="flex items-center gap-2"><span class="material-icons text-primary text-base">check_circle</span>Physical conditioning and movement work</li>
+          </ul>
+        </div>
+        <div class="pt-2">
+          <p class="text-gray-400 text-sm">If you believe your child should be considered for performance camp, please <a href="/contact" class="text-primary font-semibold hover:underline">get in touch</a> — final selection is at the coaches' discretion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Bring -->
+  <section class="py-20 bg-surface-dark">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 space-y-8">
+      <div class="space-y-3 text-center">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Preparation</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">What To Bring</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 text-gray-200">
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">checklist</span><p>Sports clothing and indoor trainers (non-marking soles)</p></div>
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">water_drop</span><p>Water bottle — stay hydrated in the summer heat</p></div>
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="material-icons text-primary">lunch_dining</span><p>Packed lunch or snack (NextGen and Performance — 3hr sessions)</p></div>
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"><span class="text-primary text-lg" aria-hidden="true">🏓</span><span class="sr-only">Table tennis bat</span><p>Own bat if they have one (not required for Beginner to Improver)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-background-dark" id="faq">
+    <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 space-y-8">
+      <div class="space-y-3 text-center">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Questions</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden" open>
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">When do summer camps run?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Summer camps take place during the school holiday period (July–August). Exact dates and booking details will be published on this page when confirmed.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">Does my child need to be an Ormeau member to attend?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">The Beginner to Improver camp is open to everyone aged 8–14, regardless of club membership. NextGen and Performance camps are invite-only for players already known to the coaching team.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">What is the difference between Beginner to Improver and NextGen?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Beginner to Improver is open to everyone and focuses on learning core skills from scratch or consolidating early technique. NextGen is invite-only for players who have progressed beyond the basics and are being developed toward competitive play.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">What does "invite only" mean for NextGen and Performance?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">These camps are reserved for players specifically selected by the coaching team based on ability, commitment, and development potential. If you would like your child to be considered, get in touch — but final selection is at the coaches' discretion.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">Does my child need their own equipment?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Not for the Beginner to Improver camp — we provide bats and balls. For NextGen and Performance, players should bring their own bat.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">What happens if my child is injured or can't attend?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Please contact us as soon as possible. Refunds or credits will be considered case-by-case; we cannot guarantee refunds for non-attendance.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">Is there parking at the venue?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">There is limited on-street parking on The Mount and surrounding streets. The venue is well served by public transport — Metro bus routes pass nearby.</div>
+        </details>
+        <details class="group bg-[#1f1f1f] border border-gray-800 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+            <span class="font-semibold text-white pr-4">Can I stay and watch?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-gray-300 text-sm">Parents are welcome to drop off and collect. We ask that spectating is kept to a minimum during sessions so coaches and players can focus.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-20 bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10 grayscale mix-blend-overlay">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr5ZYUqSr67umNFQBjUXdmYvuyqDAzBbNKd4Kq1wktWGLcYn5ogtLA7y7YVdR4d7tLOaq3b9DIwTKuiuvoavDonQeZoVEG-eZyLb52qd2OZZfzsJ7TlRmBiF5aJ9omD6fYoAD3MfFJnZRO-U4F9_rAvj6eZjzAFLJwjGCgTnYW1J8aEWajqLHG6L4_nDwTnllpT7T0kBXD90R4J3vMoYWHfim4zkO_OGLzzGPmNvdr_7RasQ7z1jAaCOudsHoYD1A1KFSW4roR7Sc" alt="Background" loading="lazy" />
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center text-white space-y-6">
+      <h2 class="text-4xl md:text-5xl font-bold">Summer Is Coming.</h2>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto font-light">Beginner to Improver places will be limited and fill quickly. NextGen and Performance players — keep an eye on your invitation. Dates and booking will be published here soon.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <a href="#beginner-improver" class="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg uppercase tracking-widest text-sm">Beginner to Improver</a>
+        <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-primary/20 border border-white/30 text-white font-bold rounded-full hover:bg-primary/30 transition-all uppercase tracking-widest text-sm">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="py-20 bg-surface-dark" id="location">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-4">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.35em]">Find Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Ormeau Table Tennis Club</h2>
+        <div class="space-y-3 text-gray-200 text-sm">
+          <div class="flex items-start gap-3"><span class="material-icons text-primary">place</span><p>113 The Mount, Belfast BT5 4ND</p></div>
+          <div class="flex items-start gap-3"><span class="material-icons text-primary">email</span><a href="mailto:ormeautt@live.co.uk" class="hover:text-primary">ormeautt@live.co.uk</a></div>
+        </div>
+        <p class="text-gray-300">Permanent facility with dedicated tables, coaching space, and easy access from city centre. Reach us by Metro bus routes or limited on-street parking nearby.</p>
+      </div>
+      <div class="bg-[#1f1f1f] border border-gray-800 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[320px]">
+        <iframe
+          title="Ormeau Table Tennis Club Map"
+          src="https://maps.google.com/maps?q=113%20The%20Mount%2C%20Belfast%20BT5%204ND&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full min-h-[320px]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
