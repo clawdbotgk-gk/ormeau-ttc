@@ -140,10 +140,10 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Friday Afterschool -->
-        <div class="bg-white dark:bg-background-dark rounded-3xl shadow-xl overflow-hidden border-2 border-green-500">
-          <div class="bg-green-500 text-white p-6 text-center">
+        <div class="bg-white dark:bg-background-dark rounded-3xl shadow-xl overflow-hidden border-2 border-gray-400 dark:border-gray-600">
+          <div class="bg-gray-600 text-white p-6 text-center">
             <div class="flex items-center justify-center gap-2 mb-2">
-              <span class="material-icons">event_available</span>
+              <span class="material-icons">event_busy</span>
               <span class="font-bold text-xl">Friday Afterschool</span>
             </div>
             <p class="text-sm opacity-90">11 Week Block Booking</p>
@@ -156,51 +156,41 @@ import Footer from '../components/Footer.astro';
                 <p class="text-gray-500 text-xs sm:text-sm">Assembly Hall</p>
               </div>
             </div>
-            <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-3 sm:p-4 mb-4 sm:mb-6">
+            <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3 sm:p-4 mb-4 sm:mb-6">
               <div class="flex items-center gap-2">
-                <span class="material-icons text-green-600">check_circle</span>
-                <span class="font-bold text-green-600 text-sm sm:text-base">AVAILABLE FOR BOOKING</span>
+                <span class="material-icons text-red-600">cancel</span>
+                <span class="font-bold text-red-600 text-sm sm:text-base">NOW FULL</span>
               </div>
             </div>
             <div class="space-y-3 sm:space-y-4">
               <div class="border-b border-gray-100 dark:border-gray-800 pb-3 sm:pb-4">
                 <div class="flex items-center justify-between mb-2">
                   <p class="font-semibold text-primary text-sm sm:text-base">April:</p>
-                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Strandtown+Friday+Table+Tennis&dates=20250417T134500/20250417T144500,20250424T134500/20250424T144500&details=Friday+afternoon+table+tennis+coaching+at+Strandtown+School%0ATime:+1.45-2.45+pm%0ALocation:+Assembly+Hall&location=Strandtown+School,+Assembly+Hall" target="_blank" class="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium flex items-center gap-1">
-                    <span class="material-icons text-sm">calendar_month</span>
-                    Add to Calendar
-                  </a>
+                  <span class="text-gray-400 text-xs sm:text-sm font-medium">Fully booked</span>
                 </div>
                 <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">17th & 24th</p>
               </div>
               <div class="border-b border-gray-100 dark:border-gray-800 pb-3 sm:pb-4">
                 <div class="flex items-center justify-between mb-2">
                   <p class="font-semibold text-primary text-sm sm:text-base">May:</p>
-                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Strandtown+Friday+Table+Tennis&dates=20250501T134500/20250501T144500,20250508T134500/20250508T144500,20250515T134500/20250515T144500,20250522T134500/20250522T144500,20250529T134500/20250529T144500&details=Friday+afternoon+table+tennis+coaching+at+Strandtown+School%0ATime:+1.45-2.45+pm%0ALocation:+Assembly+Hall&location=Strandtown+School,+Assembly+Hall" target="_blank" class="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium flex items-center gap-1">
-                    <span class="material-icons text-sm">calendar_month</span>
-                    Add to Calendar
-                  </a>
+                  <span class="text-gray-400 text-xs sm:text-sm font-medium">Fully booked</span>
                 </div>
                 <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">1st, 8th, 15th, 22nd & 29th</p>
               </div>
               <div class="pb-3 sm:pb-4">
                 <div class="flex items-center justify-between mb-2">
                   <p class="font-semibold text-primary text-sm sm:text-base">June:</p>
-                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Strandtown+Friday+Table+Tennis&dates=20250605T134500/20250605T144500,20250612T134500/20250612T144500,20250619T134500/20250619T144500,20250626T134500/20250626T144500&details=Friday+afternoon+table+tennis+coaching+at+Strandtown+School%0ATime:+1.45-2.45+pm%0ALocation:+Assembly+Hall&location=Strandtown+School,+Assembly+Hall" target="_blank" class="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium flex items-center gap-1">
-                    <span class="material-icons text-sm">calendar_month</span>
-                    Add to Calendar
-                  </a>
+                  <span class="text-gray-400 text-xs sm:text-sm font-medium">Fully booked</span>
                 </div>
                 <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">5th, 12th, 19th & 26th</p>
               </div>
             </div>
-            <a href="#register" class="group w-full py-3 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center mt-4 sm:mt-6 shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-600/40 transform hover:-translate-y-0.5 relative overflow-hidden">
-              <span class="relative z-10 flex items-center justify-center gap-2 pt-1 text-sm sm:text-base">
-                <span class="material-icons text-sm sm:text-lg">calendar_today</span>
-                Book Friday Sessions
+            <div class="w-full py-3 sm:py-4 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold rounded-xl text-center mt-4 sm:mt-6 cursor-not-allowed select-none" role="status" aria-label="Friday afterschool sessions are fully booked">
+              <span class="flex items-center justify-center gap-2 pt-1 text-sm sm:text-base">
+                <span class="material-icons text-sm sm:text-lg">block</span>
+                Friday sessions fully booked
               </span>
-              <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
