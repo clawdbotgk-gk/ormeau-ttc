@@ -18,6 +18,7 @@ import Footer from '../components/Footer.astro';
     })();
   </script>
 
+  <div class="pb-[5.5rem] md:pb-0">
   <!-- Hero Section -->
   <section class="relative bg-background-dark text-white overflow-hidden">
     <div class="absolute inset-0 bg-black/40 z-10 md:bg-black/40"></div>
@@ -49,73 +50,68 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- About Section -->
-  <section class="py-24 bg-white dark:bg-background-dark">
+  <section class="py-14 md:py-24 bg-white dark:bg-background-dark">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">What is the Little Wing Junior League?</h2>
+      <div class="text-center mb-10 md:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">What is the Little Wing Junior League?</h2>
         <div class="w-[60px] h-1 bg-primary mx-auto rounded-full"></div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
         <div>
           <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-            The Little Wing Junior League is a new junior team competition hosted by Ormeau Table Tennis Club. It's designed to give young players more matches, more team experience, and a brilliant atmosphere across four Sunday afternoons.
-          </p>
-          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-            Players can enter with their own partner, or we can help pair players together. Entries from other clubs are welcome.
+            A junior team league at Ormeau Table Tennis Club: four Sunday afternoons of match play, team experience, and a lively club atmosphere. Bring a partner or we'll help pair you—players from other clubs are welcome.
           </p>
 
-          <h3 class="text-xl font-bold mb-4 text-primary">Why Enter:</h3>
-          <ul class="space-y-3">
+          <h3 class="text-lg font-bold mb-3 text-primary">Why enter</h3>
+          <ul class="space-y-2.5">
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-              <span class="text-gray-600 dark:text-gray-400">Great match practice in a team environment</span>
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5 shrink-0">check_circle</span>
+              <span class="text-gray-600 dark:text-gray-400 text-[15px] sm:text-base">Team-based match practice</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-              <span class="text-gray-600 dark:text-gray-400">Two divisions to keep competition level appropriate</span>
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5 shrink-0">check_circle</span>
+              <span class="text-gray-600 dark:text-gray-400 text-[15px] sm:text-base">Two ability divisions</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-              <span class="text-gray-600 dark:text-gray-400">Fun way for juniors to represent their club</span>
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5 shrink-0">check_circle</span>
+              <span class="text-gray-600 dark:text-gray-400 text-[15px] sm:text-base">Represent your club</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-              <span class="text-gray-600 dark:text-gray-400">Prizes for winners & runners-up</span>
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5 shrink-0">check_circle</span>
+              <span class="text-gray-600 dark:text-gray-400 text-[15px] sm:text-base">Prizes for winners and runners-up</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-[#262626] border border-gray-800 rounded-2xl p-8">
-          <h3 class="text-xl font-bold mb-6 text-white">League Details</h3>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">group</span>
-              <div>
-                <div class="text-white font-semibold">Ages</div>
-                <div class="text-gray-400">10-16 years old</div>
-              </div>
+        <div class="space-y-3">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">League details</h3>
+          <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#262626] p-4 sm:p-5 flex items-start gap-3 shadow-sm">
+            <span class="material-symbols-outlined text-primary shrink-0">group</span>
+            <div class="min-w-0">
+              <div class="text-gray-900 dark:text-white font-semibold text-sm sm:text-base">Ages</div>
+              <div class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">10–16 years old</div>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">sports_tennis</span>
-              <div>
-                <div class="text-white font-semibold">Format</div>
-                <div class="text-gray-400">Davis Cup (2 singles + doubles)</div>
-              </div>
+          </div>
+          <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#262626] p-4 sm:p-5 flex items-start gap-3 shadow-sm">
+            <span class="material-symbols-outlined text-primary shrink-0">sports_tennis</span>
+            <div class="min-w-0">
+              <div class="text-gray-900 dark:text-white font-semibold text-sm sm:text-base">Format</div>
+              <div class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Davis Cup (2 singles + doubles)</div>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">schedule</span>
-              <div>
-                <div class="text-white font-semibold">Time</div>
-                <div class="text-gray-400">Sundays 2:00-4:00pm</div>
-              </div>
+          </div>
+          <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#262626] p-4 sm:p-5 flex items-start gap-3 shadow-sm">
+            <span class="material-symbols-outlined text-primary shrink-0">schedule</span>
+            <div class="min-w-0">
+              <div class="text-gray-900 dark:text-white font-semibold text-sm sm:text-base">Time</div>
+              <div class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Sundays 2:00–4:00pm</div>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">trophy</span>
-              <div>
-                <div class="text-white font-semibold">Divisions</div>
-                <div class="text-gray-400">2 levels by ability</div>
-              </div>
+          </div>
+          <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#262626] p-4 sm:p-5 flex items-start gap-3 shadow-sm">
+            <span class="material-symbols-outlined text-primary shrink-0">trophy</span>
+            <div class="min-w-0">
+              <div class="text-gray-900 dark:text-white font-semibold text-sm sm:text-base">Divisions</div>
+              <div class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Two levels by ability</div>
             </div>
           </div>
         </div>
@@ -197,6 +193,26 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
+  </div>
 
-  <Footer />
+  <!-- Mobile sticky CTA -->
+  <nav
+    aria-label="Register for the Junior League"
+    class="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/10 bg-background-dark/95 backdrop-blur-md supports-[backdrop-filter]:bg-background-dark/80"
+  >
+    <div class="max-w-7xl mx-auto px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <a
+        href="https://buy.stripe.com/00w28r2vW6q9eAP4L0gfu34"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex w-full items-center justify-center rounded-full bg-primary px-4 py-3.5 text-center text-base font-bold text-white shadow-lg shadow-primary/25 hover:bg-primary-hover transition-colors"
+      >
+        Register for the Junior League
+      </a>
+    </div>
+  </nav>
+
+  <div class="pb-[5.5rem] md:pb-0">
+    <Footer />
+  </div>
 </Layout>
