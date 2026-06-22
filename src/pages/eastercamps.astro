@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Easter Camps — Ormeau Table Tennis Club";
-const pageDescription = "Easter table tennis camps at Ormeau TTC in Belfast. Our 2026 camps have now finished — dates for next year's camps will be announced here in future.";
+const pageTitle = "Easter Camps 2027 — Ormeau Table Tennis Club";
+const pageDescription = "Easter table tennis camps at Ormeau TTC in Belfast. Dates for our 2027 camps will be announced soon — register your interest to be notified when booking opens.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -19,10 +19,10 @@ const pageDescription = "Easter table tennis camps at Ormeau TTC in Belfast. Our
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "When will next year's Easter camp dates be announced?",
+          "name": "When will Easter 2027 camp dates be announced?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our Easter 2026 camps have now concluded. We will publish dates and booking information for future camps on this page when they are confirmed."
+            "text": "We will publish dates and booking information for Easter 2027 on this page as soon as they are confirmed. Register your interest using the form below to be notified first."
           }
         },
         {
@@ -68,19 +68,29 @@ const pageDescription = "Easter table tennis camps at Ormeau TTC in Belfast. Our
         alt="Ormeau group photo"
         class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125"
         src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/performance%20camp.jpg"
-        loading="eager" fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/70"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center space-y-8">
-      <span class="inline-block px-5 py-2 rounded-full bg-primary/20 border border-primary/50 backdrop-blur text-xs md:text-sm font-bold uppercase tracking-[0.35em]">Easter Camps 2026 — concluded</span>
+      <span class="inline-block px-5 py-2 rounded-full bg-primary/20 border border-primary/50 backdrop-blur text-xs md:text-sm font-bold uppercase tracking-[0.35em]">Easter Camps 2027 — coming soon</span>
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
-        Thank You For<br />
-        <span class="text-primary">A Great Easter.</span>
+        Easter Camps<br />
+        <span class="text-primary">Coming in 2027.</span>
       </h1>
-      <p class="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light">
-        Our Easter 2026 camps have now finished. We will publish dates and booking details for next year's camps on this page when they are confirmed.
+            <p class="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light">
+        Five mornings of coaching, fun, and new skills — ages 8&ndash;12, no experience needed.
+        Belfast, Easter 2027.
       </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+        <a href="mailto:ormeautt@live.co.uk?subject=Easter%20Camps%202027%20%E2%80%94%20Register%20Interest"
+           class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">
+          <span class="material-icons">notifications_active</span>
+          Notify me when booking opens
+        </a>
+        <a href="#faq" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-white/10 text-white font-semibold hover:bg-white/20 transition-colors border border-white/20">
+          Read the FAQs
+        </a>
+      </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="#beginners" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-widest uppercase hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">Beginner Camp</a>
         <a href="#camps" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-semibold text-sm tracking-widest uppercase hover:bg-white/20 transition-all">Camp overview</a>
