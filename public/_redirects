@@ -1,2 +1,0 @@
-/site-images/* /site-images/:splat 200
-/images/* /images/:splat 200
