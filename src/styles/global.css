@@ -349,3 +349,37 @@ body.menu-open {
 #main:focus {
   outline: none;
 }
+
+
+/* ===== Progressive-enhancement: mobile nav works without JS ===== */
+/* With JS: html has class="js" (set inline at top of body) — normal behaviour, menu is closed by default.
+   Without JS: html has class="no-js" — on small screens, keep the mobile menu visible so users can still navigate. */
+
+@media (max-width: 767px) {
+  html.no-js #mobile-menu {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;        /* inline flow rather than full-screen overlay */
+    height: auto !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+  html.no-js #mobile-menu-backdrop,
+  html.no-js #mobile-menu-panel {
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+  html.no-js #mobile-menu-close,
+  html.no-js #mobile-menu-btn {
+    display: none !important;
+  }
+  /* Without JS, hide desktop nav on mobile (it's already done by md:flex, but ensure it's not duplicated) */
+  html.no-js nav.lg\:flex,
+  html.no-js header nav:not(#mobile-menu *) {
+    display: none !important;
+  }
+}
