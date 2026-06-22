@@ -6,13 +6,15 @@ interface Props {
   description?: string;
   canonicalUrl?: string;
   schema?: object;
+  noindex?: boolean;
 }
 
 const { 
   title, 
   description = "Ormeau Table Tennis Club - Belfast's premier table tennis club welcoming players of all ages and abilities. Professional coaching, state-of-the-art facilities, and a vibrant community.",
   canonicalUrl,
-  schema
+  schema,
+  noindex = false
 } = Astro.props;
 
 const siteUrl = "https://ormeautabletennis.com";
@@ -30,6 +32,7 @@ const pageUrl = canonicalUrl ? canonicalUrl : `${siteUrl}${Astro.url.pathname}`;
     <meta name="theme-color" content="#1a1a1a" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     
     <!-- Primary Meta Tags -->
     <title>{title}</title>
