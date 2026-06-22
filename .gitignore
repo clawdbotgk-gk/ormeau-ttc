@@ -24,3 +24,19 @@ pnpm-debug.log*
 .idea/
 .vercel
 .env*.local
+
+# Astro build output (note: directory name is _astro/ in this repo's build)
+_astro/
+# Site-generated HTML committed alongside source (Astro emits these to root)
+# Already covered by dist/ above — kept explicit so it's obvious why.
+# Backup files
+*.bak
+*.bak.*
+# Tarballs in repo root (deploy artefacts)
+*.tar.gz
+# Force-deploy sentinel files
+force-deploy.txt
+# Test artefact directories
+playwright-report/
+test-results/
+coverage/
