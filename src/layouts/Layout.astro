@@ -23,7 +23,7 @@ const pageUrl = canonicalUrl ? canonicalUrl : `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="no-js dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
@@ -141,7 +141,9 @@ const pageUrl = canonicalUrl ? canonicalUrl : `${siteUrl}${Astro.url.pathname}`;
     <a href="#main" class="skip-link">Skip to content</a>
     <main id="main" tabindex="-1"><slot /></main>
     <script is:inline>
-      // Force dark mode by default
+      // Mark JS as available, then force dark mode by default
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
       document.documentElement.classList.add('dark');
     </script>
     <script is:inline>
