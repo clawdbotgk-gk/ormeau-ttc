@@ -13,7 +13,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
   <!-- Hero Section -->
   <section class="relative bg-background-dark text-white overflow-hidden min-h-[60vh] flex items-center justify-center">
     <div class="absolute inset-0 z-0">
-      <img alt="Action Shot" class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/JO%20Waldner%20Ormeau.jpg" loading="eager" fetchpriority="high" decoding="async"/>
+      <img alt="Action Shot" class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/JO%20Waldner%20Ormeau.jpg"/>
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/50"></div>
     </div>
     <div class="relative z-20 max-w-5xl mx-auto px-6 py-24 flex flex-col items-center text-center">
@@ -32,7 +32,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
   <!-- Featured Event -->
   <section class="py-20 bg-[#1a1a1a]" id="featured">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="featured-event-card relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
+      <div class="featured-event-card relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary data-event-date="2099-12-31">
         <div class="md:w-1/2 relative min-h-[300px]">
           <img alt="British League" class="featured-event-image absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/493933685_1241133241351877_5480171846768564305_n.jpg"/>
           <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/40 to-transparent"></div>
@@ -47,7 +47,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
               <span class="material-icons text-primary mt-0.5">event</span>
               <div>
                 <div class="text-sm text-gray-400 uppercase tracking-widest">Date</div>
-                <div class="text-lg font-semibold">Sunday, 29 March 2026</div>
+                <div class="text-lg font-semibold">Next one — TBC</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -159,7 +159,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Mar 21-22 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-03-20">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">21</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Mar</span>
@@ -168,12 +168,12 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
             <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase">Tournament</span>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">National Championships</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Basketball Arena, Dublin</p>
-            <span class="text-gray-400 text-sm">March 21 - March 22</span>
+            <span class="text-gray-400 text-sm">March 20 - March 21 2027</span>
           </div>
         </div>
 
         <!-- Apr 4 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-04-04">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">04</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Apr</span>
@@ -186,7 +186,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         </div>
 
         <!-- Apr 18 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-04-18">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">18</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Apr</span>
@@ -198,6 +198,20 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
             <span class="text-gray-400 text-sm">10:00 AM - 5:00 PM</span>
           </div>
         </div>
+        <!-- Empty state: shown when JS hides all events (no upcoming) -->
+        <div id="events-empty-state" class="hidden col-span-full text-center py-16 px-6">
+          <span class="material-icons text-6xl text-gray-400 dark:text-gray-600 mb-4">event_busy</span>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">No upcoming events right now</h3>
+          <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
+            We're between seasons. Follow us on Facebook for announcements about the next tournament, social night, or coaching clinic.
+          </p>
+          <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">
+            <span class="material-icons">thumb_up</span>
+            Follow Ormeau TTC on Facebook
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -212,7 +226,6 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
     const featuredCard = document.querySelector('.featured-event-card');
     const emptyState = document.getElementById('events-empty-state');
 
-    // YYYY-MM-DD in the past?
     function isPastDate(yyyyMmDd) {
       const parts = yyyyMmDd.split('-').map(Number);
       if (parts.length !== 3 || parts.some(isNaN)) return false;
@@ -239,7 +252,6 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
       emptyState.classList.toggle('hidden', anyVisible);
     }
 
-    // Initial load: hide past-dated cards
     eventCards.forEach((card) => {
       if (!isCardVisible(card)) card.style.display = 'none';
     });
