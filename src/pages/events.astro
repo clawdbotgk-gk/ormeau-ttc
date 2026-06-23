@@ -32,7 +32,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
   <!-- Featured Event -->
   <section class="py-20 bg-[#1a1a1a]" id="featured">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="featured-event-card relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary data-event-date="2027-03-28">
+      <div class="featured-event-card relative rounded-3xl overflow-hidden bg-surface-dark text-white min-h-[400px] flex flex-col md:flex-row shadow-2xl border-4 border-primary">
         <div class="md:w-1/2 relative min-h-[300px]">
           <img alt="British League" class="featured-event-image absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://xkwg7luliofrc1cs.public.blob.vercel-storage.com/Images/493933685_1241133241351877_5480171846768564305_n.jpg"/>
           <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/40 to-transparent"></div>
@@ -47,7 +47,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
               <span class="material-icons text-primary mt-0.5">event</span>
               <div>
                 <div class="text-sm text-gray-400 uppercase tracking-widest">Date</div>
-                <div class="text-lg font-semibold">Sunday, 28 March 2027</div>
+                <div class="text-lg font-semibold">Sunday, 29 March 2026</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -66,21 +66,6 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
             </div>
           </div>
         </div>
-
-        <!-- Empty state: shown when JS hides all events (no upcoming) -->
-        <div id="events-empty-state" class="hidden col-span-full text-center py-16 px-6">
-          <span class="material-icons text-6xl text-gray-400 dark:text-gray-600 mb-4">event_busy</span>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">No upcoming events right now</h3>
-          <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
-            We're between seasons. Follow us on Facebook for announcements about the next tournament, social night, or coaching clinic.
-          </p>
-          <a href="https://www.facebook.com/ormeautt/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">
-            <span class="material-icons">thumb_up</span>
-            Follow Ormeau TTC on Facebook
-          </a>
-        </div>
-
       </div>
     </div>
   </section>
@@ -174,7 +159,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Mar 21-22 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-03-20">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">21</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Mar</span>
@@ -183,12 +168,12 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
             <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase">Tournament</span>
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">National Championships</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Basketball Arena, Dublin</p>
-            <span class="text-gray-400 text-sm">March 20 - March 21 2027</span>
+            <span class="text-gray-400 text-sm">March 21 - March 22</span>
           </div>
         </div>
 
         <!-- Apr 4 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-04-04">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">04</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Apr</span>
@@ -201,7 +186,7 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
         </div>
 
         <!-- Apr 18 -->
-        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament" data-event-date="2027-04-18">
+        <div class="event-card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all" data-category="tournament">
           <div class="event-card-date bg-primary text-white flex flex-col items-center justify-center py-4">
             <span class="text-4xl font-black leading-none">18</span>
             <span class="text-sm font-bold uppercase tracking-widest opacity-90">Apr</span>
@@ -224,34 +209,66 @@ const pageDescription = "Discover upcoming events at Ormeau Table Tennis Club. F
   document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLElement>;
     const eventCards = document.querySelectorAll('.event-card') as NodeListOf<HTMLElement>;
-    
+    const featuredCard = document.querySelector('.featured-event-card');
+    const emptyState = document.getElementById('events-empty-state');
+
+    // YYYY-MM-DD in the past?
+    function isPastDate(yyyyMmDd) {
+      const parts = yyyyMmDd.split('-').map(Number);
+      if (parts.length !== 3 || parts.some(isNaN)) return false;
+      const eventDate = new Date(parts[0], parts[1] - 1, parts[2]);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return eventDate.getTime() < today.getTime();
+    }
+
+    function isCardVisible(card) {
+      const d = card.getAttribute('data-event-date');
+      if (d && isPastDate(d)) return false;
+      return true;
+    }
+
+    function refreshEmptyState() {
+      if (!emptyState) return;
+      if (featuredCard && !isCardVisible(featuredCard)) {
+        featuredCard.style.display = 'none';
+      } else if (featuredCard) {
+        featuredCard.style.display = '';
+      }
+      const anyVisible = Array.from(eventCards).some(c => isCardVisible(c) && c.style.display !== 'none');
+      emptyState.classList.toggle('hidden', anyVisible);
+    }
+
+    // Initial load: hide past-dated cards
+    eventCards.forEach((card) => {
+      if (!isCardVisible(card)) card.style.display = 'none';
+    });
+    refreshEmptyState();
+
     filterButtons.forEach((button) => {
-      button.addEventListener('click', function(this: HTMLElement) {
-        // Remove active class from all buttons
+      button.addEventListener('click', function() {
         filterButtons.forEach((btn) => {
           btn.classList.remove('bg-primary', 'text-white');
           btn.classList.add('bg-surface-light', 'dark:bg-surface-dark', 'text-gray-600', 'dark:text-gray-300');
         });
-        
-        // Add active class to clicked button
         this.classList.remove('bg-surface-light', 'dark:bg-surface-dark', 'text-gray-600', 'dark:text-gray-300');
         this.classList.add('bg-primary', 'text-white');
-        
+
         const filter = this.getAttribute('data-filter');
-        
-        // Filter event cards
+
         eventCards.forEach((card) => {
+          if (!isCardVisible(card)) {
+            card.style.display = 'none';
+            return;
+          }
           if (filter === 'all') {
             card.style.display = 'block';
           } else {
             const category = card.getAttribute('data-category');
-            if (category === filter) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
+            card.style.display = (category === filter) ? 'block' : 'none';
           }
         });
+        refreshEmptyState();
       });
     });
   });
